@@ -5,6 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import TermosCondicoes from "./pages/TermosCondicoes";
+import ComissoesTaxas from "./pages/ComissoesTaxas";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
+import PoliticaCancelamento from "./pages/PoliticaCancelamento";
+import PoliticaReembolso from "./pages/PoliticaReembolso";
+import AvaliacoesFeedback from "./pages/AvaliacoesFeedback";
+import NormasPrestacaoServico from "./pages/NormasPrestacaoServico";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +23,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/termos-condicoes" element={<TermosCondicoes />} />
+          <Route path="/comissoes-taxas" element={<ComissoesTaxas />} />
+          <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
+          <Route path="/politica-cancelamento" element={<PoliticaCancelamento />} />
+          <Route path="/politica-reembolso" element={<PoliticaReembolso />} />
+          <Route path="/avaliacoes-feedback" element={<AvaliacoesFeedback />} />
+          <Route path="/normas-prestacao-servico" element={<NormasPrestacaoServico />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

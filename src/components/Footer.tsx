@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Facebook, Youtube, Linkedin, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const usefulLinks = [
   { label: "FAQ / Perguntas Frequentes", href: "#" },
@@ -7,13 +8,13 @@ const usefulLinks = [
 ];
 
 const policies = [
-  { label: "Termos e Condições", href: "#" },
-  { label: "Comissões e Taxas", href: "#" },
-  { label: "Política de Privacidade", href: "#" },
-  { label: "Política de Cancelamento", href: "#" },
-  { label: "Política de Reembolso", href: "#" },
-  { label: "Avaliações e feedback", href: "#" },
-  { label: "Normas de Prestação de Serviço", href: "#" },
+  { label: "Termos e Condições", href: "/termos-condicoes" },
+  { label: "Comissões e Taxas", href: "/comissoes-taxas" },
+  { label: "Política de Privacidade", href: "/politica-privacidade" },
+  { label: "Política de Cancelamento", href: "/politica-cancelamento" },
+  { label: "Política de Reembolso", href: "/politica-reembolso" },
+  { label: "Avaliações e feedback", href: "/avaliacoes-feedback" },
+  { label: "Normas de Prestação de Serviço", href: "/normas-prestacao-servico" },
 ];
 
 const socialLinks = [
@@ -115,12 +116,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {policies.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
