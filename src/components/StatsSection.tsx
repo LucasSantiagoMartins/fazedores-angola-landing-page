@@ -31,10 +31,9 @@ export const StatsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 md:py-32 bg-background" ref={ref}>
+    <section className="py-20 md:py-32 bg-background overflow-x-hidden" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Stats Grid */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -66,7 +65,6 @@ export const StatsSection = () => {
             ))}
           </motion.div>
 
-          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}

@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     quote:
-      "Com a Carteira Fazedores da empresa Fazedores Angola consigo acompanhar tudo com clareza ganhos, saques e até guardar parte do que recebo para depois.",
+    "Com a Carteira consigo acompanhar tudo com clareza ganhos, saques e até guardar parte do que recebo para depois.",
     name: "Marcos Pereira",
     role: "Prestador de Serviços",
   },
@@ -56,10 +56,9 @@ export const TestimonialsSection = () => {
     );
 
   return (
-    <section className="py-20 md:py-32 bg-muted" ref={ref}>
+    <section className="py-20 md:py-32 bg-muted overflow-x-hidden" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -77,19 +76,16 @@ export const TestimonialsSection = () => {
             </p>
           </motion.div>
 
-          {/* Testimonial Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card relative">
-              {/* Quote Icon */}
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                 <Quote className="w-6 h-6 text-primary" />
               </div>
 
-              {/* Testimonial Content */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
@@ -113,7 +109,6 @@ export const TestimonialsSection = () => {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Controls */}
               <div className="flex items-center justify-between mt-8 pt-6 border-t border-border">
                 <div className="flex gap-2">
                   {testimonials.map((_, index) => (
