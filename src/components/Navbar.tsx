@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Instagram, Youtube, Facebook } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { href: "#about", label: "Sobre nós" },
@@ -49,7 +50,7 @@ export const Navbar = () => {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
             <img 
-              src="/logo.png" 
+              src={logo} 
               alt="Fazedores Angola"
               className="h-10 w-auto transition-transform group-hover:scale-110"
             />
