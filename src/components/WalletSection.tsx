@@ -84,7 +84,7 @@ export const WalletSection = () => {
                   <div className="text-center p-6">
                     <Wallet className="w-16 h-16 text-primary mx-auto mb-4" />
                     <p className="text-foreground font-semibold">Carteira</p>
-                    <p className="text-4xl font-bold text-primary mt-2">Kz 0.00</p>
+                    <p className="text-4xl font-bold text-primary mt-2">50.000 Kz</p>
                     <p className="text-muted-foreground text-sm mt-4">Saldo disponível</p>
                   </div>
                 </div>

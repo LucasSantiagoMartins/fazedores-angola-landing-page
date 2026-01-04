@@ -118,7 +118,7 @@ export const TransactionsSection = () => {
                 <div className="w-full h-full bg-gradient-to-b from-card to-background rounded-[2rem] overflow-hidden flex flex-col items-center justify-center p-4">
                   <Wallet className="w-10 h-10 text-primary mb-3" />
                   <p className="text-foreground font-medium text-sm text-center">Resumo</p>
-                  <p className="text-2xl font-bold text-primary mt-2">Kz 0.00</p>
+                  <p className="text-2xl font-bold text-primary mt-2"> 50.000 Kz</p>
                 </div>
               </motion.div>
             </div>
