@@ -47,13 +47,12 @@ export const Navbar = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-glow transition-transform group-hover:scale-110">
-              <span className="text-primary-foreground font-bold text-lg">F</span>
-            </div>
-            <span className="text-foreground font-display font-bold text-lg hidden sm:block">
-              Fazedores Angola
-            </span>
+          <a href="/" className="flex items-center gap-3 group">
+            <img 
+              src="/logo.png" 
+              alt="Fazedores Angola" 
+              className="h-10 w-auto transition-transform group-hover:scale-110"
+            />
           </a>
 
           {/* Desktop Navigation */}
