@@ -3,37 +3,36 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
-
 const testimonials = [
   {
     quote:
-      "O app facilitou muito o meu trabalho. Agora recebo pedidos no telemóvel e consigo organizar melhor os meus serviços.",
+      "Gostei da confiança que transmitem por meio dos vídeos de alguns serviços prestados publicados nas redes sociais da Fazedores Angola. Assistindo a esses vídeos, consigo avaliar o trabalho, conferir preços e escolher o prestador com mais segurança.",
+    name: "Fátima José",
+    role: "Cliente",
+  },
+  {
+    quote:
+      "A plataforma da Fazedores Angola facilitou muito o meu trabalho. Hoje recebo pedidos diretamente no telemóvel e consigo organizar melhor os meus serviços.",
     name: "Miguel Kiala",
     role: "Decorador de Eventos",
   },
   {
     quote:
-      "Foi simples e rápido fechar o serviço. Paguei pelo app e fiquei muito mais tranquilo.",
+      "Foi simples e prático. Fiz o pagamento e fiquei muito mais tranquila durante todo o processo.",
     name: "Maria Souza",
     role: "Designer Gráfica",
   },
   {
     quote:
-      "Antes eu dependia só de indicações. Agora recebo pedidos direto no app e consigo gerir os pagamentos sem stress.",
+      "Antes dependia apenas de indicações. Graças à Fazedores Angola, recebo pedidos diretamente pela plataforma e consegui aumentar minha base de clientes.",
     name: "Osvaldo Fernandes",
     role: "Técnico de Frio",
   },
   {
     quote:
-      "Com a Carteira Fazedores vejo tudo certinho: quanto ganhei, quanto saquei e até consigo juntar algum dinheiro.",
+      "Com a Carteira Fazedores da empresa Fazedores Angola consigo acompanhar tudo com clareza ganhos, saques e até guardar parte do que recebo para depois.",
     name: "Marcos Pereira",
     role: "Prestador de Serviços",
-  },
-  {
-    quote:
-      "Gostei porque consigo comparar preços e ver as avaliações antes de escolher o prestador. Fiquei bem mais confiante.",
-    name: "Fatima José",
-    role: "Cliente",
   },
 ];
 
@@ -45,14 +44,16 @@ export const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
   const nextTestimonial = () =>
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   const prevTestimonial = () =>
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
 
   return (
     <section className="py-20 md:py-32 bg-muted" ref={ref}>
@@ -65,14 +66,14 @@ export const TestimonialsSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              A experiência de quem já usa o{" "}
-              <span className="text-gradient">nosso app</span>
+              A experiência de quem já usa a{" "}
+              <span className="text-gradient">nossa plataforma</span>
             </h2>
-            
+
             <p className="text-muted-foreground text-lg leading-relaxed">
-              O Fazedores Angola já está a facilitar a vida de clientes e
-              prestadores. Veja o que alguns deles dizem sobre o dia a dia com a
-              aplicação.
+              A Fazedores Angola já facilita o dia a dia de clientes e
+              prestadores de serviços. Veja o que alguns deles dizem sobre a
+              experiência e os benefícios de usar a plataforma.
             </p>
           </motion.div>
 
@@ -100,7 +101,7 @@ export const TestimonialsSection = () => {
                   <p className="text-foreground text-lg md:text-xl mb-8 leading-relaxed">
                     "{testimonials[currentIndex].quote}"
                   </p>
-                  
+
                   <div>
                     <p className="text-foreground font-semibold text-lg">
                       {testimonials[currentIndex].name}

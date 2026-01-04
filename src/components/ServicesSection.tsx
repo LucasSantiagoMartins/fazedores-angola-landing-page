@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Search, MessageCircle, CreditCard, Star, Home, ListTodo } from "lucide-react";
+import {
+  Search,
+  MessageCircle,
+  CreditCard,
+  Star,
+  Home,
+  ListTodo,
+} from "lucide-react";
 
 const features = [
   {
@@ -14,7 +21,7 @@ const features = [
   },
   {
     icon: CreditCard,
-    text: "Pague de forma segura usando a Carteira Fazedores.",
+    text: "Pague de forma segura e rápida usando Multicaixa Express de forma instantânea e segura ou pagamentos por referência em ATM",
   },
   {
     icon: Star,
@@ -27,10 +34,13 @@ export const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-muted relative overflow-hidden">
+    <section
+      id="services"
+      className="py-20 md:py-32 bg-muted relative overflow-hidden"
+    >
       {/* Background Accent */}
       <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/5 to-transparent" />
-      
+
       <div className="container mx-auto px-4" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -42,7 +52,7 @@ export const ServicesSection = () => {
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Como <span className="text-gradient">funciona?</span>
             </h2>
-            
+
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               Na Fazedores Angola, a vida fica mais simples. O cliente pede o
               serviço, e o prestador atende. Com segurança e rapidez, o trabalho
@@ -85,7 +95,9 @@ export const ServicesSection = () => {
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full" />
                 <div className="w-full h-full bg-gradient-to-b from-card to-background rounded-[2rem] overflow-hidden flex flex-col items-center justify-center p-4">
                   <Home className="w-10 h-10 text-primary mb-3" />
-                  <p className="text-foreground font-medium text-sm text-center">Início</p>
+                  <p className="text-foreground font-medium text-sm text-center">
+                    Início
+                  </p>
                   <div className="w-full mt-4 grid grid-cols-2 gap-2">
                     <div className="h-12 bg-muted rounded-lg" />
                     <div className="h-12 bg-muted rounded-lg" />
@@ -104,7 +116,9 @@ export const ServicesSection = () => {
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full" />
                 <div className="w-full h-full bg-gradient-to-b from-card to-background rounded-[2rem] overflow-hidden flex flex-col items-center justify-center p-4">
                   <ListTodo className="w-10 h-10 text-primary mb-3" />
-                  <p className="text-foreground font-medium text-sm text-center">Solicitações</p>
+                  <p className="text-foreground font-medium text-sm text-center">
+                    Solicitações
+                  </p>
                   <div className="w-full mt-4 space-y-2">
                     <div className="h-8 bg-muted rounded-lg" />
                     <div className="h-8 bg-primary/20 rounded-lg" />

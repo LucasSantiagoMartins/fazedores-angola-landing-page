@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Target, Eye, Users } from "lucide-react";
-
+import myProfilePic from "../assets/me.jpg";
 const values = [
   {
     icon: Target,
@@ -40,53 +40,46 @@ export const AboutSection = () => {
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Photo */}
-            <div className="flex justify-center">
+            <div className="flex justify-center ">
               <div className="relative">
-                <motion.div
-                  className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-card ring-4 ring-primary/20"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary flex items-center justify-center">
-                    <span className="text-6xl md:text-7xl font-display font-bold text-foreground/50">
-                      LS
-                    </span>
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="absolute -bottom-4 -right-4 bg-primary px-6 py-3 rounded-full shadow-glow"
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <span className="text-primary-foreground font-semibold text-sm">Fundador</span>
-                </motion.div>
+                <img
+                  src={myProfilePic}
+                  alt="Fazedores Angola"
+                  className=" w-auto transition-transform group-hover:scale-110 rounded-xl shadow-lg"
+                />
               </div>
             </div>
 
             {/* Info */}
             <div>
-              <p className="text-primary font-semibold mb-2">FAZEDORES ANGOLA PRESTAÇÃO DE SERVIÇOS (SU) LDA</p>
-              <p className="text-muted-foreground text-lg mb-4">NIF - 5002629992</p>
-              
+              <p className="text-primary font-semibold mb-2">
+                FAZEDORES ANGOLA PRESTAÇÃO DE SERVIÇOS (SU) LDA
+              </p>
+              <p className="text-muted-foreground text-lg mb-4">
+                NIF - 5002629992
+              </p>
+
               <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
                 Lucas Santiago de Oliveira Martins
               </h3>
-              <p className="text-muted-foreground text-lg mb-6">Sócio Único e Gerente</p>
-              
+              <p className="text-muted-foreground text-lg mb-6">
+                Sócio Único e Gerente
+              </p>
+
               <div className="w-16 h-1 bg-primary rounded-full mb-6" />
-              
+
               <p className="text-foreground/80 mb-4 leading-relaxed">
-                Lucas Santiago de Oliveira Martins é o fundador, Sócio Único
-                e Gerente da <strong>Fazedores Angola</strong>. Com
-                experiência na área de tecnologia e desenvolvimento de
-                soluções digitais, criou a plataforma para conectar clientes
-                e prestadores de serviços de forma simples e segura.
+                Lucas Santiago de Oliveira Martins é o fundador, Sócio Único e
+                Gerente da <strong>Fazedores Angola</strong>. Com experiência na
+                área de tecnologia e desenvolvimento de soluções digitais, criou
+                a plataforma para conectar clientes e prestadores de serviços de
+                forma simples e segura.
               </p>
               <p className="text-foreground/80 leading-relaxed">
                 A empresa tem como base o princípio
-                <em className="text-primary"> "Dividir para conquistar"</em>: distribuir
-                oportunidades, valorizar o talento angolano e assegurar que
-                o sucesso seja alcançado de forma coletiva.
+                <em className="text-primary"> "Dividir para conquistar"</em>:
+                distribuir oportunidades, valorizar o talento angolano e
+                assegurar que o sucesso seja alcançado de forma coletiva.
               </p>
             </div>
           </div>

@@ -6,19 +6,19 @@ import { Wallet, Target, Shield, Zap } from "lucide-react";
 const features = [
   {
     icon: Wallet,
-    text: "Gestão financeira inteligente — acompanhe ganhos, depósitos e saques.",
+    text: "Gestão financeira inteligente — acompanhe ganhos, histórico e saques num só lugar.",
   },
   {
     icon: Target,
-    text: "Controle e disciplina — guarda os ganhos e saca só quando precisa.",
+    text: "Mais controlo e disciplina — evite gastos impulsivos e planeie melhor seus levantamentos.",
   },
   {
     icon: Shield,
-    text: "Transparência e segurança em cada transação.",
+    text: "Transparência total — cada valor, comissão e movimento fica visível e registado.",
   },
   {
     icon: Zap,
-    text: "Pagamentos rápidos — clientes depositam e pagam com 1 clique.",
+    text: "Pagamentos rápidos — pague com Multicaixa Express ou por referência, de forma instantânea e segura.",
   },
 ];
 
@@ -27,10 +27,13 @@ export const WalletSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="wallet" className="py-20 md:py-32 bg-muted relative overflow-hidden">
+    <section
+      id="wallet"
+      className="py-20 md:py-32 bg-muted relative overflow-hidden"
+    >
       {/* Background Accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
-      
+
       <div className="container mx-auto px-4" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -40,15 +43,19 @@ export const WalletSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Carteira Fazedores — 
-              <span className="text-gradient"> o seu dinheiro mais seguro</span>
+              Carteira Fazedores —
+              <span className="text-gradient">
+                {" "}
+                organização, confiança e controlo financeiro
+              </span>
             </h2>
-            
+
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              A <strong className="text-foreground">Carteira Fazedores</strong> foi criada para dar mais
-              praticidade e controlo aos pagamentos dentro da plataforma. Todo
-              valor recebido pelos prestadores passa pela carteira, já com a
-              comissão descontada, permitindo uma visão clara dos ganhos.
+              A <strong className="text-foreground">Carteira Fazedores</strong>{" "}
+              foi criada para organizar e centralizar todos os valores dos
+              serviços dentro da plataforma. Cada pagamento recebido fica registado, com
+              histórico claro e comissão já aplicada, garantindo confiança,
+              previsibilidade e melhor planeamento financeiro para prestadores.
             </p>
 
             <ul className="space-y-4">
@@ -84,12 +91,16 @@ export const WalletSection = () => {
                   <div className="text-center p-6">
                     <Wallet className="w-16 h-16 text-primary mx-auto mb-4" />
                     <p className="text-foreground font-semibold">Carteira</p>
-                    <p className="text-4xl font-bold text-primary mt-2">50.000 Kz</p>
-                    <p className="text-muted-foreground text-sm mt-4">Saldo disponível</p>
+                    <p className="text-4xl font-bold text-primary mt-2">
+                      50.000 Kz
+                    </p>
+                    <p className="text-muted-foreground text-sm mt-4">
+                      Saldo disponível
+                    </p>
                   </div>
                 </div>
               </div>
-              
+
               {/* Floating Badge */}
               <motion.div
                 className="absolute -right-4 top-1/4 bg-card p-4 rounded-xl shadow-soft"
@@ -97,7 +108,9 @@ export const WalletSection = () => {
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <Shield className="w-6 h-6 text-primary mb-1" />
-                <p className="text-xs text-foreground font-medium">100% Seguro</p>
+                <p className="text-xs text-foreground font-medium">
+                  100% Seguro
+                </p>
               </motion.div>
             </div>
           </motion.div>

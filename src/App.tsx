@@ -12,6 +12,8 @@ import PoliticaCancelamento from "./pages/PoliticaCancelamento";
 import PoliticaReembolso from "./pages/PoliticaReembolso";
 import AvaliacoesFeedback from "./pages/AvaliacoesFeedback";
 import NormasPrestacaoServico from "./pages/NormasPrestacaoServico";
+import PerguntasRespostas from "./pages/PerguntasRespostas";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/termos-condicoes" element={<TermosCondicoes />} />
+          <Route path="/contactar" element={<Contact />} />
+          <Route path="/perguntas-respostas" element={<PerguntasRespostas />} />
           <Route path="/comissoes-taxas" element={<ComissoesTaxas />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
           <Route path="/politica-cancelamento" element={<PoliticaCancelamento />} />

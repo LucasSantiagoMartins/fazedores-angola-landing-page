@@ -5,14 +5,16 @@ import { BarChart3, ShieldCheck } from "lucide-react";
 
 const features = [
   {
-    icon: BarChart3,
-    title: "Gestão Inteligente",
-    description: "Acompanhe ganhos, gastos e saques de forma simples.",
+    icon: ShieldCheck,
+    title: "Pagamento com Garantia",
+    description:
+      "Quando o pagamento é feito de forma 100% antecipada, o valor fica cativo na plataforma até a conclusão do serviço.",
   },
   {
-    icon: ShieldCheck,
-    title: "Segurança e Transparência",
-    description: "Controle total sobre transações e histórico financeiro.",
+    icon: BarChart3,
+    title: "Regras Claras para Todos",
+    description:
+      "A plataforma organiza os pagamentos e garante transparência, evitando conflitos entre cliente e prestador.",
   },
 ];
 
@@ -31,16 +33,18 @@ export const WalletFeatureCard = () => {
         >
           <div className="bg-secondary rounded-2xl p-8 md:p-10">
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Carteira Fazedores — Segurança e Controle Financeiro
+              Carteira Fazedores — Garantia e confiança nos pagamentos
             </h3>
+
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Todos os pagamentos feitos pelo app passam primeiro pela
-              plataforma, dentro da Carteira Fazedores. Isso dá ao cliente a
-              facilidade de depositar e pagar serviços com um clique, e ao
-              prestador o controlo total dos seus ganhos, saques e histórico
-              financeiro — tudo num só lugar, com segurança e transparência.
+              Na Fazedores, os pagamentos passam primeiro pela plataforma para
+              garantir organização e segurança. Nos casos em que o cliente opta
+              pelo pagamento 100% antecipado, o valor fica cativo na Carteira
+              Fazedores até a conclusão do serviço. Após a confirmação da
+              finalização, o pagamento é então liberado ao prestador, seguindo
+              as regras e comissões definidas pela plataforma.
             </p>
-            
+
             <div className="grid sm:grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <motion.div

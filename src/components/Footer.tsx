@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Facebook, Youtube, Linkedin, ArrowUp } from "lucide-react";
+import { MapPin, Mail, Phone, PlaySquare, ArrowUp } from "lucide-react";
+import { FaTiktok, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 const usefulLinks = [
-  { label: "FAQ / Perguntas Frequentes", href: "#" },
-  { label: "Entrar em contacto", href: "#" },
+  { label: "FAQ / Perguntas Frequentes", href: "/perguntas-respostas" },
+  { label: "Entrar em contacto", href: "/contactar" },
 ];
 
 const policies = [
@@ -14,13 +14,16 @@ const policies = [
   { label: "Política de Cancelamento", href: "/politica-cancelamento" },
   { label: "Política de Reembolso", href: "/politica-reembolso" },
   { label: "Avaliações e feedback", href: "/avaliacoes-feedback" },
-  { label: "Normas de Prestação de Serviço", href: "/normas-prestacao-servico" },
+  {
+    label: "Normas de Prestação de Serviço",
+    href: "/normas-prestacao-servico",
+  },
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Youtube, href: "#", label: "Youtube" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: FaTiktok, href: "#", label: "TikTok" },
+  { icon: FaInstagram, href: "#", label: "Instagram" },
+  { icon: PlaySquare, href: "#", label: "Youtube" },
 ];
 
 export const Footer = () => {
@@ -36,9 +39,6 @@ export const Footer = () => {
           {/* Contact Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">F</span>
-              </div>
               <span className="text-foreground font-display font-bold text-xl">
                 Fazedores Angola
               </span>
@@ -50,7 +50,7 @@ export const Footer = () => {
                 <div>
                   <p>Luanda, Angola</p>
                   <p className="text-sm">
-                    Estalagem, Rua Beto Carneiro, casa nº 20, perto do antigo banco bic
+                    Estalagem, Rua Beto Carneiro, perto do antigo banco bic
                   </p>
                 </div>
               </div>
@@ -60,7 +60,7 @@ export const Footer = () => {
                   href="mailto:fazedoresangola@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  fazedoresangola@gmail.com
+                  contacto@fazedoresangola.ao
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -97,12 +97,15 @@ export const Footer = () => {
             <ul className="space-y-3">
               {usefulLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -118,7 +121,9 @@ export const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
@@ -135,10 +140,13 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-center md:text-left">
-              © 2025 <span className="text-foreground font-semibold">Fazedores Angola</span>. 
-              Todos os direitos reservados.
+              © 2026{" "}
+              <span className="text-foreground font-semibold">
+                Fazedores Angola
+              </span>
+              . Todos os direitos reservados.
             </p>
-            
+
             <motion.button
               onClick={scrollToTop}
               className="w-10 h-10 rounded-full bg-primary hover:bg-primary/90 flex items-center justify-center transition-colors shadow-glow"

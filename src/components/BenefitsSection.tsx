@@ -43,7 +43,7 @@ export const BenefitsSection = () => {
             Benefícios da <span className="text-gradient">plataforma</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Tudo o que você precisa para conectar talentos e oportunidades
+            Tudo o que você precisa para encontrar serviços de qualidade 
           </p>
         </motion.div>
 

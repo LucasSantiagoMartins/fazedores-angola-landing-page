@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, Youtube, Facebook } from "lucide-react";
+import { Menu, X, PlaySquare } from "lucide-react";
+import { FaTiktok, FaInstagram } from "react-icons/fa";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -12,9 +13,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "Youtube" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: FaTiktok, href: "#", label: "TikTok" },
+  { icon: FaInstagram, href: "#", label: "Instagram" },
+  { icon: PlaySquare, href: "#", label: "Youtube" },
 ];
 
 export const Navbar = () => {
@@ -29,7 +30,7 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href) => {
     setIsOpen(false);
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -47,16 +48,14 @@ export const Navbar = () => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <img 
-              src={logo} 
+            <img
+              src={logo}
               alt="Fazedores Angola"
               className="h-10 w-auto transition-transform group-hover:scale-110"
             />
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
@@ -70,7 +69,6 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Social Links - Desktop */}
           <div className="hidden lg:flex items-center gap-2">
             {socialLinks.map((social) => (
               <a
@@ -84,7 +82,6 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -94,7 +91,6 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -117,8 +113,7 @@ export const Navbar = () => {
                     {link.label}
                   </motion.button>
                 ))}
-                
-                {/* Social Links - Mobile */}
+
                 <div className="flex gap-3 pt-4 border-t border-border">
                   {socialLinks.map((social) => (
                     <a
