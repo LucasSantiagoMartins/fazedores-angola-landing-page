@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { XCircle, Clock, AlertTriangle, CheckCircle } from "lucide-react";
+import { XCircle, Clock, AlertTriangle, User, Briefcase } from "lucide-react";
 
 const PoliticaCancelamento = () => {
   return (
@@ -19,10 +19,11 @@ const PoliticaCancelamento = () => {
               <XCircle className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Política de Cancelamento
+              Política de Cancelamento – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Entenda como funcionam os cancelamentos na plataforma
+              Regras e fluxo de cancelamento de serviços para clientes e
+              prestadores.
             </p>
           </motion.div>
 
@@ -30,89 +31,110 @@ const PoliticaCancelamento = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Clock className="w-5 h-5 text-primary" />
+                <User className="w-5 h-5 text-primary" />
                 Cancelamento pelo Cliente
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Como cliente, você pode cancelar um serviço nas seguintes condições:
+                Clientes podem cancelar solicitações de serviço **pendentes ou
+                já aceitas** pelo prestador, mediante **justificativa
+                plausível**.
               </p>
-              <div className="space-y-4">
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Cancelamento Gratuito</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Até 24 horas antes do horário agendado, sem nenhuma taxa.
-                  </p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Cancelamento com Taxa</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Entre 24 e 2 horas antes: taxa de 25% do valor do serviço.
-                  </p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Cancelamento Tardio</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Menos de 2 horas antes: taxa de 50% do valor do serviço.
-                  </p>
-                </div>
-              </div>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Confirmação de conclusão de serviço
+                  </span>{" "}
+                  Para serviços que exigem confirmação de conclusão, o cliente
+                  deve reportar um problema usando a funcionalidade na
+                  plataforma. A simples não confirmação da conclusão não gera
+                  cancelamento automático.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Pagamento 100% Antecipado:
+                  </span>{" "}
+                  Em casos de cancelamento após a aceitação, o cliente pode ser
+                  elegível ao estorno total do valor. Este reembolso será
+                  concedido somente após análise detalhada e decisão final da
+                  equipe da plataforma.
+                </li>
+              </ul>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-primary" />
+                <Briefcase className="w-5 h-5 text-primary" />
                 Cancelamento pelo Prestador
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Prestadores que cancelam serviços frequentemente podem sofrer penalidades:
+                Prestadores podem cancelar solicitações já aceitas ou em
+                andamento, mediante **justificativa plausível**.
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Primeiro cancelamento: advertência</li>
-                <li>Segundo cancelamento em 30 dias: suspensão temporária de 24h</li>
-                <li>Terceiro cancelamento em 30 dias: suspensão de 7 dias</li>
-                <li>Cancelamentos recorrentes: análise para possível desativação da conta</li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Serviço em Andamento:
+                  </span>{" "}
+                  Cancelamentos quando o serviço já foi iniciado são
+                  considerados graves e serão analisados individualmente pela
+                  equipa da plataforma para determinar responsabilidades e
+                  medidas.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Justificativa:
+                  </span>{" "}
+                  A justificativa deve ser clara e verdadeira para evitar
+                  penalidades.
+                </li>
+              </ul>
+            </section>
+
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-red-600" />
+                Penalidades e Restrições
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Cancelamentos frequentes, injustificados ou em desacordo com as
+                normas da plataforma podem resultar em:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Clientes:
+                  </span>{" "}
+                  Impedimento temporário de realizar novas solicitações de
+                  serviço.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Prestadores:
+                  </span>{" "}
+                  Impedimento temporário de receber novas solicitações de
+                  serviço.
+                </li>
+                <li>
+                  Todos os problemas e cancelamentos são registrados para
+                  análise do histórico e aplicação de medidas.
+                </li>
               </ul>
             </section>
 
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                Exceções
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Cancelamentos sem penalidade são permitidos em casos de:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Emergência médica comprovada</li>
-                <li>Desastres naturais ou eventos de força maior</li>
-                <li>Problemas técnicos da plataforma</li>
-                <li>Comportamento inadequado da outra parte</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Como Cancelar um Serviço
-              </h2>
-              <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Acesse a seção "Meus Serviços" no aplicativo</li>
-                <li>Selecione o serviço que deseja cancelar</li>
-                <li>Clique em "Cancelar Serviço"</li>
-                <li>Selecione o motivo do cancelamento</li>
-                <li>Confirme o cancelamento</li>
-              </ol>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Dúvidas sobre Cancelamentos
+                <Clock className="w-5 h-5 text-primary" />
+                Processo de Estorno
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Se você tiver dúvidas ou precisar contestar uma taxa de cancelamento, entre em contato com nosso suporte: suporte@fazedoresangola.com
+                Em casos de estorno determinado pela plataforma (após análise do
+                cancelamento e pagamento antecipado), o tempo de processamento
+                pode variar dependendo das instituições bancárias envolvidas
+                sendo assim processados em até 10 dias úteis após decisão final.
               </p>
             </section>
           </motion.div>

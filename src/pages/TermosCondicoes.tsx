@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FileText, CheckCircle } from "lucide-react";
+import {
+  FileText,
+  CheckCircle,
+  Smartphone,
+  DollarSign,
+  RefreshCcw,
+  Handshake,
+} from "lucide-react";
 
 const TermosCondicoes = () => {
   return (
@@ -19,10 +26,11 @@ const TermosCondicoes = () => {
               <FileText className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Termos e Condições
+              Termos e Condições – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Última atualização: Janeiro de 2024
+              Estes Termos regulam o uso da plataforma e estabelecem direitos e
+              deveres.
             </p>
           </motion.div>
 
@@ -30,86 +38,201 @@ const TermosCondicoes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-primary" />
-                1. Aceitação dos Termos
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Ao acessar e utilizar a plataforma Fazedores Angola, você concorda em cumprir e ficar vinculado a estes Termos e Condições. Se você não concordar com qualquer parte destes termos, não deverá usar nossos serviços.
-              </p>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                2. Descrição do Serviço
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                A Fazedores Angola é uma plataforma que conecta prestadores de serviços a clientes que necessitam desses serviços. Funcionamos como intermediários, facilitando a comunicação e transações entre as partes.
-              </p>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                3. Cadastro e Conta
+                1. Aceitação e Objeto
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Para utilizar nossos serviços, você deve criar uma conta fornecendo informações precisas e atualizadas. Você é responsável por:
+                O uso da plataforma constitui um contrato legal. Você declara
+                que leu, entendeu e concorda com estes Termos. Caso não
+                concorde, não utilize a plataforma.
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Manter a confidencialidade de sua senha</li>
-                <li>Todas as atividades realizadas em sua conta</li>
-                <li>Notificar imediatamente sobre qualquer uso não autorizado</li>
+              <h3 className="font-semibold text-foreground mt-4 mb-2">
+                2. Sobre a Plataforma
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                A Fazedores Angola é uma **intermediária tecnológica** que
+                conecta clientes e prestadores de serviços qualificados.
+                Oferecemos:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4 mt-2">
+                <li>
+                  Solicitação e acompanhamento de serviços: Permite que clientes
+                  façam pedidos de forma organizada e que prestadores gerenciem
+                  sua agenda com facilidade.
+                </li>
+                <li>
+                  Suporte e mediação de conflitos: Protege prestadores e
+                  clientes em situações de desacordo, assegurando decisões
+                  justas e imparciais.
+                </li>
+                <li>
+                  Histórico e evidência de serviços realizados: Permite aos
+                  prestadores mostrar experiência e competências adquiridas, e
+                  aos clientes verificar o desempenho e confiabilidade de quem
+                  vai contratar.
+                </li>
+                <li>
+                  Avaliações e reputação: Prestadores recebem feedback
+                  construtivo dos clientes, fortalecendo sua reputação e
+                  permitindo melhoria contínua nos serviços.
+                </li>
+              </ul>
+              <blockquote className="mt-4 p-3 border-l-4 border-primary bg-primary/10 text-sm text-foreground">
+                A plataforma não se responsabiliza pela execução do serviço, que
+                é de responsabilidade exclusiva do Prestador.
+              </blockquote>
+            </section>
+
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Smartphone className="w-5 h-5 text-primary" />
+                3. Cadastro, Conduta e Responsabilidade
+              </h2>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  É necessário ter **mais de 18 anos** e fornecer informações
+                  verdadeiras e atualizadas.
+                </li>
+                <li>
+                  O usuário é responsável por manter a segurança das credenciais
+                  de acesso.
+                </li>
+                <li>
+                  Contas podem ser suspensas em caso de fraude ou violação
+                  destes Termos.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Regras de Conduta:
+                  </span>{" "}
+                  É proibido publicar conteúdo ofensivo ou ilegal. Clientes e
+                  prestadores devem usar os métodos de pagamento autorizados e
+                  agir com profissionalismo.
+                </li>
+              </ul>
+            </section>
+
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-primary" />
+                4. Pagamentos e Modalidades
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Aceitamos Multicaixa Express, Pagamento por Referência e
+                Pagamento em Mão (dependendo do serviço). As modalidades são:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Pagamento 100% Antecipado::
+                  </span>{" "}
+                  Valor pago no início, liberado ao prestador apenas após a
+                  confirmação de conclusão do cliente.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Pagamento Parcial (50%):
+                  </span>{" "}
+                  Valor pago parcialmente no início para aquisição de materiais
+                  necessários, o restante é pago após a conclusão do serviço.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Pagamento Pós-Conclusão:
+                  </span>{" "}
+                  Feito somente após a finalização. **Não disponível para
+                  serviços remotos.**
+                </li>
+              </ul>
+            </section>
+
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <RefreshCcw className="w-5 h-5 text-primary" />
+                5. Cancelamentos e Reembolsos
+              </h2>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Clientes:
+                  </span>{" "}
+                  Podem cancelar solicitações pendentes ou aceitas com
+                  justificativa plausível.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Prestadores:
+                  </span>{" "}
+                  Podem cancelar solicitações já aceitas ou em andamento com
+                  justificativa plausível.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Reembolso:
+                  </span>{" "}
+                  Somente Pagamento 100% Antecipado serão estornados em caso de
+                  cancelamento após aceitação, mediante análise da plataforma.
+                </li>
+                <li>
+                  Cancelamentos excessivos ou injustificados podem gerar
+                  penalidades e restrições.
+                </li>
+                <li>
+                  Problemas são reportados via funcionalidade na própria plataforma para
+                  análise da equipe, o estado do serviço não é alterado
+                  automaticamente garantindo que a equipe possa analisar e tomar decisões adequadas.
+                </li>
+              </ul>
+            </section>
+
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Handshake className="w-5 h-5 text-primary" />
+                6. Disposições Finais
+              </h2>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Mediação:
+                  </span>{" "}
+                  A plataforma oferece suporte para mediação de conflitos. Se
+                  não houver acordo, o recurso é às vias judiciais competentes.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Limitação de Responsabilidade:
+                  </span>{" "}
+                  A Fazedores Angola não se responsabiliza por serviços mal
+                  executados, informações falsas ou interrupções técnicas.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Lei Aplicável:
+                  </span>{" "}
+                  Estes Termos são regidos pelas leis da República de Angola. O
+                  foro competente é a comarca de Luanda.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Proteção de Dados:
+                  </span>{" "}
+                  O tratamento de dados pessoais é regido pela Política de
+                  Privacidade, em conformidade com a legislação angolana.
+                </li>
               </ul>
             </section>
 
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                4. Obrigações do Usuário
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Ao usar nossa plataforma, você concorda em:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Não violar leis ou regulamentos aplicáveis</li>
-                <li>Não publicar conteúdo falso ou enganoso</li>
-                <li>Respeitar outros usuários da plataforma</li>
-                <li>Não tentar acessar sistemas não autorizados</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                5. Propriedade Intelectual
+              <h2 className="text-xl font-semibold text-foreground mb-4">
+                Contato
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Todo o conteúdo da plataforma, incluindo logos, textos, gráficos e software, é propriedade da Fazedores Angola ou de seus licenciadores e está protegido por leis de propriedade intelectual.
-              </p>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                6. Modificações dos Termos
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor após a publicação na plataforma. O uso continuado após as alterações constitui aceitação dos novos termos.
-              </p>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                7. Contato
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Para dúvidas sobre estes Termos e Condições, entre em contato através do email: suporte@fazedoresangola.com
+                Para dúvidas sobre estes Termos e Condições, entre em contato:
+                contacto@fazedoresangola.com
               </p>
             </section>
           </motion.div>

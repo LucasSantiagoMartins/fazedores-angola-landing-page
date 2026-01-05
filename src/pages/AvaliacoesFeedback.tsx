@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Star, MessageSquare, ThumbsUp, Award } from "lucide-react";
+import {
+  Star,
+  MessageSquare,
+  ThumbsDown,
+  Shield,
+  TrendingUp,
+} from "lucide-react";
 
 const AvaliacoesFeedback = () => {
   return (
@@ -19,10 +25,11 @@ const AvaliacoesFeedback = () => {
               <Star className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Avaliações e Feedback
+              Avaliações e Feedback – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Sistema de avaliação para garantir qualidade
+              A sua opinião é essencial para a qualidade e confiança na nossa
+              plataforma.
             </p>
           </motion.div>
 
@@ -30,131 +37,92 @@ const AvaliacoesFeedback = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Star className="w-5 h-5 text-primary" />
-                Sistema de Estrelas
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
+                <Star className="w-6 h-6 text-primary" />
+                Regras de Avaliação
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Após cada serviço concluído, tanto clientes quanto prestadores podem avaliar a experiência:
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-primary text-xl">★★★★★</span>
-                    <span className="font-medium text-foreground">5 estrelas</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Excelente - Superou expectativas</p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-primary text-xl">★★★★</span>
-                    <span className="font-medium text-foreground">4 estrelas</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Muito bom - Atendeu expectativas</p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-primary text-xl">★★★</span>
-                    <span className="font-medium text-foreground">3 estrelas</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Regular - Pode melhorar</p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-primary text-xl">★★</span>
-                    <span className="font-medium text-foreground">2 estrelas</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Ruim - Abaixo do esperado</p>
-                </div>
-              </div>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-primary" />
-                Comentários
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Além das estrelas, você pode deixar comentários detalhados:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Descreva sua experiência de forma honesta e construtiva</li>
-                <li>Mencione pontos positivos e áreas de melhoria</li>
-                <li>Comentários devem ser respeitosos e relevantes</li>
-                <li>Comentários ofensivos serão removidos</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <ThumbsUp className="w-5 h-5 text-primary" />
-                Diretrizes de Avaliação
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Para manter a qualidade das avaliações:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Avalie apenas serviços que você realmente utilizou</li>
-                <li>Seja justo e imparcial na sua avaliação</li>
-                <li>Não utilize avaliações para chantagear ou pressionar</li>
-                <li>Relate problemas graves ao suporte, não apenas nas avaliações</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Award className="w-5 h-5 text-primary" />
-                Impacto das Avaliações
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                As avaliações têm impacto direto na plataforma:
-              </p>
               <div className="space-y-4">
                 <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Para Prestadores</h4>
-                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                    <li>Maior visibilidade para prestadores bem avaliados</li>
-                    <li>Acesso a benefícios exclusivos</li>
-                    <li>Taxas reduzidas para top performers</li>
-                  </ul>
+                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
+                    <Star className="w-4 h-4 text-primary" />
+                    Avaliação Padrão
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Clientes avaliam prestadores após a conclusão do serviço,
+                    usando um sistema de **estrelas** (1 a 5) e um
+                    **comentário** opcional.
+                  </p>
                 </div>
                 <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Para Clientes</h4>
-                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                    <li>Clientes bem avaliados têm prioridade no atendimento</li>
-                    <li>Prestadores preferem clientes com bom histórico</li>
-                    <li>Descontos especiais para avaliadores frequentes</li>
-                  </ul>
+                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-primary" />
+                    Critérios para Comentários
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Comentários devem ser **honestos, respeitosos** e baseados
+                    estritamente na **experiência real** do serviço prestado.
+                  </p>
                 </div>
               </div>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Contestação de Avaliações
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
+                <Shield className="w-6 h-6 text-red-500" />
+                Comportamento Proibido
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Se você acredita que recebeu uma avaliação injusta:
+              <p className="text-muted-foreground mb-6">
+                Para manter um ambiente de confiança, as seguintes práticas são
+                estritamente proibidas e sujeitas a moderação:
               </p>
-              <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Acesse seu perfil e vá para "Minhas Avaliações"</li>
-                <li>Selecione a avaliação em questão</li>
-                <li>Clique em "Contestar Avaliação"</li>
-                <li>Forneça evidências e explicações</li>
-                <li>Nossa equipe analisará em até 7 dias úteis</li>
-              </ol>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <blockquote className="mt-4 p-3 border-l-4 border-red-600 bg-red-600/10 text-sm text-foreground">
+                  É proibido publicar conteúdo **ofensivo, falso,
+                  discriminatório** ou que inclua **informações pessoais** de
+                  terceiros.
+                </blockquote>
+                <blockquote className="mt-4 p-3 border-l-4 border-red-600 bg-red-600/10 text-sm text-foreground">
+                  Prestadores não podem **solicitar avaliações falsas** ou
+                  oferecer **benefícios em troca** de avaliações.
+                </blockquote>
+                <li>
+                  Qualquer forma de manipulação do sistema de feedback será
+                  tratada com rigor.
+                </li>
+              </ul>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Contato
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
+                <TrendingUp className="w-6 h-6 text-primary" />
+                Moderação e Penalidades
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Dúvidas sobre avaliações: avaliacoes@fazedoresangola.com
-              </p>
+              <div className="space-y-4">
+                <div className="bg-secondary/50 rounded-xl p-4">
+                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
+                    <ThumbsDown className="w-4 h-4 text-primary" />
+                    Ações da Plataforma
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    A plataforma pode **moderar ou remover** qualquer avaliação
+                    que viole as diretrizes.
+                  </p>
+                </div>
+                <div className="bg-secondary/50 rounded-xl p-4">
+                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-primary" />
+                    Uso Indevido
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    O uso indevido das regras pode resultar em **advertência**,
+                    **restrição de visibilidade** ou **suspensão temporária** da
+                    conta.
+                  </p>
+                </div>
+              </div>
             </section>
           </motion.div>
         </div>

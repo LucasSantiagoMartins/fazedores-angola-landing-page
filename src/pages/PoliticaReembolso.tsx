@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { RefreshCcw, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { RefreshCcw, Clock, CheckCircle, AlertCircle, TrendingUp, DollarSign } from "lucide-react";
 
 const PoliticaReembolso = () => {
   return (
@@ -19,10 +19,10 @@ const PoliticaReembolso = () => {
               <RefreshCcw className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Política de Reembolso
+              Política de Reembolso – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Garantimos sua satisfação com nossos serviços
+              Regras e procedimentos para estornos de valores na plataforma.
             </p>
           </motion.div>
 
@@ -30,116 +30,76 @@ const PoliticaReembolso = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                Quando o Reembolso é Aplicável
+                <DollarSign className="w-5 h-5 text-primary" />
+                1. Elegibilidade para Reembolso
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Você pode solicitar reembolso total nas seguintes situações:
+                O reembolso é aplicável **somente** nas seguintes condições:
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>O prestador não compareceu ao serviço agendado</li>
-                <li>O serviço não foi executado conforme acordado</li>
-                <li>Houve cobrança duplicada ou erro no valor</li>
-                <li>O serviço foi cancelado dentro do prazo gratuito</li>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">Pagamento 100% Antecipado:</span> O serviço foi pago integralmente e se enquadra nas regras de cancelamento ou falha de execução.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Cancelamento:</span> O serviço foi cancelado após aceitação, mas a plataforma determinou que o cliente tem direito ao estorno (conforme Política de Cancelamento).
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Execução Incorreta:</span> Foi verificada uma execução significativa e comprovada incorreta do serviço pelo prestador.
+                </li>
               </ul>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-primary" />
-                Reembolso Parcial
+                <AlertCircle className="w-5 h-5 text-red-600" />
+                2. Situações NÃO Elegíveis
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Reembolsos parciais podem ser concedidos quando:
+                Não há direito a reembolso nos seguintes casos:
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Parte do serviço foi executada de forma satisfatória</li>
-                <li>Houve atraso significativo no início do serviço</li>
-                <li>Ambas as partes concordam com uma compensação parcial</li>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>Pagamentos realizados em **50% antecipado ou em mão** (fora do ambiente digital da plataforma).</li>
+                <li>Insatisfação subjetiva que não se baseia em uma falha de serviço clara.</li>
+                <li>Serviços corretamente concluídos e **confirmados** pelo cliente na plataforma.</li>
+                <li>A simples **não confirmação** da conclusão de um serviço pelo cliente.</li>
               </ul>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-primary" />
+                3. Processo de Análise e Decisão
+              </h2>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">Solicitação:</span> O pedido deve ser feito pelo cliente via funcionalidade de **reportar problema** na plataforma.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Análise:</span> A solicitação será analisada pela equipe da Fazedores Angola. Serão considerados todos os dados, evidências e a comunicação entre as partes.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Decisão Final:</span> A decisão sobre a concessão ou recusa do reembolso é exclusiva e final da plataforma.
+                </li>
+                <li>Casos de força maior ou contestação por abuso/má-fé serão analisados individualmente.</li>
+              </ul>
+            </section>
+
+            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
-                Prazo para Solicitar Reembolso
+                4. Prazos e Processamento
               </h2>
-              <div className="space-y-4">
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Até 48 horas</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Após a conclusão do serviço para serviços presenciais.
-                  </p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Até 7 dias</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Para serviços digitais ou que requerem verificação posterior.
-                  </p>
-                </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-2">Até 30 dias</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Para disputas envolvendo cobrança indevida ou fraude.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Como Solicitar Reembolso
-              </h2>
-              <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Acesse "Histórico de Serviços" no aplicativo</li>
-                <li>Selecione o serviço em questão</li>
-                <li>Clique em "Solicitar Reembolso"</li>
-                <li>Descreva o motivo detalhadamente</li>
-                <li>Anexe evidências se necessário (fotos, mensagens)</li>
-                <li>Aguarde a análise em até 5 dias úteis</li>
-              </ol>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Forma de Reembolso
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Os reembolsos são processados da seguinte forma:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li><strong>Crédito na Carteira Fazedores:</strong> Imediato após aprovação</li>
-                <li><strong>Cartão de crédito:</strong> 5 a 10 dias úteis</li>
-                <li><strong>Transferência bancária:</strong> 3 a 5 dias úteis</li>
+              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">Prazo de Processamento:</span> Os reembolsos aprovados serão processados em até **10 dias úteis** após a comunicação da decisão final ao cliente.
+                </li>
+                <li>O tempo para o valor estornado aparecer na conta do cliente é variável e depende estritamente dos prazos de processamento das instituições bancárias envolvidas.</li>
+                <li>Recursos contestados são analisados individualmente, com a decisão comunicada claramente ao cliente.</li>
               </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Situações Não Elegíveis
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Reembolsos não serão concedidos quando:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>O serviço foi concluído e aprovado pelo cliente</li>
-                <li>O cliente não estava presente no horário agendado</li>
-                <li>A insatisfação for subjetiva e não baseada em falhas</li>
-                <li>O prazo de solicitação já expirou</li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Contato
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Para dúvidas sobre reembolsos: reembolso@fazedoresangola.com
-              </p>
             </section>
           </motion.div>
         </div>

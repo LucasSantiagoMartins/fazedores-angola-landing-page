@@ -45,12 +45,12 @@ const faqData = [
       {
         question: "Como funcionam os pagamentos?",
         answer:
-          "Você pode optar por pagar pelo aplicativo ou diretamente ao prestador de serviço, dependendo do que for acordado. Se você pagar pelo app, o valor é seguro e só é repassado ao prestador de serviço após a conclusão e a sua aprovação. No caso de pagamento em mão, o prestador de serviços fica responsável por liquidar a comissão em até 4 dias úteis após a conclusão do serviço.",
+          "A plataforma oferece três métodos de pagamento: Multicaixa Express, Pagamento por Referência e Pagamento em Mão. Você pode escolher entre Pagamento 100% Antecipado:, Pagamento Parcial (50%) ou Pagamento Pós-Conclusão (este último não disponível para serviços remotos). Recomendamos se disponível o Pagamento 100% Antecipado: por repassado ao prestador após a conclusão e a sua confirmação. Recomendamos o Pagamento 100% Antecipado: sempre que possível, pois ele garante que o valor seja repassado ao prestador somente após a conclusão e a sua confirmação do serviço.",
       },
       {
         question: "O que é a Carteira Fazedores?",
         answer:
-          "A Carteira Fazedores foi criada para dar mais praticidade e controlo aos pagamentos dentro da plataforma. Todo valor recebido pelos prestadores passa pela carteira, já com a comissão descontada, permitindo uma visão clara dos ganhos, permitindo também ao usuário fazer depósitos, saques dos seus ganhos, ver o histórico de transações de forma segura e eficiente.",
+          "A Carteira Fazedores é a área da plataforma onde os prestadores de serviços recebem os valores de seus trabalhos (já com a comissão descontada). Ela permite fazer saques dos seus ganhos e visualizar o histórico de transações de forma segura e eficiente.",
       },
       {
         question: "Quem paga as comissões na plataforma?",
@@ -66,18 +66,17 @@ const faqData = [
       {
         question: "Como funciona o cancelamento de um serviço pelo cliente?",
         answer:
-          "O cliente pode cancelar um pedido sem penalidade antes que ele seja aceito. Para pedidos já aceitos, o cliente pode cancelar até 2 vezes por mês, informando o motivo. Consulte a nossa Política de Cancelamento.",
+          "Clientes podem cancelar solicitações pendentes ou já aceitas mediante justificativa plausível. Cancelamentos excessivos ou injustificados podem resultar em penalidades. Consulte a nossa Política de Cancelamento.",
       },
       {
         question: "E se o prestador de serviço cancelar?",
         answer:
-          "O prestador pode cancelar um serviço em casos justificados, como imprevistos ou impossibilidade de execução, devendo sempre informar o motivo. Cancelamentos injustificados ou frequentes podem afetar a classificação do prestador. Consulte a nossa Política de Cancelamento.",
+          "Prestadores podem cancelar serviços aceitos ou em andamento, desde que apresentem uma justificativa plausível. Cancelamentos durante a execução são analisados pela equipe da plataforma. Cancelamentos frequentes podem levar à suspensão temporária da possibilidade de receber ou fazer solicitações. Consulte a nossa Política de Cancelamento.",
       },
       {
-        question:
-          "Em que casos posso solicitar um reembolso (funcionalidade futura)?",
+        question: "Em que casos posso solicitar um reembolso?",
         answer:
-          "Você pode solicitar um reembolso se o serviço não for realizado conforme solicitado, houver falha na comunicação, ou o cancelamento for autorizado pela plataforma. A solicitação deve ser feita em até 5 dias úteis após a conclusão do serviço. Consulte a nossa Política de Reembolso.",
+          "O reembolso é aplicável somente para pagamentos 100% antecipados, em casos de cancelamento após aceitação ou execução significativa incorreta do serviço, conforme análise da plataforma. Não há reembolso para pagamentos 50% ou em mão, ou para insatisfação subjetiva. Consulte a nossa Política de Reembolso.",
       },
     ],
   },
@@ -88,12 +87,12 @@ const faqData = [
       {
         question: "A Fazedores Angola garante a execução perfeita do serviço?",
         answer:
-          "A Fazedores Angola atua como intermediária tecnológica e não garante a execução perfeita do serviço. A responsabilidade pela prestação do serviço é exclusivamente do prestador de serviços.",
+          "A Fazedores Angola atua como intermediária tecnológica e não se responsabiliza pela execução do serviço. A responsabilidade pela prestação do serviço é exclusivamente do prestador. No entanto, a plataforma oferece suporte para mediação de conflitos e avaliação de problemas reportados.",
       },
       {
         question: "Como funciona o sistema de avaliações e feedback?",
         answer:
-          "O sistema de avaliações permite que os clientes avaliem os serviços com comentários e uma classificação de 1 a 5 estrelas. A plataforma se reserva o direito de moderar ou remover avaliações que violem os termos, e os prestadores podem contestar avaliações injustas. Consulte a nossa política de avaliações e feedback.",
+          "O sistema permite que clientes avaliem os serviços com comentários e uma classificação. A plataforma pode moderar ou remover avaliações que violem os Termos de Uso. Usuários afetados podem contatar o suporte para análise individual, conforme nossa política de avaliações e feedback.",
       },
     ],
   },
@@ -105,7 +104,7 @@ const faqData = [
         question:
           "Quais dados pessoais a plataforma coleta e para que são usados?",
         answer:
-          "A plataforma coleta dados como nome, contactos, informações de login, dados de pagamento e histórico de serviços. Esses dados são usados para processar solicitações, gerir pagamentos, personalizar a experiência e melhorar a plataforma. Consulte a nossa Política de Privacidade.",
+          "A plataforma coleta dados como nome, contactos, informações de login, dados de pagamento (incluindo contas bancárias/carteiras móveis) e histórico de serviços. Esses dados são tratados conforme a legislação angolana e usados para processar solicitações, gerir transações de forma segura e melhorar a plataforma. Consulte a nossa Política de Privacidade.",
       },
     ],
   },
@@ -133,7 +132,6 @@ const FAQItem = ({ question, answer, delay }) => {
         />
       </button>
 
-    
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div

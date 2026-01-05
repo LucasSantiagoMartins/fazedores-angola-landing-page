@@ -90,7 +90,7 @@ export const Hero = () => {
                   className="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-6 text-lg font-semibold shadow-glow transition-all duration-300 hover:scale-105"
                 >
                   <Download className="w-5 h-5 mr-2" />
-                  Baixar o App
+                  Baixar o App 
                 </Button>
               </motion.div>
             )}

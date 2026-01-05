@@ -1,28 +1,31 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Percent, CreditCard, Wallet, Calculator } from "lucide-react";
+import { Percent, Wallet, DollarSign, Repeat, Shield } from "lucide-react";
 
 const ComissoesTaxas = () => {
-  const taxas = [
+  const infoTaxas = [
+    {
+      icon: Percent,
+      title: "Comissão Única",
+      value: "10%",
+      description:
+        "Aplicada apenas sobre o valor total dos serviços prestados pelos prestadores.",
+    },
+    {
+      icon: DollarSign,
+      title: "Taxas para Clientes",
+      value: "0%",
+      description:
+        "Os clientes não pagam taxas adicionais, apenas o valor do serviço acordado.",
+    },
     {
       icon: Wallet,
-      title: "Taxa de Serviço",
-      value: "10%",
-      description: "Aplicada sobre o valor total de cada serviço prestado através da plataforma."
+      title: "Natureza da Comissão",
+      value: "Remuneração",
+      description:
+        "Pela intermediação, infraestrutura digital e segurança das transações na plataforma.",
     },
-    {
-      icon: CreditCard,
-      title: "Taxa de Transferência",
-      value: "1.5%",
-      description: "Aplicada ao transferir fundos da carteira Fazedores para sua conta bancária."
-    },
-    {
-      icon: Calculator,
-      title: "Taxa de Processamento",
-      value: "2%",
-      description: "Taxa aplicada em pagamentos via cartão de crédito ou débito."
-    }
   ];
 
   return (
@@ -40,10 +43,11 @@ const ComissoesTaxas = () => {
               <Percent className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Comissões e Taxas
+              Comissões e Taxas – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Transparência total sobre nossos custos
+              Transparência na remuneração da Fazedores Angola pela
+              intermediação dos seus serviços.
             </p>
           </motion.div>
 
@@ -53,7 +57,7 @@ const ComissoesTaxas = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="grid gap-6 mb-12"
           >
-            {taxas.map((taxa, index) => (
+            {infoTaxas.map((taxa, index) => (
               <motion.div
                 key={taxa.title}
                 initial={{ opacity: 0, x: -20 }}
@@ -65,10 +69,14 @@ const ComissoesTaxas = () => {
                   <taxa.icon className="w-7 h-7 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{taxa.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {taxa.title}
+                  </h3>
                   <p className="text-muted-foreground">{taxa.description}</p>
                 </div>
-                <div className="text-3xl font-bold text-primary">{taxa.value}</div>
+                <div className="text-3xl font-bold text-primary">
+                  {taxa.value}
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -80,40 +88,52 @@ const ComissoesTaxas = () => {
             className="space-y-8"
           >
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Como funcionam as comissões?
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Repeat className="w-5 h-5 text-primary" />
+                Formas de Dedução da Comissão
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                A Fazedores Angola cobra uma comissão sobre cada transação realizada com sucesso na plataforma. Esta comissão nos permite manter e melhorar continuamente nossos serviços.
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>As taxas são automaticamente calculadas e deduzidas</li>
-                <li>Você sempre verá o valor líquido antes de aceitar um serviço</li>
-                <li>Não há taxas ocultas ou cobranças surpresa</li>
+              <ul className="list-disc list-inside text-muted-foreground space-y-4 ml-4">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Pagamentos Digitais (Multicaixa Express ou Referência):
+                  </span>{" "}
+                  A comissão é deduzida automaticamente antes de o valor ser
+                  liberado na Carteira Fazedores do prestador.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    Pagamento em Mão:
+                  </span>{" "}
+                  O prestador deve registrar o pagamento recebido. A comissão de
+                  10% deve ser quitada pelo prestador através da plataforma, na
+                  seção de comissões aplicadas, dentro do prazo de **3 dias
+                  úteis**. A plataforma pode deduzir automaticamente do saldo
+                  disponível na Carteira Fazedores no momento do registro do
+                  serviço concluído.
+                </li>
               </ul>
             </section>
 
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Isenções e Descontos
+              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-primary" />
+                Observações Importantes
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Em algumas situações, você pode ter direito a taxas reduzidas:
-              </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>Prestadores com alta avaliação podem ter taxas reduzidas</li>
-                <li>Promoções especiais podem oferecer períodos com taxas zero</li>
-                <li>Programas de fidelidade oferecem benefícios progressivos</li>
+                <li>
+                  O prestador é o único responsável por todas as **obrigações
+                  fiscais** relativas aos serviços prestados e receitas geradas.
+                </li>
+                <li>
+                  A Fazedores Angola reserva-se o direito de **revisar a taxa de
+                  comissão** mediante **comunicação prévia** aos prestadores.
+                </li>
+                <li>
+                  O uso contínuo da plataforma implica na aceitação
+                  incondicional destas condições e de quaisquer futuras revisões
+                  comunicadas.
+                </li>
               </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">
-                Pagamento das Taxas
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                As taxas são deduzidas automaticamente do valor do serviço antes do depósito na sua carteira Fazedores. Você não precisa se preocupar com pagamentos separados de taxas.
-              </p>
             </section>
           </motion.div>
         </div>
