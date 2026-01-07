@@ -1,5 +1,50 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  "redirects": [
+    {
+      "source": "/cancellation_policy.html",
+      "destination": "/politica-cancelamento",
+      "permanent": true
+    },
+    {
+      "source": "/commissions_and_fees.html",
+      "destination": "/comissoes-taxas",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contactar",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/perguntas-respostas",
+      "permanent": true
+    },
+    {
+      "source": "/privacy_policy.html",
+      "destination": "/politica-privacidade",
+      "permanent": true
+    },
+    {
+      "source": "/refund_policy.html",
+      "destination": "/politica-reembolso",
+      "permanent": true
+    },
+    {
+      "source": "/reviews_and_feedback.html",
+      "destination": "/avaliacoes-feedback",
+      "permanent": true
+    },
+    {
+      "source": "/service_guidelines.html",
+      "destination": "/normas-prestacao-servico",
+      "permanent": true
+    },
+    {
+      "source": "/terms_and_conditions.html",
+      "destination": "/termos-condicoes",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
