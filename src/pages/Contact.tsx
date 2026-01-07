@@ -1,12 +1,114 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { useToast } from "@/hooks/use-toast";
+
+// EmailJS configuration - replace with your actual values
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
 const ContactPage = () => {
-  const handleSubmit = (e) => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "O nome é obrigatório";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "O email é obrigatório";
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Formato de email inválido";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "A mensagem é obrigatória";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+    // Clear error when user starts typing
+    if (errors[id as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [id]: undefined }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Mensagem enviada! Entraremos em contacto brevemente.");
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contacto brevemente.",
+      });
+
+      // Clear form
+      setFormData({ name: "", email: "", message: "" });
+      setErrors({});
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Ocorreu um erro. Por favor, tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -108,10 +210,16 @@ const ContactPage = () => {
                     <input
                       type="text"
                       id="name"
-                      required
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="O seu nome"
-                      className="w-full p-2 border border-border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10"
+                      className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10 ${
+                        errors.name ? "border-destructive" : "border-border"
+                      }`}
                     />
+                    {errors.name && (
+                      <p className="text-destructive text-sm mt-1">{errors.name}</p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -123,10 +231,16 @@ const ContactPage = () => {
                     <input
                       type="email"
                       id="email"
-                      required
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="o.seu.email@exemplo.com"
-                      className="w-full p-2 border border-border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10"
+                      className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10 ${
+                        errors.email ? "border-destructive" : "border-border"
+                      }`}
                     />
+                    {errors.email && (
+                      <p className="text-destructive text-sm mt-1">{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -140,18 +254,34 @@ const ContactPage = () => {
                   <textarea
                     id="message"
                     rows={6}
-                    required
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Descreva a sua questão em detalhe..."
-                    className="w-full p-2 border border-border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10"
+                    className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10 ${
+                      errors.message ? "border-destructive" : "border-border"
+                    }`}
                   />
+                  {errors.message && (
+                    <p className="text-destructive text-sm mt-1">{errors.message}</p>
+                  )}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full md:w-auto px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-colors hover:bg-primary/90 flex items-center justify-center gap-2"
+                  disabled={isLoading}
+                  className="w-full md:w-auto px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-colors hover:bg-primary/90 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-5 h-5" />
-                  Enviar Mensagem
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      A enviar...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Enviar Mensagem
+                    </>
+                  )}
                 </button>
               </form>
             </motion.div>
