@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Wallet, Target, Shield, Zap } from "lucide-react";
+import walletImage from "@/assets/wallet.webp";
 
 const features = [
   {
@@ -86,18 +87,13 @@ export const WalletSection = () => {
             <div className="relative">
               {/* Phone Frame */}
               <div className="relative w-64 md:w-72 aspect-[9/19] bg-secondary rounded-[3rem] p-3 shadow-card">
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-6 bg-background rounded-full" />
-                <div className="w-full h-full bg-gradient-to-b from-card to-background rounded-[2.5rem] overflow-hidden flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <Wallet className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <p className="text-foreground font-semibold">Carteira</p>
-                    <p className="text-4xl font-bold text-primary mt-2">
-                      50.000 Kz
-                    </p>
-                    <p className="text-muted-foreground text-sm mt-4">
-                      Saldo disponível
-                    </p>
-                  </div>
+                <div className="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-6 bg-background rounded-full z-10" />
+                <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
+                  <img 
+                    src={walletImage} 
+                    alt="Carteira Fazedores" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
 

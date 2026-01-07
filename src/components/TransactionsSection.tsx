@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Receipt, Shield, Wallet, Zap, ListChecks, Lock } from "lucide-react";
+import { Receipt, Shield, Zap, ListChecks, Lock } from "lucide-react";
+import transactionsImage from "@/assets/transactions.webp";
+import transactionsResumeImage from "@/assets/transactions_resume.webp";
 
 const features = [
   {
@@ -98,42 +100,35 @@ export const TransactionsSection = () => {
             className="relative flex justify-center lg:justify-end"
           >
             <div className="flex gap-4">
-              {/* First Phone */}
+              {/* First Phone - Transactions */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
                 className="relative w-48 md:w-56 aspect-[9/19] bg-secondary rounded-[2.5rem] p-2 shadow-card"
               >
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full" />
-                <div className="w-full h-full bg-gradient-to-b from-card to-background rounded-[2rem] overflow-hidden flex flex-col items-center justify-center p-4">
-                  <Receipt className="w-10 h-10 text-primary mb-3" />
-                  <p className="text-foreground font-medium text-sm text-center">
-                    Transações
-                  </p>
-                  <div className="w-full mt-4 space-y-2">
-                    <div className="h-2 bg-muted rounded-full" />
-                    <div className="h-2 bg-muted rounded-full w-3/4" />
-                    <div className="h-2 bg-primary/30 rounded-full w-1/2" />
-                  </div>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full z-10" />
+                <div className="w-full h-full rounded-[2rem] overflow-hidden">
+                  <img 
+                    src={transactionsImage} 
+                    alt="Histórico de Transações" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </motion.div>
 
-              {/* Second Phone */}
+              {/* Second Phone - Resume */}
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
                 className="relative w-48 md:w-56 aspect-[9/19] bg-secondary rounded-[2.5rem] p-2 shadow-card mt-12"
               >
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full" />
-                <div className="w-full h-full bg-gradient-to-b from-card to-background rounded-[2rem] overflow-hidden flex flex-col items-center justify-center p-4">
-                  <Wallet className="w-10 h-10 text-primary mb-3" />
-                  <p className="text-foreground font-medium text-sm text-center">
-                    Resumo
-                  </p>
-                  <p className="text-2xl font-bold text-primary mt-2">
-                    {" "}
-                    50.000 Kz
-                  </p>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full z-10" />
+                <div className="w-full h-full rounded-[2rem] overflow-hidden">
+                  <img 
+                    src={transactionsResumeImage} 
+                    alt="Resumo Financeiro" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </motion.div>
             </div>
