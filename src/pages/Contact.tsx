@@ -6,10 +6,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 
-// EmailJS configuration - replace with your actual values
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "service_ehq54qn";
+const EMAILJS_TEMPLATE_ID = "template_xj3zj4b";
+const EMAILJS_PUBLIC_KEY = "vjkJCSBfaIettKHQz";
 
 interface FormData {
   name: string;
