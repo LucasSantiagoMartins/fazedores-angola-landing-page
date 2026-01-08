@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Download,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const slides = [
@@ -8,12 +13,21 @@ const slides = [
     title: "Encontre profissionais e serviços em Angola",
     description:
       "O Fazedores Angola é uma plataforma digital para encontrar profissionais de serviços em Angola e solicitar trabalhos com segurança. Conectamos clientes a técnicos, freelancers e prestadores qualificados, valorizando talentos locais e fortalecendo a economia angolana.",
+    cta: {
+      text: "Solicitar serviço agora",
+      link: "https://wa.me/244921587661?text=Olá! Gostaria de solicitar um serviço.",
+      icon: <FaWhatsapp className="w-5 h-5 mr-2" />,
+    },
   },
   {
     title: "Solicite serviços e contrate com confiança",
     description:
       "Precisa de um técnico, freelancer ou prestador de serviços em Angola? Na Fazedores Angola, podes solicitar serviços, comparar profissionais, acompanhar o trabalho e pagar de forma simples e segura — tudo num só lugar.",
-    cta: true,
+    cta: {
+      text: "Baixar o App",
+      link: "#",
+      icon: <Download className="w-5 h-5 mr-2" />,
+    },
   },
 ];
 
@@ -33,13 +47,11 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
-      {/* H1 fixo para SEO */}
       <h1 className="sr-only">
         Encontre profissionais e serviços em Angola e solicite serviços com
         segurança
       </h1>
 
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -50,7 +62,6 @@ export const Hero = () => {
         />
       </div>
 
-      {/* Glow Effect */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-4 py-32 relative z-10">
@@ -102,11 +113,20 @@ export const Hero = () => {
                   transition={{ delay: 0.6 }}
                 >
                   <Button
+                    asChild
                     size="lg"
                     className="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-6 text-lg font-semibold shadow-glow transition-all duration-300 hover:scale-105"
                   >
-                    <Download className="w-5 h-5 mr-2" />
-                    Baixar o App
+                    <a
+                      href={slide.cta.link}
+                      target={
+                        slide.cta.link.startsWith("http") ? "_blank" : "_self"
+                      }
+                      rel="noopener noreferrer"
+                    >
+                      {slide.cta.icon}
+                      {slide.cta.text}
+                    </a>
                   </Button>
                 </motion.div>
               )}
@@ -114,7 +134,6 @@ export const Hero = () => {
           ))}
         </AnimatePresence>
 
-        {/* Carousel Controls */}
         <div className="flex items-center justify-center gap-4 mt-12">
           <button
             onClick={prevSlide}
@@ -149,7 +168,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

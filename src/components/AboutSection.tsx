@@ -35,7 +35,7 @@ export const AboutSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 2 }}
           className="mb-20"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
