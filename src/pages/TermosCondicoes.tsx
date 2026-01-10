@@ -128,7 +128,7 @@ const TermosCondicoes = () => {
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
                 <li>
                   <span className="font-semibold text-foreground">
-                    Pagamento 100% Antecipado::
+                    Pagamento 100% Antecipado:
                   </span>{" "}
                   Valor pago no início, liberado ao prestador apenas após a
                   confirmação de conclusão do cliente.
