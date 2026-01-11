@@ -135,14 +135,14 @@ const TermosCondicoes = () => {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
-                    Pagamento Parcial (50%):
+                    Pagamento parcialmente antecipado 50%:
                   </span>{" "}
                   Valor pago parcialmente no início para aquisição de materiais
                   necessários, o restante é pago após a conclusão do serviço.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
-                    Pagamento Pós-Conclusão:
+                    Pagamento Após a Conclusão:
                   </span>{" "}
                   Feito somente após a finalização. **Não disponível para
                   serviços remotos.**
