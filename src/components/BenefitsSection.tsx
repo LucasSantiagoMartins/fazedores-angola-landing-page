@@ -42,8 +42,8 @@ export const BenefitsSection = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Benefícios da <span className="text-gradient">plataforma</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Tudo o que você precisa para encontrar serviços de qualidade 
+          <p className="text-lg max-w-2xl mx-auto">
+            Tudo o que você precisa para encontrar serviços de qualidade
           </p>
         </motion.div>
 

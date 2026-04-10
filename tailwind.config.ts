@@ -63,8 +63,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'Roboto', 'sans-serif'],
-        display: ['Red Rose', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

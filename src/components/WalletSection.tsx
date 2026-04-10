@@ -53,10 +53,13 @@ export const WalletSection = () => {
 
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               A <strong className="text-foreground">Carteira Fazedores</strong>{" "}
-              foi criada para organizar e centralizar todos os valores dos
-              serviços dentro da plataforma. Cada pagamento recebido fica registado, com
-              histórico claro e comissão já aplicada, garantindo confiança,
-              previsibilidade e melhor planeamento financeiro para prestadores.
+              <h1>
+                foi criada para organizar e centralizar todos os valores dos
+                serviços dentro da plataforma. Cada pagamento recebido fica
+                registado, com histórico claro e comissão já aplicada,
+                garantindo confiança, previsibilidade e melhor planeamento
+                financeiro para prestadores.
+              </h1>
             </p>
 
             <ul className="space-y-4">
@@ -89,9 +92,9 @@ export const WalletSection = () => {
               <div className="relative w-64 md:w-72 aspect-[9/19] bg-secondary rounded-[3rem] p-3 shadow-card">
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-6 bg-background rounded-full z-10" />
                 <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
-                  <img 
-                    src={walletImage} 
-                    alt="Carteira Fazedores" 
+                  <img
+                    src={walletImage}
+                    alt="Carteira Fazedores"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

@@ -68,8 +68,8 @@ const StatItem = ({ stat, index, isInView }: { stat: typeof stats[0]; index: num
       className="group"
     >
       <div className="flex items-center gap-4 p-4 rounded-xl bg-card/50 hover:bg-card border border-transparent hover:border-border transition-all duration-300">
-        <div className="w-12 h-12 rounded-full bg-secondary group-hover:bg-primary flex items-center justify-center transition-colors duration-300">
-          <stat.icon className="w-5 h-5 text-foreground group-hover:text-primary-foreground transition-colors" />
+        <div className="w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary flex items-center justify-center transition-colors duration-300">
+          <stat.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
         </div>
         <div>
           <p className="text-2xl md:text-3xl font-bold text-foreground">

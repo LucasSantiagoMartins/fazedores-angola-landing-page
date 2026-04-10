@@ -108,9 +108,9 @@ export const TransactionsSection = () => {
               >
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full z-10" />
                 <div className="w-full h-full rounded-[2rem] overflow-hidden">
-                  <img 
-                    src={transactionsImage} 
-                    alt="Histórico de Transações" 
+                  <img
+                    src={transactionsImage}
+                    alt="Histórico de Transações"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -124,9 +124,9 @@ export const TransactionsSection = () => {
               >
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-background rounded-full z-10" />
                 <div className="w-full h-full rounded-[2rem] overflow-hidden">
-                  <img 
-                    src={transactionsResumeImage} 
-                    alt="Resumo Financeiro" 
+                  <img
+                    src={transactionsResumeImage}
+                    alt="Resumo Financeiro"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -135,7 +135,7 @@ export const TransactionsSection = () => {
           </motion.div>
         </div>
 
-        {/* Info Cards */}
+        {/* Info Cards - Alterado para Branco */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -143,7 +143,7 @@ export const TransactionsSection = () => {
           className="mt-20"
         >
           <div className="max-w-3xl">
-            <div className="bg-secondary rounded-2xl p-8">
+            <div className="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-gray-200">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Visão Geral das Transações
               </h3>

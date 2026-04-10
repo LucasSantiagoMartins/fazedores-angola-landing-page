@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+
 const testimonials = [
   {
     quote:
@@ -30,7 +31,7 @@ const testimonials = [
   },
   {
     quote:
-    "Com a Carteira consigo acompanhar tudo com clareza ganhos, saques e até guardar parte do que recebo para depois.",
+      "Com a Carteira consigo acompanhar tudo com clareza ganhos, saques e até guardar parte do que recebo para depois.",
     name: "Marcos Pereira",
     role: "Prestador de Serviços",
   },
@@ -52,7 +53,7 @@ export const TestimonialsSection = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   const prevTestimonial = () =>
     setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
 
   return (
@@ -128,17 +129,17 @@ export const TestimonialsSection = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-full bg-secondary hover:bg-primary flex items-center justify-center transition-colors group"
+                    className="w-10 h-10 rounded-full border border-primary hover:bg-primary flex items-center justify-center transition-colors group"
                     aria-label="Depoimento anterior"
                   >
-                    <ChevronLeft className="w-5 h-5 text-foreground group-hover:text-primary-foreground" />
+                    <ChevronLeft className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                   </button>
                   <button
                     onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-full bg-secondary hover:bg-primary flex items-center justify-center transition-colors group"
+                    className="w-10 h-10 rounded-full border border-primary hover:bg-primary flex items-center justify-center transition-colors group"
                     aria-label="Próximo depoimento"
                   >
-                    <ChevronRight className="w-5 h-5 text-foreground group-hover:text-primary-foreground" />
+                    <ChevronRight className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                   </button>
                 </div>
               </div>

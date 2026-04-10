@@ -31,12 +31,12 @@ export const WalletFeatureCard = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <div className="bg-secondary rounded-2xl p-8 md:p-10">
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-primary mb-4">
               Carteira Fazedores — Garantia e confiança nos pagamentos
             </h3>
 
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+            <p className="text-gray-700 text-lg mb-8 leading-relaxed">
               Na Fazedores, os pagamentos passam primeiro pela plataforma para
               garantir organização e segurança. Nos casos em que o cliente opta
               pelo pagamento 100% antecipado, o valor fica cativo na Carteira
@@ -58,10 +58,10 @@ export const WalletFeatureCard = () => {
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-foreground font-semibold text-lg mb-1">
+                    <h4 className="text-primary font-semibold text-lg mb-1">
                       {feature.title}
                     </h4>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-gray-600 text-sm">
                       {feature.description}
                     </p>
                   </div>

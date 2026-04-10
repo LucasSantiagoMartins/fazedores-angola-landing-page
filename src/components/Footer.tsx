@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, PlaySquare, ArrowUp } from "lucide-react";
-import { FaTiktok, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const usefulLinks = [
   { label: "FAQ / Perguntas Frequentes", href: "/perguntas-respostas" },
@@ -21,9 +21,11 @@ const policies = [
 ];
 
 const socialLinks = [
-  { icon: FaTiktok, href: "#", label: "TikTok" },
-  { icon: FaInstagram, href: "#", label: "Instagram" },
-  { icon: PlaySquare, href: "#", label: "Youtube" },
+  {
+    icon: FaInstagram,
+    href: "https://instagram.com/fazedores_angola",
+    label: "Instagram",
+  },
 ];
 
 export const Footer = () => {
@@ -81,9 +83,9 @@ export const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-secondary hover:bg-primary flex items-center justify-center transition-colors group"
+                  className="w-10 h-10 rounded-full border border-primary hover:bg-primary flex items-center justify-center transition-colors group"
                 >
-                  <social.icon className="w-5 h-5 text-foreground group-hover:text-primary-foreground transition-colors" />
+                  <social.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
                 </a>
               ))}
             </div>
