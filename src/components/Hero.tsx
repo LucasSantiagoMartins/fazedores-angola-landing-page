@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 const slides = [
   {
-    title: "Encontre profissionais e serviços em Angola",
+    title: "Serviços e crescimento profissional em Angola",
     description:
-      "Conectamos você aos melhores canalizadores, eletricistas e técnicos de manutenção em Luanda e em todo o país. Profissionais validados para sua total segurança.",
+      "Conectamos clientes a prestadores qualificados. Peça um serviço ou torne-se prestador e cresça com a plataforma.",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    title: "Solicite serviços e contrate com confiança",
+    title: "Gestão, marketing e oportunidades para prestadores",
     description:
-      "Precisa de obras ou reparos? Encontre prestadores qualificados para transformar sua casa ou escritório com a garantia de qualidade Fazedores Angola.",
+      "Mais do que um marketplace — uma plataforma completa de crescimento profissional para quem faz acontecer.",
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
   },
@@ -40,7 +40,7 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <h1 className="sr-only">Encontre profissionais e serviços em Angola</h1>
+      <h1 className="sr-only">Fazedores Angola — Serviços e crescimento profissional</h1>
 
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -73,7 +73,7 @@ export const Hero = () => {
             transition={{ duration: 0.7 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <motion.h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <motion.h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
               {slides[currentSlide].title.split(" ").map((word, i) => (
                 <span key={i}>
                   {i === 0 || i === 1 ? (
@@ -85,13 +85,30 @@ export const Hero = () => {
               ))}
             </motion.h2>
 
-            <motion.p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              <h1>{slides[currentSlide].description}</h1>
+            <motion.p className="text-gray-200 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8 md:mb-10 px-2">
+              {slides[currentSlide].description}
             </motion.p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="#services"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-glow"
+              >
+                Pedir serviço
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="#plans"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white/80 hover:border-primary hover:bg-primary/10 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300"
+              >
+                Tornar-se prestador
+              </a>
+            </div>
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex items-center justify-center gap-4 mt-12 relative z-30">
+        <div className="flex items-center justify-center gap-4 mt-10 md:mt-12 relative z-30">
           <button
             onClick={prevSlide}
             className="w-12 h-12 rounded-full border-2 border-primary bg-transparent hover:bg-primary/20 flex items-center justify-center transition-all duration-300"

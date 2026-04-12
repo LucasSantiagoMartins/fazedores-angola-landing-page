@@ -7,10 +7,9 @@ import logo from "@/assets/log.png";
 
 const navLinks = [
   { href: "#about", label: "Sobre nós" },
-  { href: "#wallet", label: "Carteira Fazedores" },
-  { href: "#benefits", label: "Benefícios" },
-  { href: "#services", label: "Serviços" },
-  { href: "#transactions", label: "Transações" },
+  { href: "#wallet", label: "Carteira" },
+  { href: "#plans", label: "Planos" },
+  { href: "#services", label: "Como funciona" },
 ];
 
 const socialLinks = [
@@ -47,8 +46,10 @@ export const Navbar = () => {
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     if (isHome) {
-      const element = document.querySelector(href);
-      element?.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     } else {
       window.location.href = "/" + href;
     }
