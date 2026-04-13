@@ -1,25 +1,25 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Video, Sparkles, Share2 } from "lucide-react";
+import { ImagePlus, Sparkles, Download } from "lucide-react";
 
 const features = [
   {
-    icon: Video,
-    title: "Vídeos antes e depois",
+    icon: ImagePlus,
+    title: "Submissão de Conteúdo",
     description:
-      "Mostramos o resultado real do trabalho dos prestadores em vídeos profissionais.",
+      "Envie fotos e vídeos reais dos seus serviços diretamente pela plataforma para nossa equipa.",
   },
   {
     icon: Sparkles,
-    title: "Edição profissional",
+    title: "Transformação Profissional",
     description:
-      "Conteúdo editado com qualidade para destacar o melhor de cada serviço.",
+      "Transformamos os seus registos em cartazes digitais e conteúdos de alto impacto para atrair mais clientes.",
   },
   {
-    icon: Share2,
-    title: "Publicação nas redes",
+    icon: Download,
+    title: "Visibilidade e Downloads",
     description:
-      "Os vídeos são publicados nas redes sociais da Fazedores Angola, dando visibilidade aos prestadores.",
+      "Promovemos o seu trabalho nas nossas redes e, conforme o seu plano, pode baixar os conteúdos para as suas próprias redes.",
   },
 ];
 
@@ -37,10 +37,10 @@ export const ShowcaseSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-            Showcase — <span className="text-gradient">Marketing</span>
+            Showcase — <span className="text-gradient">Marketing para Você</span>
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
-            Damos visibilidade ao trabalho dos prestadores com conteúdo profissional.
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-2">
+            Não apenas listamos o seu serviço. Construímos a sua imagem profissional para você se destacar no mercado.
           </p>
         </motion.div>
 
@@ -53,8 +53,8 @@ export const ShowcaseSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
               className="group"
             >
-              <div className="h-full bg-card p-6 md:p-8 rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-card hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary flex items-center justify-center mb-5 transition-colors duration-300">
+              <div className="h-full bg-card p-6 md:p-8 rounded-[2.5rem] border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-card hover:-translate-y-1">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 group-hover:bg-primary flex items-center justify-center mb-5 transition-colors duration-300">
                   <feature.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <h3 className="text-foreground font-semibold text-lg sm:text-xl mb-2">

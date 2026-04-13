@@ -169,21 +169,11 @@ const ContactPage = () => {
                       href="tel:+244921587661"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +244 921 587 661
+                      +244 924 686 977
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Localização</p>
-                    <p className="text-muted-foreground">Luanda, Angola</p>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Estalagem, Rua Beto Carneiro, perto do antigo banco BIC
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
 

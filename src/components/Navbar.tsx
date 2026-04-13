@@ -7,7 +7,6 @@ import logo from "@/assets/log.png";
 
 const navLinks = [
   { href: "#about", label: "Sobre nós" },
-  { href: "#wallet", label: "Carteira" },
   { href: "#plans", label: "Planos" },
   { href: "#services", label: "Como funciona" },
 ];

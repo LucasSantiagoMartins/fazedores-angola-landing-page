@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { HandCoins, Users, UserCheck, Award } from "lucide-react";
+import { Briefcase, Users, Star, Rocket } from "lucide-react";
 
 const stats = [
-  { icon: HandCoins, value: 965, label: "Serviços concluídos", prefix: "+", suffix: "" },
-  { icon: Users, value: 235, label: "Prestadores de serviço", prefix: "+", suffix: "" },
-  { icon: UserCheck, value: 98, label: "Satisfação dos clientes", prefix: "", suffix: "%" },
-  { icon: Award, value: 5, label: "Anos de experiência", prefix: "+", suffix: "" },
+  { icon: Briefcase, value: 965, label: "Serviços realizados", prefix: "+", suffix: "" },
+  { icon: Users, value: 235, label: "Fazedores ativos", prefix: "+", suffix: "" },
+  { icon: Star, value: 98, label: "Avaliação positiva", prefix: "", suffix: "%" },
+  { icon: Rocket, value: 100, label: "Foco em crescimento", prefix: "", suffix: "%" },
 ];
 
 const useCountUp = (end: number, duration: number = 2000, start: boolean = false) => {
@@ -35,15 +35,15 @@ const StatItem = ({ stat, index, isInView }: { stat: typeof stats[0]; index: num
       transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
       className="group"
     >
-      <div className="flex items-center gap-4 p-4 rounded-xl bg-card/50 hover:bg-card border border-transparent hover:border-border transition-all duration-300">
-        <div className="w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary flex items-center justify-center transition-colors duration-300">
+      <div className="flex flex-col sm:flex-row items-center gap-4 p-6 rounded-[2rem] bg-card/50 hover:bg-card border border-border/50 hover:border-primary/30 transition-all duration-300">
+        <div className="w-12 h-12 rounded-2xl bg-primary/10 group-hover:bg-primary flex items-center justify-center transition-colors duration-300">
           <stat.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
         </div>
-        <div>
+        <div className="text-center sm:text-left">
           <p className="text-2xl md:text-3xl font-bold text-foreground">
             {stat.prefix}{count}{stat.suffix}
           </p>
-          <p className="text-muted-foreground text-sm">{stat.label}</p>
+          <p className="text-muted-foreground text-xs md:text-sm font-medium uppercase tracking-wider">{stat.label}</p>
         </div>
       </div>
     </motion.div>
@@ -74,14 +74,14 @@ export const StatsSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
-              Simplificar e <span className="text-gradient">valorizar</span> o talento angolano
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
+              Transformando serviços em <span className="text-gradient">renda e impacto</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mb-4 md:mb-6 leading-relaxed">
-              Facilitamos a vida de quem precisa de um serviço e damos valor ao trabalho dos profissionais angolanos.
+              Damos o suporte necessário para que você, prestador, deixe de depender apenas de indicações informais e passe a ter um fluxo constante de oportunidades profissionais.
             </p>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-              Confiança, transparência e eficiência — os princípios que sustentam cada serviço na plataforma.
+              Nossa tecnologia foi desenhada para valorizar o seu talento, organizando o mercado angolano com transparência, justiça e visibilidade digital.
             </p>
           </motion.div>
         </div>

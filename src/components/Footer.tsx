@@ -12,7 +12,6 @@ const policies = [
   { label: "Comissões e Taxas", href: "/comissoes-taxas" },
   { label: "Política de Privacidade", href: "/politica-privacidade" },
   { label: "Política de Cancelamento", href: "/politica-cancelamento" },
-  { label: "Política de Reembolso", href: "/politica-reembolso" },
   { label: "Avaliações e feedback", href: "/avaliacoes-feedback" },
   {
     label: "Normas de Prestação de Serviço",
@@ -52,7 +51,7 @@ export const Footer = () => {
                 <div>
                   <p>Luanda, Angola</p>
                   <p className="text-sm">
-                    Estalagem, Rua Beto Carneiro, perto do antigo banco bic
+                    Estalagem, Rua Beto Carneiro
                   </p>
                 </div>
               </div>
@@ -71,7 +70,7 @@ export const Footer = () => {
                   href="tel:+244921587661"
                   className="hover:text-primary transition-colors"
                 >
-                  +244 921 587 661
+                  +244 924 686 977
                 </a>
               </div>
             </div>

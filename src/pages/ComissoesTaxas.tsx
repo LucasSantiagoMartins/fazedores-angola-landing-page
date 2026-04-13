@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Percent, Wallet, DollarSign, Repeat, Shield } from "lucide-react";
+import { Percent, Wallet, DollarSign, AlertCircle, ShieldCheck } from "lucide-react";
 
 const ComissoesTaxas = () => {
   const infoTaxas = [
     {
       icon: Percent,
-      title: "Comissão Única",
+      title: "Comissão de Intermediação",
       value: "10%",
       description:
-        "Aplicada apenas sobre o valor total dos serviços prestados pelos prestadores.",
+        "Calculada sobre o valor total de cada serviço concluído através da plataforma.",
     },
     {
       icon: DollarSign,
       title: "Taxas para Clientes",
       value: "0%",
       description:
-        "Os clientes não pagam taxas adicionais, apenas o valor do serviço acordado.",
+        "Clientes não pagam taxas à plataforma. O pagamento do serviço é feito 100% ao fazedor.",
     },
     {
       icon: Wallet,
-      title: "Natureza da Comissão",
-      value: "Remuneração",
+      title: "Responsabilidade",
+      value: "Fazedor",
       description:
-        "Pela intermediação, infraestrutura digital e segurança das transações na plataforma.",
+        "O prestador recebe o valor total do cliente e é responsável por transferir a comissão à plataforma.",
     },
   ];
 
@@ -46,8 +46,7 @@ const ComissoesTaxas = () => {
               Comissões e Taxas – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Transparência na remuneração da Fazedores Angola pela
-              intermediação dos seus serviços.
+              Transparência total sobre como funciona a sustentabilidade do nosso ecossistema.
             </p>
           </motion.div>
 
@@ -63,16 +62,16 @@ const ComissoesTaxas = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-card rounded-2xl p-6 md:p-8 border border-border flex flex-col md:flex-row items-start md:items-center gap-6"
+                className="bg-card rounded-[2rem] p-6 md:p-8 border border-border flex flex-col md:flex-row items-start md:items-center gap-6 hover:border-primary/30 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <taxa.icon className="w-7 h-7 text-primary" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     {taxa.title}
                   </h3>
-                  <p className="text-muted-foreground">{taxa.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">{taxa.description}</p>
                 </div>
                 <div className="text-3xl font-bold text-primary">
                   {taxa.value}
@@ -87,51 +86,46 @@ const ComissoesTaxas = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="space-y-8"
           >
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Repeat className="w-5 h-5 text-primary" />
-                Formas de Dedução da Comissão
+            {/* Regras de Pagamento e Prazos */}
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-sm">
+              <h2 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-primary" />
+                Prazos e Restrições de Conta
               </h2>
-              <ul className="list-disc list-inside text-muted-foreground space-y-4 ml-4">
-                <li>
-                  <span className="font-semibold text-foreground">
-                    Pagamentos Digitais (Multicaixa Express ou Referência):
-                  </span>{" "}
-                  A comissão é deduzida automaticamente antes de o valor ser
-                  liberado na Carteira Fazedores do prestador.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">
-                    Pagamento em Mão:
-                  </span>{" "}
-                  O prestador deve registrar o pagamento recebido. A comissão de
-                  10% deve ser quitada pelo prestador através da plataforma, na
-                  seção de comissões aplicadas, dentro do prazo de **3 dias
-                  úteis**. A plataforma pode deduzir automaticamente do saldo
-                  disponível na Carteira Fazedores no momento do registro do
-                  serviço concluído.
-                </li>
-              </ul>
+              <div className="space-y-4">
+                <div className="p-4 bg-primary/5 border-l-4 border-primary rounded-r-xl">
+                  <p className="text-foreground font-medium">Janela de Pagamento: 48 Horas</p>
+                  <p className="text-muted-foreground text-sm mt-1">
+                    Após a conclusão de um serviço, o fazedor tem até 48 horas para efetuar o pagamento da comissão de 10% à plataforma.
+                  </p>
+                </div>
+
+                <ul className="list-disc list-inside text-muted-foreground space-y-4 ml-4">
+                  <li>
+                    <span className="font-semibold text-foreground">Inatividade da Conta:</span> Caso o prazo de 48 horas expire sem o acerto da comissão, a conta será marcada como <span className="text-destructive font-bold">Inativa</span>. O acesso ao sistema será bloqueado até a regularização.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-foreground">Bloqueio de Ações:</span> Enquanto houver uma comissão pendente (mesmo dentro do prazo), o fazedor continuará a receber novas solicitações de clientes, porém **não poderá aceitar ou recusar** nenhum novo pedido até que o saldo anterior seja quitado.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-foreground">Fluxo Direto:</span> Reforçamos que o cliente paga sempre diretamente ao fazedor. A dívida da comissão é um compromisso exclusivo do fazedor para com a Fazedores Angola.
+                  </li>
+                </ul>
+              </div>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border">
+            {/* Observações Fiscais */}
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-primary" />
-                Observações Importantes
+                <ShieldCheck className="w-5 h-5 text-primary" />
+                Conformidade
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
                 <li>
-                  O prestador é o único responsável por todas as **obrigações
-                  fiscais** relativas aos serviços prestados e receitas geradas.
+                  O fazedor é responsável pela emissão de faturas aos seus clientes e pelo cumprimento das suas obrigações fiscais junto da AGT.
                 </li>
                 <li>
-                  A Fazedores Angola reserva-se o direito de **revisar a taxa de
-                  comissão** mediante **comunicação prévia** aos prestadores.
-                </li>
-                <li>
-                  O uso contínuo da plataforma implica na aceitação
-                  incondicional destas condições e de quaisquer futuras revisões
-                  comunicadas.
+                  A manutenção da conta ativa garante acesso às ferramentas de marketing e edição de conteúdos profissionais.
                 </li>
               </ul>
             </section>

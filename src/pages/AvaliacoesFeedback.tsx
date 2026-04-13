@@ -7,6 +7,8 @@ import {
   ThumbsDown,
   Shield,
   TrendingUp,
+  CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
 
 const AvaliacoesFeedback = () => {
@@ -28,8 +30,7 @@ const AvaliacoesFeedback = () => {
               Avaliações e Feedback – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              A sua opinião é essencial para a qualidade e confiança na nossa
-              plataforma.
+              Transparência e qualidade: como funciona o sistema de reputação da nossa comunidade.
             </p>
           </motion.div>
 
@@ -39,87 +40,82 @@ const AvaliacoesFeedback = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-10"
           >
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
-                <Star className="w-6 h-6 text-primary" />
-                Regras de Avaliação
+            {/* 1. Regras de Avaliação */}
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <CheckCircle2 className="w-6 h-6 text-primary" />
+                Como Avaliar
               </h2>
-              <div className="space-y-4">
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="bg-white rounded-2xl p-5 border border-border shadow-sm">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Star className="w-4 h-4 text-primary" />
-                    Avaliação Padrão
+                    Sistema de Estrelas
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Clientes avaliam prestadores após a conclusão do serviço,
-                    usando um sistema de **estrelas** (1 a 5) e um
-                    **comentário** opcional.
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Após a conclusão de cada serviço, o cliente atribui uma nota de 1 a 5 estrelas baseada na pontualidade, qualidade e profissionalismo.
                   </p>
                 </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
+                <div className="bg-white rounded-2xl p-5 border border-border shadow-sm">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <MessageSquare className="w-4 h-4 text-primary" />
-                    Critérios para Comentários
+                    Feedback Escrito
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Comentários devem ser **honestos, respeitosos** e baseados
-                    estritamente na **experiência real** do serviço prestado.
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    O comentário é o espaço para detalhar a experiência. Deve ser construtivo e focado no trabalho realizado pelo fazedor.
                   </p>
                 </div>
               </div>
             </section>
 
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+            {/* 2. Diretrizes de Conduta */}
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
-                <Shield className="w-6 h-6 text-red-500" />
-                Comportamento Proibido
+                <Shield className="w-6 h-6 text-destructive" />
+                Política de Respeito
               </h2>
               <p className="text-muted-foreground mb-6">
-                Para manter um ambiente de confiança, as seguintes práticas são
-                estritamente proibidas e sujeitas a moderação:
+                Para manter a integridade do ecossistema, não toleramos condutas que manipulem a veracidade das avaliações:
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
-                <blockquote className="mt-4 p-3 border-l-4 border-red-600 bg-red-600/10 text-sm text-foreground">
-                  É proibido publicar conteúdo **ofensivo, falso,
-                  discriminatório** ou que inclua **informações pessoais** de
-                  terceiros.
-                </blockquote>
-                <blockquote className="mt-4 p-3 border-l-4 border-red-600 bg-red-600/10 text-sm text-foreground">
-                  Prestadores não podem **solicitar avaliações falsas** ou
-                  oferecer **benefícios em troca** de avaliações.
-                </blockquote>
-                <li>
-                  Qualquer forma de manipulação do sistema de feedback será
-                  tratada com rigor.
-                </li>
-              </ul>
-            </section>
-
-            <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
-                <TrendingUp className="w-6 h-6 text-primary" />
-                Moderação e Penalidades
-              </h2>
-              <div className="space-y-4">
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
-                    <ThumbsDown className="w-4 h-4 text-primary" />
-                    Ações da Plataforma
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    A plataforma pode **moderar ou remover** qualquer avaliação
-                    que viole as diretrizes.
+              <div className="space-y-3">
+                <div className="flex gap-3 p-4 bg-destructive/5 rounded-xl border-l-4 border-destructive">
+                  <AlertCircle className="w-5 h-5 text-destructive shrink-0" />
+                  <p className="text-sm text-foreground">
+                    <strong>Conteúdo Proibido:</strong> Linguagem ofensiva, insultos, discriminação ou exposição de dados privados (telefones, endereços) resultam em remoção imediata.
                   </p>
                 </div>
-                <div className="bg-secondary/50 rounded-xl p-4">
-                  <h4 className="font-medium text-foreground mb-1 flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-primary" />
-                    Uso Indevido
+                <div className="flex gap-3 p-4 bg-destructive/5 rounded-xl border-l-4 border-destructive">
+                  <AlertCircle className="w-5 h-5 text-destructive shrink-0" />
+                  <p className="text-sm text-foreground">
+                    <strong>Fraude:</strong> É proibido criar avaliações falsas para benefício próprio ou de terceiros. A manipulação do ranking compromete a conta do usuário.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 3. Moderação e Visibilidade */}
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <TrendingUp className="w-6 h-6 text-primary" />
+                Impacto na Plataforma
+              </h2>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="bg-white rounded-2xl p-5 border border-border shadow-sm">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <ThumbsDown className="w-4 h-4 text-primary" />
+                    Moderação Ativa
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    O uso indevido das regras pode resultar em **advertência**,
-                    **restrição de visibilidade** ou **suspensão temporária** da
-                    conta.
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Nossa equipe revisa denúncias de feedbacks injustos ou agressivos, garantindo que a reputação do prestador seja protegida contra abusos.
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl p-5 border border-border shadow-sm">
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-primary" />
+                    Penalidades
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Comportamentos reincidentes ou avaliações abusivas podem levar à perda de visibilidade nos resultados de busca ou suspensão da conta.
                   </p>
                 </div>
               </div>
