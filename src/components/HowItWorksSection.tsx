@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageSquare, Zap, Camera, CheckCircle2, TrendingUp } from "lucide-react";
-import { GlitchText } from "./GlitchText";
 
 const steps = [
   {
@@ -46,43 +45,39 @@ export const HowItWorksSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-            Como <GlitchText text="funciona?" className="text-gradient" />
+            Como <span className="text-gradient">funciona</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-2">
-            Um processo otimizado para gerar confiança ao cliente e visibilidade ao profissional.
+            Um processo simples e transparente, do pedido à conclusão.
           </p>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-0">
+        <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-6 max-w-6xl mx-auto">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.85 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
               className="flex-1 flex flex-col items-center text-center relative gpu"
             >
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] right-0 h-0.5 bg-gradient-to-r from-primary/60 to-transparent z-0" />
+                <div className="hidden md:block absolute top-7 left-[calc(50%+32px)] right-[-12px] h-px bg-border z-0" />
               )}
 
-              <motion.div
-                whileHover={{ scale: 1.08, rotate: 6 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="relative z-10 w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 shadow-glow"
-              >
+              <div className="relative z-10 w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 shadow-glow">
                 <step.icon className="w-6 h-6 text-primary-foreground" />
-              </motion.div>
+              </div>
 
               <h3 className="text-foreground font-semibold text-base sm:text-lg mb-1">
                 {step.label}
               </h3>
-              <p className="text-muted-foreground text-sm max-w-[180px] leading-relaxed">
+              <p className="text-muted-foreground text-sm max-w-[200px] leading-relaxed">
                 {step.description}
               </p>
 
               {index < steps.length - 1 && (
-                <div className="md:hidden w-0.5 h-6 bg-border my-2" />
+                <div className="md:hidden w-px h-6 bg-border my-3" />
               )}
             </motion.div>
           ))}
