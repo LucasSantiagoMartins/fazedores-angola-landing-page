@@ -23,7 +23,7 @@ const values = [
 
 export const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <section id="about" className="py-20 md:py-32 bg-background" ref={ref}>
