@@ -131,6 +131,7 @@ export default {
         "float": "float 3s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "tilt-in": "tilt-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
