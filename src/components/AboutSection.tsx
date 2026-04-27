@@ -38,7 +38,7 @@ export const AboutSection = () => {
             className="flex justify-center lg:justify-start"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-[3rem] blur opacity-25 transition duration-1000"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-primary/0 rounded-[3rem] blur opacity-25 transition duration-1000"></div>
               <img
                 src={myProfilePic}
                 alt="Lucas Santiago - Fazedores Angola"
@@ -57,7 +57,7 @@ export const AboutSection = () => {
               <p className="text-primary font-bold tracking-widest uppercase text-sm mb-2">
                 Fazedores Angola Prestação de Serviços (SU) LDA
               </p>
-              <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2">
+              <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-medium text-foreground mb-2">
                 Lucas Santiago de Oliveira Martins
               </h3>
               <p className="text-muted-foreground font-medium text-xl">

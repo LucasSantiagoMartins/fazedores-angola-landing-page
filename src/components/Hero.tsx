@@ -93,14 +93,14 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-glow"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-glow"
               >
                 Pedir serviço
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="#plans"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white/80 hover:border-primary hover:bg-primary/10 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white/80 hover:border-primary hover:bg-primary/10 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300"
               >
                 Tornar-se prestador
               </a>
