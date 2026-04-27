@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Sparkles } from "lucide-react";
+import { GlitchText } from "./GlitchText";
 
 const slides = [
   {
@@ -50,9 +51,10 @@ export const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
-            className="absolute inset-0"
+            className="absolute inset-0 gpu"
           >
-            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80 z-10" />
+            <div className="absolute inset-0 bg-radial-primary z-10 opacity-80" />
             <img
               src={slides[currentSlide].image}
               alt=""
@@ -71,18 +73,34 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.7 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center gpu"
           >
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full glass-dark text-white/90 text-xs sm:text-sm font-medium"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-primary-glow" />
+              Plataforma #1 de serviços em Angola
+            </motion.div>
+
             <motion.h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
-              {slides[currentSlide].title.split(" ").map((word, i) => (
-                <span key={i}>
-                  {i === 0 || i === 1 ? (
-                    <span className="text-primary">{word} </span>
-                  ) : (
-                    <span>{word} </span>
-                  )}
-                </span>
-              ))}
+              {slides[currentSlide].title.split(" ").map((word, i) => {
+                const isAccent = i === 0 || i === 1;
+                return (
+                  <span key={i}>
+                    {isAccent ? (
+                      <GlitchText
+                        text={word + " "}
+                        className="text-primary inline-block"
+                      />
+                    ) : (
+                      <span>{word} </span>
+                    )}
+                  </span>
+                );
+              })}
             </motion.h2>
 
             <motion.p className="text-gray-200 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8 md:mb-10 px-2">
@@ -93,16 +111,16 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-glow"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-glow"
               >
-                Pedir serviço
+                Criar conta
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="#plans"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white/80 hover:border-primary hover:bg-primary/10 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white/80 hover:border-primary hover:bg-primary/10 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300"
               >
-                Tornar-se prestador
+                Entrar na plataforma
               </a>
             </div>
           </motion.div>

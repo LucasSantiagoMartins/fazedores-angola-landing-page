@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
+import { GlitchText } from "./GlitchText";
 
 const plans = [
   {
@@ -46,8 +47,9 @@ export const PlansSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="plans" className="py-16 md:py-28 bg-muted" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="plans" className="relative py-16 md:py-28 bg-muted overflow-hidden" ref={ref}>
+      <div className="pointer-events-none absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-radial-primary opacity-60" />
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -55,7 +57,7 @@ export const PlansSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-            Planos para <span className="text-gradient">prestadores</span>
+            Planos para <GlitchText text="prestadores" className="text-gradient" />
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
             Escolha o plano ideal e cresça dentro da plataforma.
@@ -66,16 +68,17 @@ export const PlansSection = () => {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="group"
+              initial={{ opacity: 0, y: 50, rotate: index === 1 ? 0 : index === 0 ? -2 : 2, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, rotate: 0, scale: 1 } : {}}
+              transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8 }}
+              className="group gpu"
             >
               <div
-                className={`h-full p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
+                className={`h-full p-6 md:p-8 rounded-3xl transition-all duration-300 flex flex-col ${
                   plan.highlight
-                    ? "bg-primary text-primary-foreground border-primary shadow-glow"
-                    : "bg-card border-border hover:border-primary/30 hover:shadow-card"
+                    ? "bg-gradient-primary text-primary-foreground shadow-glow scale-[1.02]"
+                    : "glass hover:border-primary/40 hover:shadow-card"
                 }`}
               >
                 <h3
@@ -88,14 +91,14 @@ export const PlansSection = () => {
                 <p
                   className={`text-sm sm:text-base mb-6 ${
                     plan.highlight
-                      ? "text-primary-foreground/80"
+                      ? "text-primary-foreground/85"
                       : "text-muted-foreground"
                   }`}
                 >
                   {plan.description}
                 </p>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 flex-1">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <Check
@@ -117,6 +120,20 @@ export const PlansSection = () => {
                     </li>
                   ))}
                 </ul>
+
+                <a
+                  href="https://app.fazedoresangola.ao/criar-conta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-[1.03] ${
+                    plan.highlight
+                      ? "bg-white text-primary hover:bg-white/90"
+                      : "bg-gradient-primary text-primary-foreground shadow-glow"
+                  }`}
+                >
+                  Começar agora
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </motion.div>
           ))}
