@@ -107,9 +107,18 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(24 100% 50% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(24 100% 50% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(221 93% 60% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(221 93% 60% / 0.6)" },
         },
+        "tilt-in": {
+          "0%": { opacity: "0", transform: "translateY(40px) rotate(-3deg) scale(0.96)" },
+          "100%": { opacity: "1", transform: "translateY(0) rotate(0) scale(1)" },
+        },
+      },
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        card: "var(--shadow-card)",
+        soft: "var(--shadow-soft)",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -121,7 +130,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out forwards",
         "float": "float 3s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-      },
+        "tilt-in": "tilt-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards",
     },
   },
   plugins: [require("tailwindcss-animate")],
