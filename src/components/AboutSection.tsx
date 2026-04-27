@@ -26,16 +26,16 @@ export const AboutSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background" ref={ref}>
+    <section id="about" className="py-20 md:py-32 bg-background overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Lado Esquerdo: Foto */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="flex justify-center lg:justify-start"
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex justify-center lg:justify-start gpu"
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-[3rem] blur opacity-25 transition duration-1000"></div>
@@ -49,9 +49,10 @@ export const AboutSection = () => {
 
           {/* Lado Direito: Texto Institucional e Cards Integrados */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="gpu"
           >
             <div className="mb-8">
               <p className="text-primary font-bold tracking-widest uppercase text-sm mb-2">
