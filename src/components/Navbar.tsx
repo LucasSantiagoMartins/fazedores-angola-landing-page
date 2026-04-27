@@ -96,6 +96,8 @@ export const Navbar = () => {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 ${
                   shouldShowTransparent
                     ? "border-white/20 text-white hover:bg-white hover:text-primary"
@@ -105,6 +107,26 @@ export const Navbar = () => {
                 <social.icon size={16} />
               </a>
             ))}
+            <a
+              href="https://app.fazedoresangola.ao/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 ${
+                shouldShowTransparent
+                  ? "text-white border-white/30 hover:bg-white/10"
+                  : "text-foreground border-border hover:border-primary hover:text-primary"
+              }`}
+            >
+              Entrar
+            </a>
+            <a
+              href="https://app.fazedoresangola.ao/criar-conta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full text-sm font-semibold bg-gradient-primary text-primary-foreground shadow-glow hover:scale-[1.04] transition-transform duration-300"
+            >
+              Criar conta
+            </a>
           </div>
 
           <button
@@ -135,11 +157,31 @@ export const Navbar = () => {
                   {link.label}
                 </button>
               ))}
+              <div className="flex flex-col gap-3 w-full max-w-xs pt-4">
+                <a
+                  href="https://app.fazedoresangola.ao/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center px-6 py-3 rounded-full border border-border text-foreground font-medium"
+                >
+                  Entrar
+                </a>
+                <a
+                  href="https://app.fazedoresangola.ao/criar-conta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center px-6 py-3 rounded-full bg-gradient-primary text-primary-foreground font-semibold shadow-glow"
+                >
+                  Criar conta
+                </a>
+              </div>
               <div className="flex gap-6 pt-8 border-t border-border w-full justify-center">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary p-3 bg-primary/10 rounded-full"
                   >
                     <social.icon size={24} />
