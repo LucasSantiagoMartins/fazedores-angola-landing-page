@@ -22,9 +22,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Azul Primário #0A56F7 -> HSL(221, 93%, 50%) */
-    --primary: 221 93% 50%;
+    /* Azul Primário moderno HSL(221 93% 60%) */
+    --primary: 221 93% 60%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 100% 72%;
+    --primary-deep: 221 93% 42%;
 
     /* Secundário: Preto Puro */
     --secondary: 0 0% 0%;
@@ -41,12 +43,18 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 221 93% 50%;
+    --ring: 221 93% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --gradient-primary: linear-gradient(135deg, #0a56f7 0%, #3b82f6 100%);
-    --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(221 93% 60%) 0%, hsl(221 100% 72%) 100%);
+    --gradient-primary-soft: linear-gradient(135deg, hsl(221 93% 60% / 0.15) 0%, hsl(221 100% 72% / 0.05) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(221 100% 97%) 100%);
+    --gradient-radial: radial-gradient(circle at 30% 20%, hsl(221 93% 60% / 0.18), transparent 60%);
+
+    --shadow-glow: 0 0 40px -8px hsl(221 93% 60% / 0.45);
+    --shadow-card: 0 20px 50px -20px hsl(221 50% 30% / 0.18);
+    --shadow-soft: 0 10px 40px -12px hsl(222 47% 11% / 0.15);
   }
 
   .dark {
@@ -59,8 +67,10 @@
     --popover: 0 0% 4%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 221 93% 50%;
+    --primary: 221 93% 60%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 100% 72%;
+    --primary-deep: 221 93% 42%;
 
     --secondary: 222 47% 11%;
     --secondary-foreground: 210 40% 98%;
@@ -73,9 +83,10 @@
 
     --border: 217 33% 15%;
     --input: 217 33% 15%;
-    --ring: 221 93% 50%;
+    --ring: 221 93% 60%;
 
-    --gradient-hero: linear-gradient(135deg, #010101 0%, #051a4d 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(221 80% 12%) 100%);
+    --gradient-radial: radial-gradient(circle at 30% 20%, hsl(221 93% 60% / 0.25), transparent 60%);
   }
 }
 
