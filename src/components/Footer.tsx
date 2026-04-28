@@ -35,39 +35,40 @@ export const Footer = () => {
   return (
     <footer className="bg-muted border-t border-border">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto px-4 py-14 md:py-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12">
           {/* Contact Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3 mb-5">
               <span className="text-foreground font-display font-bold text-xl">
                 Fazedores Angola
               </span>
             </div>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
+              Plataforma de serviços e crescimento profissional para clientes e prestadores em Angola.
+            </p>
 
-            <div className="space-y-3 text-muted-foreground">
+            <div className="space-y-3.5 text-muted-foreground text-sm">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4.5 h-4.5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p>Luanda, Angola</p>
-                  <p className="text-sm">
-                    Estalagem, Rua Beto Carneiro
-                  </p>
+                  <p className="text-foreground/90">Luanda, Angola</p>
+                  <p className="text-muted-foreground">Estalagem, Rua Beto Carneiro</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <Mail className="w-4.5 h-4.5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:fazedoresangola@gmail.com"
+                  href="mailto:contacto@fazedoresangola.ao"
                   className="hover:text-primary transition-colors"
                 >
                   contacto@fazedoresangola.ao
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <Phone className="w-4.5 h-4.5 text-primary flex-shrink-0" />
                 <a
-                  href="tel:+244921587661"
+                  href="tel:+244924686977"
                   className="hover:text-primary transition-colors"
                 >
                   +244 924 686 977
@@ -76,23 +77,23 @@ export const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 mt-7">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-primary hover:bg-primary flex items-center justify-center transition-colors group"
+                  className="w-10 h-10 rounded-full border border-primary/40 hover:bg-primary hover:border-primary flex items-center justify-center transition-all group"
                 >
-                  <social.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                  <social.icon className="w-4.5 h-4.5 text-primary group-hover:text-primary-foreground transition-colors" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Useful Links */}
-          <div>
-            <h3 className="text-foreground font-semibold text-lg mb-4">
+          <div className="lg:col-span-3">
+            <h3 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">
               Links Úteis
             </h3>
             <ul className="space-y-3">
@@ -100,10 +101,8 @@ export const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -113,8 +112,8 @@ export const Footer = () => {
           </div>
 
           {/* Policies */}
-          <div>
-            <h3 className="text-foreground font-semibold text-lg mb-4">
+          <div className="lg:col-span-4">
+            <h3 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">
               Políticas
             </h3>
             <ul className="space-y-3">
@@ -122,9 +121,7 @@ export const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}

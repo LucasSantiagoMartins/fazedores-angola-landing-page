@@ -145,48 +145,68 @@ export const Navbar = () => {
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-0 top-0 left-0 w-full h-screen bg-background p-6 lg:hidden flex flex-col justify-center items-center gap-8 shadow-xl"
+              transition={{ type: "spring", damping: 28, stiffness: 220 }}
+              className="fixed inset-0 z-[100] w-full h-[100dvh] bg-background lg:hidden flex flex-col shadow-2xl"
             >
-              {navLinks.map((link) => (
+              {/* Top bar com logo + botão fechar sempre visível */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+                <img
+                  src={logo}
+                  alt="Fazedores Angola"
+                  className="rounded-full h-9 w-auto"
+                />
                 <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-center text-2xl font-semibold text-foreground/80 hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Fechar menu"
+                  className="w-10 h-10 rounded-full bg-muted hover:bg-muted/80 text-foreground flex items-center justify-center transition-colors"
                 >
-                  {link.label}
+                  <X size={22} />
                 </button>
-              ))}
-              <div className="flex flex-col gap-3 w-full max-w-xs pt-4">
-                <a
-                  href="https://app.fazedoresangola.ao/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center px-6 py-3 rounded-full border border-border text-foreground font-medium"
-                >
-                  Entrar
-                </a>
-                <a
-                  href="https://app.fazedoresangola.ao/criar-conta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center px-6 py-3 rounded-full bg-gradient-primary text-primary-foreground font-semibold shadow-glow"
-                >
-                  Criar conta
-                </a>
               </div>
-              <div className="flex gap-6 pt-8 border-t border-border w-full justify-center">
-                {socialLinks.map((social) => (
+
+              {/* Conteúdo centrado */}
+              <div className="flex-1 flex flex-col justify-center items-center gap-7 px-6 overflow-y-auto py-8">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                    className="text-center text-2xl font-semibold text-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                ))}
+                <div className="flex flex-col gap-3 w-full max-w-xs pt-4">
                   <a
-                    key={social.label}
-                    href={social.href}
+                    href="https://app.fazedoresangola.ao/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary p-3 bg-primary/10 rounded-full"
+                    className="w-full text-center px-6 py-3 rounded-full border border-border text-foreground font-medium hover:border-primary hover:text-primary transition-colors"
                   >
-                    <social.icon size={24} />
+                    Entrar
                   </a>
-                ))}
+                  <a
+                    href="https://app.fazedoresangola.ao/criar-conta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center px-6 py-3 rounded-full bg-gradient-primary text-primary-foreground font-semibold shadow-glow"
+                  >
+                    Criar conta
+                  </a>
+                </div>
+                <div className="flex gap-4 pt-6 border-t border-border w-full justify-center mt-2">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="text-primary p-3 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors"
+                    >
+                      <social.icon size={22} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}

@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, ArrowRight } from "lucide-react";
-import { GlitchText } from "./GlitchText";
 
 const plans = [
   {
@@ -57,27 +56,27 @@ export const PlansSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-            Planos para <GlitchText text="prestadores" className="text-gradient" />
+            Planos para <span className="text-gradient">prestadores</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
             Escolha o plano ideal e cresça dentro da plataforma.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50, rotate: index === 1 ? 0 : index === 0 ? -2 : 2, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, y: 0, rotate: 0, scale: 1 } : {}}
-              transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8 }}
-              className="group gpu"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -6 }}
+              className="group gpu h-full"
             >
               <div
                 className={`h-full p-6 md:p-8 rounded-3xl transition-all duration-300 flex flex-col ${
                   plan.highlight
-                    ? "bg-gradient-primary text-primary-foreground shadow-glow scale-[1.02]"
+                    ? "bg-gradient-primary text-primary-foreground shadow-glow"
                     : "glass hover:border-primary/40 hover:shadow-card"
                 }`}
               >

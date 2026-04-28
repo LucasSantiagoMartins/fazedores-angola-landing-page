@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import { GlitchText } from "./GlitchText";
 
 export const FinalCTASection = () => {
   const ref = useRef(null);
@@ -18,7 +17,7 @@ export const FinalCTASection = () => {
           className="max-w-4xl mx-auto text-center glass rounded-[2.5rem] p-8 md:p-14 shadow-glow gpu"
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Pronto para <GlitchText text="começar?" className="text-gradient" />
+            Pronto para <span className="text-gradient">começar?</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto mb-8">
             Crie a sua conta gratuitamente e descubra como a Fazedores Angola pode acelerar o seu crescimento.

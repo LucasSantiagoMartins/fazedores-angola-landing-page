@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight, Sparkles } from "lucide-react";
-import { GlitchText } from "./GlitchText";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 const slides = [
   {
@@ -40,21 +39,22 @@ export const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black -mb-px">
       <h1 className="sr-only">Fazedores Angola — Serviços e crescimento profissional</h1>
 
+      {/* Background image layer (fills entire hero, no gaps) */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="absolute inset-0 gpu"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80 z-10" />
-            <div className="absolute inset-0 bg-radial-primary z-10 opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/85 z-10" />
+            <div className="absolute inset-0 bg-radial-primary z-10 opacity-70" />
             <img
               src={slides[currentSlide].image}
               alt=""
@@ -69,56 +69,46 @@ export const Hero = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.7 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-4xl mx-auto text-center gpu"
           >
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full glass-dark text-white/90 text-xs sm:text-sm font-medium"
             >
-              <Sparkles className="w-3.5 h-3.5 text-primary-glow" />
-              Plataforma #1 de serviços em Angola
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-glow animate-pulse" />
+              Serviços profissionais em Angola
             </motion.div>
 
-            <motion.h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
-              {slides[currentSlide].title.split(" ").map((word, i) => {
-                const isAccent = i === 0 || i === 1;
-                return (
-                  <span key={i}>
-                    {isAccent ? (
-                      <GlitchText
-                        text={word + " "}
-                        className="text-primary inline-block"
-                      />
-                    ) : (
-                      <span>{word} </span>
-                    )}
-                  </span>
-                );
-              })}
-            </motion.h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
+              {slides[currentSlide].title}
+            </h2>
 
-            <motion.p className="text-gray-200 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8 md:mb-10 px-2">
+            <p className="text-gray-200 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8 md:mb-10 px-2">
               {slides[currentSlide].description}
-            </motion.p>
+            </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
               <a
-                href="#services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-glow"
+                href="https://app.fazedoresangola.ao/criar-conta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-primary text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-full shadow-glow transition-transform duration-300 hover:scale-[1.03] gpu"
               >
                 Criar conta
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="#plans"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-white/80 hover:border-primary hover:bg-primary/10 text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-300"
+                href="https://app.fazedoresangola.ao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-dark text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/15 hover:scale-[1.03] gpu"
               >
                 Entrar na plataforma
               </a>
@@ -129,10 +119,10 @@ export const Hero = () => {
         <div className="flex items-center justify-center gap-4 mt-10 md:mt-12 relative z-30">
           <button
             onClick={prevSlide}
-            className="w-12 h-12 rounded-full border-2 border-primary bg-transparent hover:bg-primary/20 flex items-center justify-center transition-all duration-300"
+            className="w-11 h-11 rounded-full border border-white/30 bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all duration-300"
             aria-label="Anterior"
           >
-            <ChevronLeft className="w-6 h-6 text-primary" />
+            <ChevronLeft className="w-5 h-5 text-white" />
           </button>
 
           <div className="flex gap-2">
@@ -140,8 +130,9 @@ export const Hero = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
+                aria-label={`Slide ${index + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? "w-8 bg-primary" : "w-2 bg-white/50"
+                  index === currentSlide ? "w-8 bg-primary" : "w-2 bg-white/40"
                 }`}
               />
             ))}
@@ -149,10 +140,10 @@ export const Hero = () => {
 
           <button
             onClick={nextSlide}
-            className="w-12 h-12 rounded-full border-2 border-primary bg-transparent hover:bg-primary/20 flex items-center justify-center transition-all duration-300"
+            className="w-11 h-11 rounded-full border border-white/30 bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all duration-300"
             aria-label="Próximo"
           >
-            <ChevronRight className="w-6 h-6 text-primary" />
+            <ChevronRight className="w-5 h-5 text-white" />
           </button>
         </div>
       </div>

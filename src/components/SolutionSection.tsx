@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Share2, Target, LayoutGrid } from "lucide-react";
-import { GlitchText } from "./GlitchText";
 
 const solutions = [
   {
@@ -39,7 +38,7 @@ export const SolutionSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-            A <GlitchText text="solução" className="text-gradient" />
+            A <span className="text-gradient">solução</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-2">
             Criamos um ecossistema que organiza o mercado, profissionaliza quem
@@ -51,17 +50,13 @@ export const SolutionSection = () => {
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40, rotate: index % 2 === 0 ? -2 : 2, scale: 0.96 }}
-              animate={isInView ? { opacity: 1, y: 0, rotate: 0, scale: 1 } : {}}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{ y: -6, rotate: index % 2 === 0 ? -0.4 : 0.4 }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -4 }}
               className="group gpu"
             >
-              <div className="h-full glass p-6 md:p-8 rounded-[2rem] hover:border-primary/40 transition-all duration-300 hover:shadow-glow">
+              <div className="h-full glass p-6 md:p-8 rounded-[2rem] hover:border-primary/40 transition-all duration-300 hover:shadow-card">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-primary-soft group-hover:bg-gradient-primary flex items-center justify-center mb-5 transition-all duration-300">
                   <solution.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
