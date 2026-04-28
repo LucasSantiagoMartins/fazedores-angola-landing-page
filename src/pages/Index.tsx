@@ -18,6 +18,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <WaveDivider fromColor="hsl(0 0% 0%)" toColor="hsl(var(--muted))" />
         <SolutionSection />
         <WaveDivider fromColor="hsl(var(--muted))" toColor="hsl(var(--background))" />
         <HowItWorksSection />
