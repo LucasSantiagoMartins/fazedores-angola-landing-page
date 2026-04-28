@@ -1,23 +1,25 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Target, Eye, Users } from "lucide-react";
-import myProfilePic from "../assets/me.jpg";
 
 const values = [
   {
     icon: Target,
     title: "Missão",
-    description: "Conectar clientes e fazedores com praticidade, promovendo renda e valorizando o talento nacional.",
+    description:
+      "Conectar clientes e fazedores com praticidade, promovendo renda e valorizando o talento nacional.",
   },
   {
     icon: Eye,
     title: "Visão",
-    description: "Ser o ecossistema líder em Angola para serviços, reconhecido pela inovação e impacto digital.",
+    description:
+      "Ser o ecossistema líder em Angola para serviços, reconhecido pela inovação e impacto digital.",
   },
   {
     icon: Users,
     title: "Cultura",
-    description: "Dividir para conquistar: distribuímos oportunidades e crescemos juntos como uma comunidade.",
+    description:
+      "Dividir para conquistar: distribuímos oportunidades e crescemos juntos como uma comunidade.",
   },
 ];
 
@@ -26,28 +28,13 @@ export const AboutSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background overflow-hidden" ref={ref}>
+    <section
+      id="about"
+      className="py-20 md:py-32 bg-background overflow-hidden"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Lado Esquerdo: Foto */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex justify-center lg:justify-start gpu"
-          >
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-primary/0 rounded-[3rem] blur opacity-25 transition duration-1000"></div>
-              <img
-                src={myProfilePic}
-                alt="Lucas Santiago - Fazedores Angola"
-                className="relative w-full max-w-md rounded-[2.5rem] shadow-2xl transition-transform duration-700"
-              />
-            </div>
-          </motion.div>
-
-          {/* Lado Direito: Texto Institucional e Cards Integrados */}
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -68,15 +55,24 @@ export const AboutSection = () => {
 
             <div className="space-y-6 text-foreground/80 leading-relaxed text-lg mb-10">
               <p>
-                A <strong>Fazedores Angola</strong> nasceu da visão de transformar o mercado de serviços em Angola através da tecnologia. Como especialistas em sistemas digitais e negócios, focamos em criar uma solução que não seja apenas um intermediário, mas um motor de crescimento.
+                A <strong>Fazedores Angola</strong> nasceu da visão de
+                transformar o mercado de serviços em Angola através da
+                tecnologia. Como especialistas em sistemas digitais e negócios,
+                focamos em criar uma solução que não seja apenas um
+                intermediário, mas um motor de crescimento.
               </p>
               <p>
-                Acreditamos no princípio <em className="text-primary font-semibold">"Dividir para conquistar"</em>: nossa plataforma assegura que as oportunidades sejam distribuídas de forma justa, garantindo que o sucesso de um prestador impulsione todo o ecossistema.
+                Acreditamos no princípio{" "}
+                <em className="text-primary font-semibold">
+                  "Dividir para conquistar"
+                </em>
+                : nossa plataforma assegura que as oportunidades sejam
+                distribuídas de forma justa, garantindo que o sucesso de um
+                prestador impulsione todo o ecossistema.
               </p>
             </div>
 
-            {/* Values - Lista Integrada no Fluxo do Texto */}
-            <div className="space-y-4">
+            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
               {values.map((value, index) => (
                 <motion.div
                   key={index}
@@ -89,7 +85,9 @@ export const AboutSection = () => {
                     <value.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-foreground font-bold text-lg mb-1">{value.title}</h4>
+                    <h4 className="text-foreground font-bold text-lg mb-1">
+                      {value.title}
+                    </h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {value.description}
                     </p>
