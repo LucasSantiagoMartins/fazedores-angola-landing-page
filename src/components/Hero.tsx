@@ -39,7 +39,7 @@ export const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black -mb-px">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black rounded-b-[2.5rem] md:rounded-b-[4rem]">
       <h1 className="sr-only">Fazedores Angola — Serviços e crescimento profissional</h1>
 
       {/* Background image layer (fills entire hero, no gaps) */}
