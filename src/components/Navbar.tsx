@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const navLinks = [
   { href: "#about", label: "Sobre nós" },
