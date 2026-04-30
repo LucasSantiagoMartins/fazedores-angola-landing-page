@@ -39,7 +39,7 @@ export const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <h1 className="sr-only">Fazedores Angola — Serviços e crescimento profissional</h1>
 
       {/* Background image layer (fills entire hero, no gaps) */}
@@ -65,7 +65,7 @@ export const Hero = () => {
         </AnimatePresence>
       </div>
 
-      <div className="container mx-auto px-4 py-32 relative z-20">
+      <div className="container mx-auto px-4 py-20 md:py-32 relative z-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
