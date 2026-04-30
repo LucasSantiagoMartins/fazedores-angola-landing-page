@@ -124,10 +124,10 @@ export const PlansSection = () => {
                   href="https://app.fazedoresangola.ao/criar-conta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-[1.03] ${
+                  className={`mt-8 inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full font-medium transition-all active:scale-[0.98] ${
                     plan.highlight
-                      ? "bg-white text-primary hover:bg-white/90"
-                      : "bg-gradient-primary text-primary-foreground shadow-glow"
+                      ? "bg-background text-foreground hover:bg-background/90"
+                      : "btn-gradient shadow-glow hover:brightness-110"
                   }`}
                 >
                   Começar agora
