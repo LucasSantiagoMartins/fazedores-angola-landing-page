@@ -26,25 +26,10 @@ export const FinalCTASection = () => {
             Crie a sua conta gratuitamente e descubra como a Fazedores Angola
             pode acelerar o seu crescimento.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center justify-center">
             <DoerButton
               asChild
               variant="primary"
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              <a
-                href="https://app.fazedoresangola.ao/criar-conta"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Criar conta grátis
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </DoerButton>
-            <DoerButton
-              asChild
-              variant="outline"
               size="lg"
               className="w-full sm:w-auto"
             >
@@ -54,6 +39,7 @@ export const FinalCTASection = () => {
                 rel="noopener noreferrer"
               >
                 Já tenho conta
+                <ArrowRight className="w-5 h-5" />
               </a>
             </DoerButton>
           </div>

@@ -153,7 +153,7 @@ export const PlansSection = () => {
                   href="https://app.fazedoresangola.ao/criar-conta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-8 inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full font-medium transition-all active:scale-[0.98] ${
+                  className={`mt-8 inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full font-medium whitespace-nowrap text-[13px] sm:text-sm transition-all active:scale-[0.98] ${
                     plan.highlight
                       ? "bg-background text-foreground hover:bg-background/90"
                       : "btn-gradient shadow-glow hover:brightness-110"
