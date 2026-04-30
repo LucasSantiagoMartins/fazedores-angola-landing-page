@@ -9,7 +9,6 @@ import { StatsSection } from "@/components/StatsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
-import { WaveDivider } from "@/components/WaveDivider";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -19,12 +18,9 @@ const Index = () => {
       <main>
         <Hero />
         <SolutionSection />
-        <WaveDivider fromColor="hsl(var(--muted))" toColor="hsl(var(--background))" />
         <HowItWorksSection />
         <OpportunitiesSection />
-        <WaveDivider fromColor="hsl(var(--background))" toColor="hsl(var(--muted))" />
         <PlansSection />
-        <WaveDivider fromColor="hsl(var(--muted))" toColor="hsl(var(--background))" />
         <ShowcaseSection />
         <StatsSection />
         <AboutSection />
