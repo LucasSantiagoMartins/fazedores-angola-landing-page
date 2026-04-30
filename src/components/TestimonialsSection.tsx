@@ -6,32 +6,32 @@ import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Gostei da confiança que transmitem por meio dos vídeos de alguns serviços prestados publicados nas redes sociais da Fazedores Angola.",
-    name: "Fátima José",
-    role: "Cliente",
-  },
-  {
-    quote:
-      "A plataforma facilitou muito o meu trabalho. Hoje recebo pedidos no telemóvel e organizo melhor os meus serviços.",
+      "Hoje recebo pedidos diretamente pela plataforma, sem precisar correr atrás de clientes. Isso mudou a forma como trabalho.",
     name: "Miguel Kiala",
     role: "Decorador de Eventos",
   },
   {
     quote:
-      "Foi simples e prático. Fiz o pagamento e fiquei muito mais tranquila durante todo o processo.",
-    name: "Maria Souza",
-    role: "Designer Gráfica",
+      "A Fazedores Angola trouxe mais organização. Consigo controlar os serviços que faço e acompanhar tudo com mais clareza.",
+    name: "Marcos Pereira",
+    role: "Prestador de Serviços",
   },
   {
     quote:
-      "Graças à Fazedores Angola, recebo pedidos pela plataforma e aumentei minha base de clientes.",
+      "Senti mais confiança porque existe um sistema por trás. Não é só um contacto, há acompanhamento do serviço.",
+    name: "Fátima José",
+    role: "Cliente",
+  },
+  {
+    quote:
+      "Antes era difícil conseguir clientes. Agora recebo solicitações pela plataforma e consigo crescer de forma mais consistente.",
     name: "Osvaldo Fernandes",
     role: "Técnico de Frio",
   },
   {
     quote:
-      "Com a Carteira consigo acompanhar tudo com clareza — ganhos, saques e o que recebo.",
-    name: "Marcos Pereira",
+      "O processo é simples: o cliente pede, eu executo e depois registro. Fica tudo organizado e sem confusão.",
+    name: "João Manuel",
     role: "Prestador de Serviços",
   },
 ];
@@ -52,11 +52,14 @@ export const TestimonialsSection = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   const prevTestimonial = () =>
     setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
 
   return (
-    <section className="py-16 md:py-28 bg-background-subtle overflow-x-hidden" ref={ref}>
+    <section
+      className="py-16 md:py-28 bg-background-subtle overflow-x-hidden"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <motion.div
@@ -65,10 +68,12 @@ export const TestimonialsSection = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
-              O que dizem os nossos <span className="text-gradient">utilizadores</span>
+              O que dizem os nossos{" "}
+              <span className="text-gradient">utilizadores</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-              Clientes e prestadores partilham as suas experiências com a Fazedores Angola.
+              Clientes e prestadores partilham as suas experiências com a
+              Fazedores Angola.
             </p>
           </motion.div>
 

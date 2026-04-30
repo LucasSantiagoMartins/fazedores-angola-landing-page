@@ -1,6 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Share2, Target, LayoutGrid } from "lucide-react";
+import {
+  Share2,
+  Target,
+  LayoutGrid,
+  MessageSquare,
+  CheckCircle2,
+  PlayCircle,
+  Wallet,
+} from "lucide-react";
 
 const solutions = [
   {
@@ -23,14 +31,51 @@ const solutions = [
   },
 ];
 
+const steps = [
+  {
+    number: "01",
+    icon: MessageSquare,
+    title: "Pedido",
+    description: "O cliente solicita um serviço pela plataforma.",
+  },
+  {
+    number: "02",
+    icon: CheckCircle2,
+    title: "Aceitação",
+    description: "Um prestador disponível aceita o serviço.",
+  },
+  {
+    number: "03",
+    icon: PlayCircle,
+    title: "Execução",
+    description: "O serviço é realizado conforme solicitado.",
+  },
+  {
+    number: "04",
+    icon: CheckCircle2,
+    title: "Conclusão",
+    description: "O prestador marca o serviço como concluído.",
+  },
+  {
+    number: "05",
+    icon: Wallet,
+    title: "Comissão",
+    description: "A plataforma aplica a comissão sobre o serviço realizado.",
+  },
+];
+
 export const SolutionSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="relative py-16 md:py-28 bg-background overflow-hidden" ref={ref}>
+    <section
+      className="relative py-16 md:py-28 bg-background overflow-hidden"
+      ref={ref}
+    >
       <div className="pointer-events-none absolute -top-32 -right-20 w-[420px] h-[420px] rounded-full bg-radial-primary opacity-70" />
-      <div className="container mx-auto px-4 relative">
+
+      <div className="container mx-auto px-4 relative mb-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -52,7 +97,11 @@ export const SolutionSection = () => {
               key={index}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               whileHover={{ y: -4 }}
               className="group gpu"
             >
@@ -67,6 +116,52 @@ export const SolutionSection = () => {
                   {solution.description}
                 </p>
               </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="text-center mb-12 md:mb-20"
+        >
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3">
+            Como funciona
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg">
+            Um processo simples — do pedido à conclusão.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+              className="relative flex flex-col items-center text-center"
+            >
+              <div className="mb-6 relative">
+                <span className="absolute -top-4 -right-4 text-xs font-bold bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center shadow-lg">
+                  {step.number}
+                </span>
+                <div className="w-16 h-16 rounded-full border-2 border-dashed border-primary/30 flex items-center justify-center bg-background/50 group">
+                  <step.icon className="w-8 h-8 text-primary" />
+                </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-full w-full h-[2px] bg-gradient-to-r from-primary/20 to-transparent -z-10" />
+                )}
+              </div>
+              <h4 className="text-foreground font-bold text-lg mb-2">
+                {step.title}
+              </h4>
+              <p className="text-muted-foreground text-sm leading-snug">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>
