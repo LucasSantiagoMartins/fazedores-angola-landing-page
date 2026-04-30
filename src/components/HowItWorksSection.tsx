@@ -36,7 +36,6 @@ export const HowItWorksSection = () => {
 
   return (
     <section id="services" className="relative py-16 md:py-28 bg-background overflow-hidden" ref={ref}>
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-radial-primary opacity-50" />
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

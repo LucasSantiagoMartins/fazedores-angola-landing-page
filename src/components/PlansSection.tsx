@@ -4,39 +4,41 @@ import { Check, ArrowRight } from "lucide-react";
 
 const plans = [
   {
-    name: "Básico",
-    description: "Para quem está a começar na plataforma.",
+    name: "Presença",
+    price: "7.500 Kz",
+    description: "Plano básico para presença na plataforma.",
     highlight: false,
     features: [
-      "Perfil de prestador activo",
-      "Receber pedidos de serviço",
-      "Carteira Fazedores",
-      "Histórico de transações",
+      "Até 1 submissão",
+      "Até 1 vídeo produzido (edição básica)",
+      "Conteúdos para suas redes",
+      "Até 1 imagem promocional",
     ],
   },
   {
-    name: "Pro",
-    description: "Para prestadores que querem crescer mais rápido.",
+    name: "Influência",
+    price: "19.900 Kz",
+    description: "Plano com maior visibilidade e produção de conteúdo.",
     highlight: true,
     features: [
-      "Tudo do plano Básico",
-      "Prioridade em novos pedidos",
-      "Destaque no perfil",
-      "Relatórios de desempenho",
-      "Suporte prioritário",
+      "Até 2 submissões",
+      "Até 2 vídeos (edição profissional)",
+      "Conteúdos para suas redes",
+      "Até 2 imagens promocionais",
+      "1 publicação nas redes da Fazedores",
     ],
   },
   {
-    name: "Elite",
-    description: "Máxima visibilidade e crescimento acelerado.",
+    name: "Escala de Resultados",
+    price: "49.890 Kz",
+    description: "Plano completo com máximo destaque e suporte dedicado.",
     highlight: false,
     features: [
-      "Tudo do plano Pro",
-      "Vídeos profissionais do trabalho",
-      "Marketing nas redes Fazedores",
-      "Badge de prestador verificado",
-      "Acesso a grandes projectos",
-      "Gestor de conta dedicado",
+      "Até 4 submissões",
+      "Até 4 vídeos (edição avançada)",
+      "Formatos prontos para redes sociais",
+      "3 Publicações nas redes da Fazedores",
+      "Até 2 imagens promocionais",
     ],
   },
 ];
@@ -46,7 +48,11 @@ export const PlansSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="plans" className="relative py-16 md:py-28 bg-background-subtle overflow-hidden" ref={ref}>
+    <section
+      id="plans"
+      className="relative py-16 md:py-28 bg-background-subtle overflow-hidden"
+      ref={ref}
+    >
       <div className="pointer-events-none absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-radial-primary opacity-60" />
       <div className="container mx-auto px-4 relative">
         <motion.div
@@ -69,7 +75,11 @@ export const PlansSection = () => {
               key={index}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               whileHover={{ y: -6 }}
               className="group gpu h-full"
             >
@@ -80,15 +90,34 @@ export const PlansSection = () => {
                     : "glass hover:border-primary/40 hover:shadow-card"
                 }`}
               >
+                {plan.highlight && (
+                  <span className="text-[10px] uppercase tracking-widest font-bold mb-4 py-1 px-3 bg-background/20 rounded-full w-fit">
+                    Mais Popular
+                  </span>
+                )}
                 <h3
-                  className={`font-semibold text-xl sm:text-2xl mb-2 ${
-                    plan.highlight ? "text-primary-foreground" : "text-foreground"
+                  className={`font-semibold text-xl sm:text-2xl mb-1 ${
+                    plan.highlight
+                      ? "text-primary-foreground"
+                      : "text-foreground"
                   }`}
                 >
                   {plan.name}
                 </h3>
+                <div className="mb-4">
+                  <span
+                    className={`text-2xl sm:text-3xl font-bold ${plan.highlight ? "text-primary-foreground" : "text-foreground"}`}
+                  >
+                    {plan.price}
+                  </span>
+                  <span
+                    className={`text-xs ml-1 ${plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}
+                  >
+                    /mês
+                  </span>
+                </div>
                 <p
-                  className={`text-sm sm:text-base mb-6 ${
+                  className={`text-sm mb-6 ${
                     plan.highlight
                       ? "text-primary-foreground/85"
                       : "text-muted-foreground"
@@ -108,7 +137,7 @@ export const PlansSection = () => {
                         }`}
                       />
                       <span
-                        className={`text-sm sm:text-base ${
+                        className={`text-sm ${
                           plan.highlight
                             ? "text-primary-foreground/90"
                             : "text-foreground/80"
@@ -130,7 +159,7 @@ export const PlansSection = () => {
                       : "btn-gradient shadow-glow hover:brightness-110"
                   }`}
                 >
-                  Começar agora
+                  Assinar {plan.name}
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
