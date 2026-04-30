@@ -46,7 +46,7 @@ export const PlansSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="plans" className="relative py-16 md:py-28 bg-muted overflow-hidden" ref={ref}>
+    <section id="plans" className="relative py-16 md:py-28 bg-background-subtle overflow-hidden" ref={ref}>
       <div className="pointer-events-none absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-radial-primary opacity-60" />
       <div className="container mx-auto px-4 relative">
         <motion.div
