@@ -28,7 +28,7 @@ export const SolutionSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="relative py-16 md:py-28 bg-muted overflow-hidden" ref={ref}>
+    <section className="relative py-16 md:py-28 bg-background overflow-hidden" ref={ref}>
       <div className="pointer-events-none absolute -top-32 -right-20 w-[420px] h-[420px] rounded-full bg-radial-primary opacity-70" />
       <div className="container mx-auto px-4 relative">
         <motion.div

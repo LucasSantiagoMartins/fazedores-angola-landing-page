@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
@@ -89,30 +89,9 @@ export const Hero = () => {
               {slides[currentSlide].title}
             </h2>
 
-            <p className="text-gray-200 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8 md:mb-10 px-2">
+            <p className="text-foreground/90 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2">
               {slides[currentSlide].description}
             </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
-              <a
-                href="https://app.fazedoresangola.ao/criar-conta"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-primary text-primary-foreground font-semibold text-base sm:text-lg px-8 py-4 rounded-full shadow-glow transition-transform duration-300 hover:scale-[1.03] gpu"
-              >
-                Criar conta
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="https://app.fazedoresangola.ao/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-dark text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/15 hover:scale-[1.03] gpu"
-              >
-                Entrar na plataforma
-              </a>
-            </div>
           </motion.div>
         </AnimatePresence>
 

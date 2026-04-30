@@ -123,7 +123,7 @@ export const Navbar = () => {
               href="https://app.fazedoresangola.ao/criar-conta"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 rounded-full text-sm font-semibold bg-gradient-primary text-primary-foreground shadow-glow hover:scale-[1.04] transition-transform duration-300"
+              className="px-5 h-10 inline-flex items-center rounded-full text-sm font-medium btn-gradient shadow-glow hover:brightness-110 active:scale-[0.98] transition-all"
             >
               Criar conta
             </a>
@@ -188,7 +188,7 @@ export const Navbar = () => {
                     href="https://app.fazedoresangola.ao/criar-conta"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-center px-6 py-3 rounded-full bg-gradient-primary text-primary-foreground font-semibold shadow-glow"
+                    className="w-full text-center px-6 h-12 inline-flex items-center justify-center rounded-full btn-gradient font-medium shadow-glow active:scale-[0.98] transition-all"
                   >
                     Criar conta
                   </a>

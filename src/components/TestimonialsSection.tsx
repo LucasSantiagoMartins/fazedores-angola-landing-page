@@ -56,7 +56,7 @@ export const TestimonialsSection = () => {
     );
 
   return (
-    <section className="py-16 md:py-28 bg-muted overflow-x-hidden" ref={ref}>
+    <section className="py-16 md:py-28 bg-background-subtle overflow-x-hidden" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <motion.div

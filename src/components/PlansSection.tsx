@@ -46,7 +46,7 @@ export const PlansSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="plans" className="relative py-16 md:py-28 bg-muted overflow-hidden" ref={ref}>
+    <section id="plans" className="relative py-16 md:py-28 bg-background-subtle overflow-hidden" ref={ref}>
       <div className="pointer-events-none absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-radial-primary opacity-60" />
       <div className="container mx-auto px-4 relative">
         <motion.div
@@ -124,10 +124,10 @@ export const PlansSection = () => {
                   href="https://app.fazedoresangola.ao/criar-conta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-[1.03] ${
+                  className={`mt-8 inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full font-medium transition-all active:scale-[0.98] ${
                     plan.highlight
-                      ? "bg-white text-primary hover:bg-white/90"
-                      : "bg-gradient-primary text-primary-foreground shadow-glow"
+                      ? "bg-background text-foreground hover:bg-background/90"
+                      : "btn-gradient shadow-glow hover:brightness-110"
                   }`}
                 >
                   Começar agora
