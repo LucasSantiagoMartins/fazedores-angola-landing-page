@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { SolutionSection } from "@/components/SolutionSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { OpportunitiesSection } from "@/components/OpportunitiesSection";
 import { PlansSection } from "@/components/PlansSection";
 import { ShowcaseSection } from "@/components/ShowcaseSection";
@@ -10,6 +9,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
 
 const Index = () => {
   return (
