@@ -30,10 +30,10 @@ const NormasPrestacaoServico = () => {
               <Briefcase className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Normas de Prestação de Serviço – Fazedores Angola
+              Service Guidelines – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Directrizes oficiais sobre pagamentos, comissões e conduta profissional.
+              Official guidelines on payments, commissions, and professional conduct.
             </p>
           </motion.div>
 
@@ -43,107 +43,107 @@ const NormasPrestacaoServico = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-10"
           >
-            {/* 1. Fluxo de Pagamento e Comissão */}
+            {/* 1. Payment and Commission Flow */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
                 <Wallet className="w-5 h-5 text-primary" />
-                1. Política de Pagamento e Comissões
+                1. Payment and Commission Policy
               </h2>
               <div className="space-y-4">
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Handshake className="w-4 h-4 text-primary" />
-                    Pagamento ao Prestador
+                    Payment to the Provider
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    O pagamento pelo serviço executado é realizado pelo cliente directamente ao prestador (fazedor). A plataforma não retém o valor do serviço, sendo a transação de inteira responsabilidade das partes.
+                    Payment for the executed service is made by the client directly to the provider (doer). The platform does not retain the service amount, and the transaction is the sole responsibility of the parties.
                   </p>
                 </div>
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
-                  <h4 className="font-semibold  mb-2 flex items-center gap-2 text-primary">
+                  <h4 className="font-semibold mb-2 flex items-center gap-2 text-primary">
                     <AlertTriangle className="w-4 h-4" />
-                    Obrigatoriedade da Comissão
+                    Mandatory Commission
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    O prestador deve pagar a taxa de serviço à Fazedores Angola por cada trabalho fechado. O não pagamento ou o atraso recorrente impossibilitam a recepção de novas solicitações.
+                    The provider must pay the service fee to Fazedores Angola for each closed job. Non-payment or recurring delays prevent the receipt of new requests.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* 2. Obrigações do Prestador */}
+            {/* 2. Provider Obligations */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <UserCheck className="w-5 h-5 text-primary" />
-                2. Obrigações do Fazedor
+                2. Doer's Obligations
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
-                <li>Executar serviços com transparência e respeitar o orçamento inicial.</li>
+                <li>Perform services with transparency and respect the initial budget.</li>
                 <li>
-                  <span className="font-semibold text-foreground">Finalização do Serviço:</span> É obrigação do prestador marcar o serviço como concluído no sistema assim que o trabalho for finalizado.
+                  <span className="font-semibold text-foreground">Service Completion:</span> It is the provider's obligation to mark the service as completed in the system as soon as the work is finished.
                 </li>
-                <li>Reportar o valor real recebido para o cálculo correcto da comissão.</li>
-                <li>Manter uma postura ética e profissional durante todo o atendimento.</li>
+                <li>Report the actual amount received for the correct calculation of the commission.</li>
+                <li>Maintain ethical and professional conduct throughout the service.</li>
               </ul>
-              
+
               <div className="mt-6 p-5 bg-destructive/5 border-l-4 border-destructive rounded-r-xl space-y-3">
                 <h4 className="text-sm font-bold text-destructive flex items-center gap-2">
-                  <Shield className="w-4 h-4" /> AVISO DE TOLERÂNCIA ZERO
+                  <Shield className="w-4 h-4" /> ZERO TOLERANCE NOTICE
                 </h4>
                 <p className="text-sm text-foreground leading-relaxed">
-                  O uso de cancelamentos indevidos resultam na suspensão imediata e permanente da conta, sem direito a aviso prévio.
+                  Improper cancellations result in immediate and permanent account suspension, without prior notice.
                 </p>
               </div>
             </section>
 
-            {/* 3. Obrigações do Cliente */}
+            {/* 3. Client Obligations */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <User className="w-5 h-5 text-primary" />
-                3. Obrigações do Cliente
+                3. Client Obligations
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
-                <li>Garantir o pagamento integral ao prestador conforme acordado.</li>
-                <li>Facilitar o acesso do profissional ao local do serviço.</li>
-                <li>Reportar à plataforma caso o prestador solicite pagamentos "por fora" para burlar as taxas do sistema.</li>
-                <li>Avaliar o prestador de forma honesta após a finalização confirmada.</li>
+                <li>Ensure full payment to the provider as agreed.</li>
+                <li>Facilitate the professional's access to the service location.</li>
+                <li>Report to the platform if the provider requests "off-platform" payments to bypass system fees.</li>
+                <li>Honestly evaluate the provider after confirmed completion.</li>
               </ul>
             </section>
 
-            {/* 4. Sanções e Monitorização */}
+            {/* 4. Sanctions and Monitoring */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-destructive" />
-                4. Monitorização e Sanções
+                4. Monitoring and Sanctions
               </h2>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
-                  <h4 className="font-semibold text-destructive mb-2 text-sm uppercase">Advertência</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">Aplicada em casos de atrasos no reporte de conclusão ou falhas leves de comunicação.</p>
+                  <h4 className="font-semibold text-destructive mb-2 text-sm uppercase">Warning</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">Applied in cases of delays in completion reporting or minor communication failures.</p>
                 </div>
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
-                  <h4 className="font-semibold text-destructive mb-2 text-sm uppercase">Bloqueio</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">Aplicado por fraude financeira, cancelamentos falsos após aceite ou comportamento abusivo.</p>
+                  <h4 className="font-semibold text-destructive mb-2 text-sm uppercase">Block</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">Applied for financial fraud, false cancellations after acceptance, or abusive behavior.</p>
                 </div>
               </div>
             </section>
 
-            {/* 5. Qualidade e Retificações */}
+            {/* 5. Quality and Rectifications */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                5. Garantia e Retificação
+                5. Warranty and Rectification
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Ao confirmar a finalização, o prestador assegura que o serviço foi entregue com qualidade. Se houver problemas técnicos em até 48h, o prestador deve realizar a rectificação. A omissão neste período impacta directamente o seu selo de confiança na plataforma.
+                By confirming completion, the provider ensures the service was delivered with quality. If technical issues arise within 48h, the provider must perform the rectification. Failure to do so within this period directly impacts their trust seal on the platform.
               </p>
             </section>
 
-            {/* 6. Disposições Finais */}
+            {/* 6. Final Provisions */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">6. Responsabilidade</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">6. Responsibility</h2>
               <p className="text-muted-foreground leading-relaxed text-sm">
-                A Fazedores Angola é uma intermediadora tecnológica. O vínculo de prestação de serviço é estabelecido exclusivamente entre cliente e fazedor. Todas as obrigações fiscais decorrentes da transação são de responsabilidade do prestador.
+                Fazedores Angola is a technological intermediary. The service provision relationship is established exclusively between client and doer. All tax obligations arising from the transaction are the responsibility of the provider.
               </p>
             </section>
           </motion.div>
