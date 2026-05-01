@@ -20,76 +20,76 @@ import { Footer } from "@/components/Footer";
 
 const faqData = [
   {
-    category: "Sobre a Plataforma",
+    category: "About the Platform",
     icon: HelpCircle,
     questions: [
       {
-        question: "O que é a Fazedores Angola?",
+        question: "What is Fazedores Angola?",
         answer:
-          "É uma plataforma que conecta clientes a prestadores de serviços qualificados (Fazedores) em Angola. Facilitamos o encontro entre quem precisa de um serviço (como canalização, eletricidade ou consultoria) e quem sabe fazer, garantindo visibilidade e organização.",
+          "It is a platform that connects clients with qualified service providers (Doers) in Angola. We facilitate the meeting between those who need a service (such as plumbing, electricity, or consulting) and those who know how to do it, ensuring visibility and organization.",
       },
       {
-        question: "A Fazedores Angola emprega os prestadores?",
+        question: "Does Fazedores Angola employ the providers?",
         answer:
-          "Não. Somos uma intermediária tecnológica. Cada prestador é um profissional independente ou empresa que utiliza a nossa tecnologia para gerir o seu próprio negócio e encontrar novos clientes.",
+          "No. We are a technological intermediary. Each provider is an independent professional or company that uses our technology to manage their own business and find new clients.",
       },
     ],
   },
   {
-    category: "Pagamentos e Comissões",
+    category: "Payments and Commissions",
     icon: Wallet,
     questions: [
       {
-        question: "Como faço para pagar o prestador?",
+        question: "How do I pay the provider?",
         answer:
-          "O pagamento é feito diretamente ao prestador de serviço. Você pode combinar o método que for mais prático: dinheiro vivo, transferência bancária ou MultiCaixa Express. A plataforma não retém o valor do serviço no momento da transação.",
+          "Payment is made directly to the service provider. You can agree on the most convenient method: cash, bank transfer, or MultiCaixa Express. The platform does not retain the service amount at the time of the transaction.",
       },
       {
-        question: "Sou prestador, como pago a comissão da plataforma?",
+        question: "I am a provider, how do I pay the platform commission?",
         answer:
-          "Após receber o pagamento do cliente, você deve reportar a conclusão do serviço no aplicativo e efetuar o pagamento da taxa de intermediação (comissão) à Fazedores Angola. Este pagamento é essencial para manter o seu perfil ativo e com boa visibilidade.",
+          "After receiving payment from the client, you must report the service completion in the app and pay the intermediation fee (commission) to Fazedores Angola. This payment is essential to keep your profile active and visible.",
       },
       {
-        question: "O que acontece se o prestador não pagar a comissão?",
+        question: "What happens if the provider doesn't pay the commission?",
         answer:
-          "O não pagamento recorrente ou a ocultação de serviços realizados leva à restrição das funcionalidades da conta e, em casos graves, ao banimento permanente do profissional da plataforma.",
+          "Recurring non-payment or hiding completed services leads to restriction of account features and, in serious cases, permanent banning of the professional from the platform.",
       },
     ],
   },
   {
-    category: "Fluxo de Serviço",
+    category: "Service Flow",
     icon: Clock,
     questions: [
       {
-        question: "Como o serviço é finalizado no sistema?",
+        question: "How is the service completed in the system?",
         answer:
-          "A responsabilidade de marcar o serviço como 'Concluído' é do prestador. Assim que o trabalho terminar e o pagamento for recebido, o fazedor deve atualizar o estado no app para que o cliente possa deixar a sua avaliação.",
+          "The responsibility for marking the service as 'Completed' belongs to the provider. As soon as the work is finished and payment is received, the doer must update the status in the app so the client can leave their review.",
       },
       {
-        question: "Posso cancelar uma solicitação?",
+        question: "Can I cancel a request?",
         answer:
-          "Sim. Ambos podem cancelar, mas deve haver uma justificativa justa. Cancelamentos frequentes por parte do prestador após aceitar o serviço prejudicam a sua pontuação de confiança e podem gerar suspensões.",
+          "Yes. Both can cancel, but there must be a fair justification. Frequent cancellations by the provider after accepting the service harm their trust score and may lead to suspensions.",
       },
     ],
   },
   {
-    category: "Segurança e Qualidade",
+    category: "Safety and Quality",
     icon: Shield,
     questions: [
       {
-        question: "O serviço ficou mal feito, o que eu faço?",
+        question: "The service was poorly done, what do I do?",
         answer:
-          "O prestador é o responsável direto pela qualidade. Recomendamos que reporte o problema imediatamente via chat na plataforma. Se houver falha técnica comprovada em até 48h, o prestador deve retificar o serviço. A nossa equipa de suporte pode mediar casos de conflito.",
+          "The provider is directly responsible for quality. We recommend reporting the issue immediately via the platform chat. If a technical failure is proven within 48h, the provider must rectify the service. Our support team can mediate conflict cases.",
       },
       {
-        question: "É seguro deixar o prestador entrar na minha casa?",
+        question: "Is it safe to let the provider into my home?",
         answer:
-          "Trabalhamos para verificar perfis, mas recomendamos sempre: verifique as avaliações de outros clientes no perfil do fazedor, confirme a identidade dele ao chegar.",
+          "We work to verify profiles, but we always recommend: check reviews from other clients on the doer's profile, and confirm their identity upon arrival.",
       },
       {
-        question: "Posso negociar 'por fora' da plataforma?",
+        question: "Can I negotiate 'outside' the platform?",
         answer:
-          "Para sua segurança, mantenha o histórico de negociação e o registro do serviço dentro da plataforma. Serviços feitos 'por fora' não possuem suporte de mediação da Fazedores Angola nem contam pontos para a reputação do profissional.",
+          "For your safety, keep the negotiation history and service record within the platform. Services done 'off-platform' have no mediation support from Fazedores Angola and don't count points toward the professional's reputation.",
       },
     ],
   },
@@ -153,10 +153,10 @@ const PerguntasRespostas = () => {
               <BookOpen className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Perguntas e Respostas
+              Frequently Asked Questions
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Central de ajuda da Fazedores Angola. Tire as suas dúvidas sobre pagamentos, segurança e como crescer na plataforma.
+              Fazedores Angola Help Center. Get answers to your questions about payments, security, and how to grow on the platform.
             </p>
           </motion.div>
         </div>
@@ -197,14 +197,14 @@ const PerguntasRespostas = () => {
               </section>
             ))}
 
-            {/* Card de CTA para Suporte Direto */}
+            {/* Direct Support CTA Card */}
             <div className="bg-primary/5 rounded-[2rem] p-8 border border-primary/20 text-center">
-              <h3 className="text-xl font-bold text-foreground mb-2">Ainda tem dúvidas?</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Still have questions?</h3>
               <p className="text-muted-foreground mb-6">
-                A nossa equipa de suporte está pronta para ajudar prestadores e clientes.
+                Our support team is ready to help providers and clients.
               </p>
               <button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-all shadow-md">
-                Contactar Suporte via WhatsApp
+                Contact Support via WhatsApp
               </button>
             </div>
           </motion.div>
