@@ -19,10 +19,10 @@ const PoliticaCancelamento = () => {
               <XCircle className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Política de Cancelamento – Fazedores Angola
+              Cancellation Policy – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Entenda o fluxo de cancelamento e a importância da nossa mediação para a segurança de clientes e fazedores.
+              Understand the cancellation flow and the importance of our mediation for the safety of clients and doers.
             </p>
           </motion.div>
 
@@ -32,77 +32,77 @@ const PoliticaCancelamento = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-10"
           >
-            {/* 1. Fluxo de Cancelamento */}
+            {/* 1. Cancellation Flow */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
-                Estados da Solicitação
+                Request States
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Cada serviço na plataforma está vinculado a um fazedor específico. O cancelamento segue regras rigorosas dependendo do estado do pedido:
+                  Each service on the platform is linked to a specific doer. Cancellation follows strict rules depending on the request status:
                 </p>
                 <ul className="list-disc list-inside space-y-4 ml-4">
                   <li>
-                    <span className="font-semibold text-foreground italic">Solicitação Pendente:</span> O cliente pode cancelar o pedido diretamente pela plataforma enquanto o fazedor designado ainda não tiver confirmado o aceite do serviço.
+                    <span className="font-semibold text-foreground italic">Pending Request:</span> The client can cancel the request directly through the platform while the assigned doer has not yet confirmed acceptance of the service.
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground italic">Serviço Aceite ou Posterior:</span> Uma vez que o fazedor aceita o compromisso, o cancelamento direto é bloqueado. Qualquer interrupção deve ser solicitada através dos nossos canais oficiais para análise.
+                    <span className="font-semibold text-foreground italic">Accepted Service or Later:</span> Once the doer accepts the commitment, direct cancellation is blocked. Any interruption must be requested through our official channels for review.
                   </li>
                 </ul>
               </div>
             </section>
 
-            {/* 2. Como Solicitar o Cancelamento */}
+            {/* 2. How to Request Cancellation */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Headphones className="w-5 h-5 text-primary" />
-                Mediação Obrigatória
+                Mandatory Mediation
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Tanto o <span className="font-semibold text-foreground">Cliente</span> quanto o <span className="font-semibold text-foreground">Fazedor</span> podem solicitar o cancelamento após o aceite, entrando em contacto direto com a nossa equipa.
+                Both the <span className="font-semibold text-foreground">Client</span> and the <span className="font-semibold text-foreground">Doer</span> can request cancellation after acceptance, by contacting our team directly.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-sm">
-                    <MessageSquare className="w-4 h-4 text-primary" /> Canais Internos
+                    <MessageSquare className="w-4 h-4 text-primary" /> Internal Channels
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Envie a sua situação detalhada através do canal de apoio disponível dentro da própria plataforma para validação imediata.
+                    Submit your detailed situation through the support channel available within the platform itself for immediate validation.
                   </p>
                 </div>
                 <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-sm">
-                    <AlertTriangle className="w-4 h-4 text-primary" /> Canais Externos
+                    <AlertTriangle className="w-4 h-4 text-primary" /> External Channels
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Comunicação via e-mail oficial de suporte ou WhatsApp para reportar incidentes que impeçam a realização do serviço.
+                    Communication via official support email or WhatsApp to report incidents that prevent the service from being carried out.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* 3. Limites e Vistorias */}
+            {/* 3. Limits and Inspections */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-amber-500" />
-                Limite de Cancelamentos
+                Cancellation Limit
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Para manter a integridade da comunidade Fazedores Angola, estabelecemos um <span className="font-semibold text-foreground">limite de 3 cancelamentos mensais</span> por usuário. 
+                To maintain the integrity of the Fazedores Angola community, we have established a <span className="font-semibold text-foreground">limit of 3 monthly cancellations</span> per user.
                 <br /><br />
-                Ao atingir este limite, a conta entrará automaticamente em um processo de <span className="font-semibold text-foreground">vistoria técnica e análise de comportamento</span> pela nossa equipa de qualidade. Cancelamentos indevidos recorrentes podem resultar em sanções administrativas ou suspensão do acesso.
+                Upon reaching this limit, the account will automatically enter a process of <span className="font-semibold text-foreground">technical inspection and behavior analysis</span> by our quality team. Recurring improper cancellations may result in administrative sanctions or access suspension.
               </p>
             </section>
 
-            {/* 4. Segurança e Conduta */}
+            {/* 4. Safety and Conduct */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Briefcase className="w-5 h-5 text-primary" />
-                Proteção à Agenda do Fazedor
+                Doer Schedule Protection
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Este fluxo existe para prevenir cancelamentos de última hora que geram prejuízos logísticos e perda de outras oportunidades de trabalho para o fazedor. Da mesma forma, protege o cliente contra desistências sem aviso prévio por parte do prestador.
+                This flow exists to prevent last-minute cancellations that cause logistical losses and the loss of other work opportunities for the doer. Likewise, it protects the client against withdrawals without prior notice from the provider.
               </p>
             </section>
           </motion.div>

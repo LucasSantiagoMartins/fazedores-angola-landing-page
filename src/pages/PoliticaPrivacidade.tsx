@@ -19,11 +19,11 @@ const PoliticaPrivacidade = () => {
               <Shield className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Política de Privacidade – Fazedores Angola
+              Privacy Policy – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Comprometemo-nos com a proteção dos seus dados em total conformidade 
-              com a Lei de Proteção de Dados Pessoais de Angola.
+              We are committed to protecting your data in full compliance
+              with Angola's Personal Data Protection Law.
             </p>
           </motion.div>
 
@@ -33,69 +33,69 @@ const PoliticaPrivacidade = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-10"
           >
-            {/* 1. Dados Coletados */}
+            {/* 1. Data Collected */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Database className="w-5 h-5 text-primary" />
-                1. Informações que Coletamos
+                1. Information We Collect
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
-                <li><span className="font-semibold text-foreground">Identificação:</span> Nome, BI, e dados de contacto para validação de conta.</li>
-                <li><span className="font-semibold text-foreground">Conteúdo Multimédia:</span> Imagens e vídeos enviados pelos fazedores para edição e criação de cartazes publicitários.</li>
-                <li><span className="font-semibold text-foreground">Dados de Localização:</span> Utilizados para conectar clientes a fazedores próximos em Luanda e outras províncias.</li>
-                <li><span className="font-semibold text-foreground">Transações de Planos:</span> Registos de pagamento de subscrições e comissões via Multicaixa Express ou Referência.</li>
+                <li><span className="font-semibold text-foreground">Identification:</span> Name, ID, and contact details for account validation.</li>
+                <li><span className="font-semibold text-foreground">Multimedia Content:</span> Images and videos submitted by doers for editing and the creation of advertising posters.</li>
+                <li><span className="font-semibold text-foreground">Location Data:</span> Used to connect clients with nearby doers in Luanda and other provinces.</li>
+                <li><span className="font-semibold text-foreground">Plan Transactions:</span> Records of subscription and commission payments via Multicaixa Express or Reference.</li>
               </ul>
             </section>
 
-            {/* 2. Uso dos Dados */}
+            {/* 2. Use of Data */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Eye className="w-5 h-5 text-primary" />
-                2. Como Utilizamos os Seus Dados
+                2. How We Use Your Data
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Os seus dados têm finalidades específicas dentro do nosso ecossistema:
+                Your data has specific purposes within our ecosystem:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
-                <li>Viabilizar a conexão direta e comunicação entre cliente e fazedor.</li>
-                <li>Transformar o material bruto enviado pelos fazedores em conteúdos de marketing profissionais.</li>
-                <li>Gerir o estado de atividade da conta com base no histórico de pagamentos de comissões.</li>
-                <li>Promover o perfil dos fazedores em redes sociais e canais oficiais da plataforma.</li>
+                <li>Enable direct connection and communication between client and doer.</li>
+                <li>Transform raw material submitted by doers into professional marketing content.</li>
+                <li>Manage account activity status based on commission payment history.</li>
+                <li>Promote doers' profiles on social networks and the platform's official channels.</li>
               </ul>
             </section>
 
-            {/* 3. Partilha de Informação */}
+            {/* 3. Information Sharing */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Share2 className="w-5 h-5 text-primary" />
-                3. Partilha de Informação
+                3. Information Sharing
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">Entre Usuários:</span> Partilhamos o contacto do fazedor com o cliente apenas quando uma solicitação é aceite, para permitir o pagamento direto do serviço.
+                <span className="font-semibold text-foreground">Between Users:</span> We share the doer's contact with the client only when a request is accepted, to allow direct payment for the service.
                 <br /><br />
-                <span className="font-semibold text-foreground">Público:</span> Os cartazes e banners criados pela nossa equipa de design serão públicos para maximizar a sua visibilidade e atrair novos clientes.
+                <span className="font-semibold text-foreground">Public:</span> Posters and banners created by our design team will be public to maximize visibility and attract new clients.
               </p>
             </section>
 
-            {/* 4. Segurança */}
+            {/* 4. Security */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Lock className="w-5 h-5 text-primary" />
-                4. Segurança e Retenção
+                4. Security and Retention
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Utilizamos protocolos de criptografia e servidores seguros para proteger as suas informações. Como não processamos o pagamento direto do serviço (apenas subscrições), não armazenamos dados de cartões bancários de clientes, apenas os comprovativos de pagamento de taxas enviados pelos fazedores.
+                We use encryption protocols and secure servers to protect your information. Since we do not process direct service payments (only subscriptions), we do not store client bank card data, only the payment receipts for fees submitted by doers.
               </p>
             </section>
 
-            {/* 5. Direitos do Usuário */}
+            {/* 5. User Rights */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Settings className="w-5 h-5 text-primary" />
-                5. Seus Direitos
+                5. Your Rights
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                De acordo com a legislação angolana, você pode solicitar a qualquer momento o acesso, correção ou eliminação definitiva dos seus dados pessoais dos nossos sistemas de visibilidade através do email oficial: <span className="text-primary font-medium">contacto@fazedoresangola.com</span>.
+                In accordance with Angolan legislation, you may request at any time access, correction, or permanent deletion of your personal data from our visibility systems through the official email: <span className="text-primary font-medium">contacto@fazedoresangola.com</span>.
               </p>
             </section>
           </motion.div>

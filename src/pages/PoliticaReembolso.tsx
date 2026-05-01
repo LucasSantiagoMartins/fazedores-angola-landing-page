@@ -19,10 +19,10 @@ const PoliticaReembolso = () => {
               <RefreshCcw className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Política de Reembolso – Fazedores Angola
+              Refund Policy – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Regras e procedimentos para estornos de valores na plataforma.
+              Rules and procedures for refunds on the platform.
             </p>
           </motion.div>
 
@@ -35,20 +35,20 @@ const PoliticaReembolso = () => {
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <DollarSign className="w-5 h-5 text-primary" />
-                1. Elegibilidade para Reembolso
+                1. Refund Eligibility
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                O reembolso é aplicável **somente** nas seguintes condições:
+                Refunds are applicable **only** under the following conditions:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
                 <li>
-                  <span className="font-semibold text-foreground">Pagamento 100% Antecipado:</span> O serviço foi pago integralmente e se enquadra nas regras de cancelamento ou falha de execução.
+                  <span className="font-semibold text-foreground">100% Upfront Payment:</span> The service was paid in full and falls within the cancellation or execution failure rules.
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">Cancelamento:</span> O serviço foi cancelado após aceitação, mas a plataforma determinou que o cliente tem direito ao estorno (conforme Política de Cancelamento).
+                  <span className="font-semibold text-foreground">Cancellation:</span> The service was cancelled after acceptance, and the platform determined that the client is entitled to a refund (per the Cancellation Policy).
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">Execução Incorreta:</span> Foi verificada uma execução significativa e comprovada incorreta do serviço pelo prestador.
+                  <span className="font-semibold text-foreground">Incorrect Execution:</span> A significant and proven incorrect execution of the service by the provider was verified.
                 </li>
               </ul>
             </section>
@@ -56,49 +56,49 @@ const PoliticaReembolso = () => {
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-red-600" />
-                2. Situações NÃO Elegíveis
+                2. Non-Eligible Situations
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Não há direito a reembolso nos seguintes casos:
+                There is no right to a refund in the following cases:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
-                <li>Pagamentos realizados em **50% antecipado ou em mão** (fora do ambiente digital da plataforma).</li>
-                <li>Insatisfação subjetiva que não se baseia em uma falha de serviço clara.</li>
-                <li>Serviços corretamente concluídos e **confirmados** pelo cliente na plataforma.</li>
-                <li>A simples **não confirmação** da conclusão de um serviço pelo cliente.</li>
+                <li>Payments made as **50% upfront or in cash** (outside the platform's digital environment).</li>
+                <li>Subjective dissatisfaction not based on a clear service failure.</li>
+                <li>Services correctly completed and **confirmed** by the client on the platform.</li>
+                <li>Simple **non-confirmation** of service completion by the client.</li>
               </ul>
             </section>
 
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-primary" />
-                3. Processo de Análise e Decisão
+                3. Review and Decision Process
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
                 <li>
-                  <span className="font-semibold text-foreground">Solicitação:</span> O pedido deve ser feito pelo cliente via funcionalidade de **reportar problema** na plataforma.
+                  <span className="font-semibold text-foreground">Request:</span> The request must be made by the client via the **report a problem** feature on the platform.
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">Análise:</span> A solicitação será analisada pela equipe da Fazedores Angola. Serão considerados todos os dados, evidências e a comunicação entre as partes.
+                  <span className="font-semibold text-foreground">Review:</span> The request will be reviewed by the Fazedores Angola team. All data, evidence, and communication between the parties will be considered.
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">Decisão Final:</span> A decisão sobre a concessão ou recusa do reembolso é exclusiva e final da plataforma.
+                  <span className="font-semibold text-foreground">Final Decision:</span> The decision to grant or deny the refund is exclusive and final by the platform.
                 </li>
-                <li>Casos de força maior ou contestação por abuso/má-fé serão analisados individualmente.</li>
+                <li>Force majeure cases or contestations for abuse/bad faith will be reviewed individually.</li>
               </ul>
             </section>
 
             <section className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
-                4. Prazos e Processamento
+                4. Deadlines and Processing
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
                 <li>
-                  <span className="font-semibold text-foreground">Prazo de Processamento:</span> Os reembolsos aprovados serão processados em até **10 dias úteis** após a comunicação da decisão final ao cliente.
+                  <span className="font-semibold text-foreground">Processing Time:</span> Approved refunds will be processed within up to **10 business days** after communicating the final decision to the client.
                 </li>
-                <li>O tempo para o valor estornado aparecer na conta do cliente é variável e depende estritamente dos prazos de processamento das instituições bancárias envolvidas.</li>
-                <li>Recursos contestados são analisados individualmente, com a decisão comunicada claramente ao cliente.</li>
+                <li>The time for the refunded amount to appear in the client's account is variable and depends strictly on the processing times of the banking institutions involved.</li>
+                <li>Contested appeals are reviewed individually, with the decision clearly communicated to the client.</li>
               </ul>
             </section>
           </motion.div>
