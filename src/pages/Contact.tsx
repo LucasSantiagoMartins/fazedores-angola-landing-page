@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, Send, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -41,17 +41,17 @@ const ContactPage = () => {
     const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = "O nome é obrigatório";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "O e-mail é obrigatório";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = "Invalid email format";
+      newErrors.email = "Formato de e-mail inválido";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = "A mensagem é obrigatória";
     }
 
     setErrors(newErrors);
@@ -63,7 +63,6 @@ const ContactPage = () => {
   ) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
-    // Clear error when user starts typing
     if (errors[id as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [id]: undefined }));
     }
@@ -91,18 +90,17 @@ const ContactPage = () => {
       );
 
       toast({
-        title: "Message sent!",
-        description: "We will get back to you shortly.",
+        title: "Mensagem enviada!",
+        description: "Entraremos em contacto consigo em breve.",
       });
 
-      // Clear form
       setFormData({ name: "", email: "", message: "" });
       setErrors({});
     } catch (error) {
       console.error("EmailJS error:", error);
       toast({
-        title: "Sending error",
-        description: "An error occurred. Please try again.",
+        title: "Erro no envio",
+        description: "Ocorreu um erro. Por favor, tente novamente.",
         variant: "destructive",
       });
     } finally {
@@ -126,11 +124,11 @@ const ContactPage = () => {
               <Send className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Get in Touch
+              Entre em Contacto
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Have a question, suggestion, or need support? Send us a
-              message or use our direct contacts.
+              Tem alguma dúvida, sugestão ou precisa de suporte? Envie-nos uma
+              mensagem ou utilize os nossos contactos diretos.
             </p>
           </motion.div>
 
@@ -139,10 +137,10 @@ const ContactPage = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-2 space-y-8 p-8 bg-card rounded-2xl shadow-lg border border-border h-fit"
+              className="lg:col-span-2 space-y-8 p-8 bg-card rounded-[2.5rem] shadow-lg border border-border h-fit"
             >
               <h2 className="text-xl font-semibold text-foreground border-b border-border/50 pb-3">
-                Support Information
+                Informações de Suporte
               </h2>
 
               <div className="space-y-4">
@@ -150,7 +148,7 @@ const ContactPage = () => {
                   <Mail className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-foreground">
-                      Contact Email
+                      E-mail de Contacto
                     </p>
                     <a
                       href="mailto:contacto@fazedoresangola.ao"
@@ -164,16 +162,15 @@ const ContactPage = () => {
                 <div className="flex items-start space-x-3">
                   <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-foreground">Phone</p>
+                    <p className="font-medium text-foreground">Telefone</p>
                     <a
-                      href="tel:+244921587661"
+                      href="tel:+244924686977"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       +244 924 686 977
                     </a>
                   </div>
                 </div>
-
               </div>
             </motion.div>
 
@@ -181,10 +178,10 @@ const ContactPage = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-3 bg-card rounded-2xl p-6 md:p-10 shadow-lg border border-border"
+              className="lg:col-span-3 bg-card rounded-[2.5rem] p-6 md:p-10 shadow-lg border border-border"
             >
               <h2 className="text-2xl font-semibold text-foreground mb-6">
-                Send Us a Message
+                Envie-nos uma Mensagem
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -194,15 +191,15 @@ const ContactPage = () => {
                       htmlFor="name"
                       className="block text-sm font-medium text-foreground mb-1"
                     >
-                      Full Name
+                      Nome Completo
                     </label>
                     <input
                       type="text"
                       id="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Your name"
-                      className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10 ${
+                      placeholder="Seu nome"
+                      className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 ${
                         errors.name ? "border-destructive" : "border-border"
                       }`}
                     />
@@ -215,15 +212,15 @@ const ContactPage = () => {
                       htmlFor="email"
                       className="block text-sm font-medium text-foreground mb-1"
                     >
-                      Email
+                      E-mail
                     </label>
                     <input
                       type="email"
                       id="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="your.email@example.com"
-                      className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10 ${
+                      placeholder="seu.email@exemplo.com"
+                      className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 ${
                         errors.email ? "border-destructive" : "border-border"
                       }`}
                     />
@@ -238,15 +235,15 @@ const ContactPage = () => {
                     htmlFor="message"
                     className="block text-sm font-medium text-foreground mb-1"
                   >
-                    Message
+                    Mensagem
                   </label>
                   <textarea
                     id="message"
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Describe your question in detail..."
-                    className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:bg-primary/10 ${
+                    placeholder="Descreva a sua dúvida em detalhe..."
+                    className={`w-full p-2 border rounded-lg bg-background text-foreground transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 ${
                       errors.message ? "border-destructive" : "border-border"
                     }`}
                   />
@@ -258,17 +255,17 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full md:w-auto px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-colors hover:bg-primary/90 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full md:w-auto px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full transition-colors hover:bg-primary/90 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      Sending...
+                      Enviando...
                     </>
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Send Message
+                      Enviar Mensagem
                     </>
                   )}
                 </button>

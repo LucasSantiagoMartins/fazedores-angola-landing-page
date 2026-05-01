@@ -53,7 +53,7 @@ export const PlansSection = () => {
       className="relative py-16 md:py-28 bg-background-subtle overflow-hidden"
       ref={ref}
     >
-      <div className="pointer-events-none absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-radial-primary opacity-60" />
+      <div className="pointer-events-none absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full   opacity-60" />
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

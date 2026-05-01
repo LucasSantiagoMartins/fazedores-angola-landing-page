@@ -20,7 +20,7 @@ export const FinalCTASection = () => {
           className="max-w-4xl mx-auto text-center glass rounded-2xl p-8 md:p-14 gpu"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Pronto para <span className="text-gradient">começar?</span>
+            Pronto para <span className="text-primary">começar?</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto mb-8">
             Crie a sua conta gratuitamente e descubra como a Fazedores Angola
@@ -38,7 +38,7 @@ export const FinalCTASection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Já tenho conta
+                Ir para a página inicial
                 <ArrowRight className="w-5 h-5" />
               </a>
             </DoerButton>

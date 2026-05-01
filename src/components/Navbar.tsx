@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 import logo from "@/assets/logo.webp";
 
 const navLinks = [
-  { href: "#about", label: "Sobre nós" },
-  { href: "#plans", label: "Planos" },
-  { href: "#services", label: "Como funciona" },
+  { href: "about", label: "Sobre nós" },
+  { href: "plans", label: "Planos" },
+  { href: "services", label: "Como funciona" },
 ];
 
 const socialLinks = [
@@ -23,6 +23,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   useEffect(() => {
@@ -42,17 +43,40 @@ export const Navbar = () => {
     };
   }, [isOpen]);
 
-  const handleNavClick = (href: string) => {
-    setIsOpen(false);
-    if (isHome) {
-      setTimeout(() => {
-        const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      window.location.href = "/" + href;
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
+
+  const handleNavClick = (id: string) => {
+    setIsOpen(false);
+    if (isHome) {
+      scrollToSection(id);
+    } else {
+      navigate("/", { state: { targetId: id } });
+    }
+  };
+
+  useEffect(() => {
+    if (isHome && location.state?.targetId) {
+      const targetId = location.state.targetId;
+      setTimeout(() => {
+        scrollToSection(targetId);
+        window.history.replaceState({}, document.title);
+      }, 300);
+    }
+  }, [isHome, location]);
 
   const shouldShowTransparent = isHome && !isScrolled;
 
@@ -68,7 +92,18 @@ export const Navbar = () => {
     >
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between relative">
-          <a href="/" className="flex items-center gap-3 group z-10">
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              if (isHome) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                navigate("/");
+              }
+            }}
+            href="/"
+            className="flex items-center gap-3 group z-10 cursor-pointer"
+          >
             <img
               src={logo}
               alt="Fazedores Angola"
@@ -148,7 +183,6 @@ export const Navbar = () => {
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
               className="fixed inset-0 z-[100] w-full h-[100dvh] bg-background lg:hidden flex flex-col shadow-2xl"
             >
-              {/* Top bar com logo + botão fechar sempre visível */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-border">
                 <img
                   src={logo}
@@ -164,7 +198,6 @@ export const Navbar = () => {
                 </button>
               </div>
 
-              {/* Conteúdo centrado */}
               <div className="flex-1 flex flex-col justify-center items-center gap-7 px-6 overflow-y-auto py-8">
                 {navLinks.map((link) => (
                   <button

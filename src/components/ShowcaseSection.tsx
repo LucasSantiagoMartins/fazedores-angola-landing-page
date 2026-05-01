@@ -37,7 +37,7 @@ export const ShowcaseSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-            Showcase — <span className="text-gradient">Marketing para Você</span>
+            Montra — <span className="text-gradient">Marketing para Si</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-2">
             Não apenas listamos o seu serviço. Construímos a sua imagem profissional para você se destacar no mercado.

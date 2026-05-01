@@ -73,7 +73,7 @@ export const SolutionSection = () => {
       className="relative py-16 md:py-28 bg-background overflow-hidden"
       ref={ref}
     >
-      <div className="pointer-events-none absolute -top-32 -right-20 w-[420px] h-[420px] rounded-full bg-radial-primary opacity-70" />
+      <div className="pointer-events-none absolute -top-32 -right-20 w-[420px] h-[420px] rounded-full  opacity-70" />
 
       <div className="container mx-auto px-4 relative mb-24">
         <motion.div

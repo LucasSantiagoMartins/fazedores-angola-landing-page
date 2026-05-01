@@ -2,20 +2,28 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import carpenterImg from "../assets/carpenter.jpg";
+import mechanicImg from "../assets/mechanic.jpg";
+import marketingImg from "../assets/marketing_team.jpg";
+
 const slides = [
   {
     title: "Serviços e crescimento profissional em Angola",
     description:
       "Conectamos clientes a prestadores qualificados. Peça um serviço ou torne-se prestador e cresça com a plataforma.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+    image: carpenterImg,
+  },
+  {
+    title: "Soluções técnicas com especialistas locais",
+    description:
+      "Encontre mecânicos e técnicos preparados para resolver os seus problemas com confiança e agilidade.",
+    image: mechanicImg,
   },
   {
     title: "Gestão, marketing e oportunidades para prestadores",
     description:
       "Mais do que um marketplace — uma plataforma completa de crescimento profissional para quem faz acontecer.",
-    image:
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
+    image: marketingImg,
   },
 ];
 
@@ -40,17 +48,18 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <h1 className="sr-only">Fazedores Angola — Serviços e crescimento profissional</h1>
+      <h1 className="sr-only">
+        Fazedores Angola — Serviços e crescimento profissional
+      </h1>
 
-      {/* Background image layer (fills entire hero, no gaps) */}
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "linear" }}
             className="absolute inset-0 gpu"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/85 z-10" />
@@ -95,7 +104,7 @@ export const Hero = () => {
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex items-center justify-center gap-4 mt-10 md:mt-12 relative z-30">
+        <div className="flex items-center justify-center gap-12 md:gap-20 mt-10 md:mt-12 relative z-30">
           <button
             onClick={prevSlide}
             className="w-11 h-11 rounded-full border border-white/30 bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all duration-300"

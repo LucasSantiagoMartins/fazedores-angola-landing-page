@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { XCircle, Clock, AlertTriangle, User, Briefcase, MessageSquare, Headphones } from "lucide-react";
+import {
+  XCircle,
+  Clock,
+  AlertTriangle,
+  Briefcase,
+  MessageSquare,
+  Headphones,
+} from "lucide-react";
 
 const PoliticaCancelamento = () => {
   return (
@@ -19,10 +26,11 @@ const PoliticaCancelamento = () => {
               <XCircle className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Cancellation Policy – Fazedores Angola
+              Política de Cancelamento – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Understand the cancellation flow and the importance of our mediation for the safety of clients and doers.
+              Entenda o fluxo de cancelamento e a importância da nossa mediação
+              para a segurança de clientes e fazedores.
             </p>
           </motion.div>
 
@@ -32,77 +40,112 @@ const PoliticaCancelamento = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-10"
           >
-            {/* 1. Cancellation Flow */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
-                Request States
+                Estados da Solicitação
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Each service on the platform is linked to a specific doer. Cancellation follows strict rules depending on the request status:
+                  Cada serviço na plataforma está vinculado a um fazedor
+                  específico. O cancelamento segue regras rigorosas dependendo
+                  do estado do pedido:
                 </p>
                 <ul className="list-disc list-inside space-y-4 ml-4">
                   <li>
-                    <span className="font-semibold text-foreground italic">Pending Request:</span> The client can cancel the request directly through the platform while the assigned doer has not yet confirmed acceptance of the service.
+                    <span className="font-semibold text-foreground">
+                      Solicitação Pendente:
+                    </span>{" "}
+                    O cliente pode cancelar o pedido diretamente pela plataforma
+                    enquanto o fazedor atribuído ainda não tiver confirmado a
+                    aceitação do serviço.
                   </li>
                   <li>
-                    <span className="font-semibold text-foreground italic">Accepted Service or Later:</span> Once the doer accepts the commitment, direct cancellation is blocked. Any interruption must be requested through our official channels for review.
+                    <span className="font-semibold text-foreground">
+                      Serviço Aceite ou Posterior:
+                    </span>{" "}
+                    Assim que o fazedor aceita o compromisso, o cancelamento
+                    direto é bloqueado. Qualquer interrupção deve ser solicitada
+                    através dos nossos canais oficiais para análise.
                   </li>
                 </ul>
               </div>
             </section>
 
-            {/* 2. How to Request Cancellation */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Headphones className="w-5 h-5 text-primary" />
-                Mandatory Mediation
+                Mediação Obrigatória
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Both the <span className="font-semibold text-foreground">Client</span> and the <span className="font-semibold text-foreground">Doer</span> can request cancellation after acceptance, by contacting our team directly.
+                Tanto o{" "}
+                <span className="font-semibold text-foreground">Cliente</span>{" "}
+                como o{" "}
+                <span className="font-semibold text-foreground">Fazedor</span>{" "}
+                podem solicitar o cancelamento após a aceitação, contactando
+                diretamente a nossa equipa.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
+                <div className="p-5 bg-primary/5 rounded-2xl border border-primary/10 shadow-sm">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-sm">
-                    <MessageSquare className="w-4 h-4 text-primary" /> Internal Channels
+                    <MessageSquare className="w-4 h-4 text-primary" /> Canais
+                    Internos
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Submit your detailed situation through the support channel available within the platform itself for immediate validation.
+                    Submeta a sua situação detalhada através do canal de suporte
+                    disponível dentro da própria plataforma para validação
+                    imediata.
                   </p>
                 </div>
-                <div className="p-5 bg-white rounded-2xl border border-border shadow-sm">
+                <div className="p-5 bg-primary/5 rounded-2xl border border-primary/10 shadow-sm">
                   <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-sm">
-                    <AlertTriangle className="w-4 h-4 text-primary" /> External Channels
+                    <AlertTriangle className="w-4 h-4 text-primary" /> Canais
+                    Externos
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Communication via official support email or WhatsApp to report incidents that prevent the service from being carried out.
+                    Comunicação via e-mail oficial de suporte ou WhatsApp para
+                    reportar incidentes que impossibilitem a realização do
+                    serviço.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* 3. Limits and Inspections */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-amber-500" />
-                Cancellation Limit
+                Limite de Cancelamentos
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                To maintain the integrity of the Fazedores Angola community, we have established a <span className="font-semibold text-foreground">limit of 3 monthly cancellations</span> per user.
-                <br /><br />
-                Upon reaching this limit, the account will automatically enter a process of <span className="font-semibold text-foreground">technical inspection and behavior analysis</span> by our quality team. Recurring improper cancellations may result in administrative sanctions or access suspension.
+                Para manter a integridade da comunidade Fazedores Angola,
+                estabelecemos um{" "}
+                <span className="font-semibold text-foreground">
+                  limite de 3 cancelamentos mensais
+                </span>{" "}
+                por utilizador.
+                <br />
+                <br />
+                Ao atingir este limite, a conta entrará automaticamente num
+                processo de{" "}
+                <span className="font-semibold text-foreground">
+                  inspeção técnica e análise de comportamento
+                </span>{" "}
+                pela nossa equipa de qualidade. Cancelamentos impróprios
+                recorrentes podem resultar em sanções administrativas ou
+                suspensão do acesso.
               </p>
             </section>
 
-            {/* 4. Safety and Conduct */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Briefcase className="w-5 h-5 text-primary" />
-                Doer Schedule Protection
+                Proteção da Agenda do Fazedor
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                This flow exists to prevent last-minute cancellations that cause logistical losses and the loss of other work opportunities for the doer. Likewise, it protects the client against withdrawals without prior notice from the provider.
+                Este fluxo existe para evitar cancelamentos de última hora que
+                causem prejuízos logísticos e a perda de outras oportunidades de
+                trabalho para o fazedor. Da mesma forma, protege o cliente
+                contra desistências sem aviso prévio por parte do prestador.
               </p>
             </section>
           </motion.div>

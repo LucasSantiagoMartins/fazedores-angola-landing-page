@@ -40,7 +40,7 @@ const StatItem = ({ stat, index, isInView }: { stat: typeof stats[0]; index: num
           <stat.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
         </div>
         <div className="text-center sm:text-left">
-          <p className="text-2xl md:text-3xl font-bold text-foreground">
+          <p className="text-2xl md:text-3xl font-medium text-foreground">
             {stat.prefix}{count}{stat.suffix}
           </p>
           <p className="text-muted-foreground text-xs md:text-sm font-medium uppercase tracking-wider">{stat.label}</p>

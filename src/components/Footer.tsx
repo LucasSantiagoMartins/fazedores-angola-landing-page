@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.webp";
 
 const usefulLinks = [
   { label: "FAQ / Perguntas Frequentes", href: "/perguntas-respostas" },
@@ -13,7 +14,10 @@ const policies = [
   { label: "Política de Privacidade", href: "/politica-privacidade" },
   { label: "Política de Cancelamento", href: "/politica-cancelamento" },
   { label: "Avaliações e feedback", href: "/avaliacoes-feedback" },
-  { label: "Normas de Prestação de Serviço", href: "/normas-prestacao-servico" },
+  {
+    label: "Normas de Prestação de Serviço",
+    href: "/normas-prestacao-servico",
+  },
 ];
 
 export const Footer = () => {
@@ -23,13 +27,17 @@ export const Footer = () => {
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-14 md:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12">
-          {/* Contact Info */}
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-5">
-              <span className="text-foreground font-bold text-xl">Fazedores Angola</span>
+              <img
+                src={logo}
+                alt="Fazedores Angola"
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
-              Plataforma de serviços e crescimento profissional para clientes e prestadores em Angola.
+              Plataforma de serviços e crescimento profissional para clientes e
+              prestadores em Angola.
             </p>
 
             <div className="space-y-3.5 text-muted-foreground text-sm">
@@ -37,25 +45,32 @@ export const Footer = () => {
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-foreground/90">Luanda, Angola</p>
-                  <p className="text-muted-foreground">Estalagem, Rua Beto Carneiro</p>
+                  <p className="text-muted-foreground">
+                    Estalagem, Rua Beto Carneiro
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:contacto@fazedoresangola.ao" className="hover:text-primary transition-colors">
+                <a
+                  href="mailto:contacto@fazedoresangola.ao"
+                  className="hover:text-primary transition-colors"
+                >
                   contacto@fazedoresangola.ao
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="tel:+244924686977" className="hover:text-primary transition-colors">
+                <a
+                  href="tel:+244924686977"
+                  className="hover:text-primary transition-colors"
+                >
                   +244 924 686 977
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Useful Links */}
           <div className="lg:col-span-3">
             <h3 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">
               Links Úteis
@@ -75,7 +90,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Policies */}
           <div className="lg:col-span-4">
             <h3 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">
               Políticas
@@ -97,11 +111,14 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright centralizado */}
       <div className="border-t border-border">
         <div className="container mx-auto px-4 py-6 relative">
           <p className="text-muted-foreground text-sm text-center">
-            © 2026 <span className="text-foreground font-semibold">Fazedores Angola</span>. Todos os direitos reservados.
+            © 2026{" "}
+            <span className="text-foreground font-semibold">
+              Fazedores Angola
+            </span>
+            . Todos os direitos reservados.
           </p>
           <motion.button
             onClick={scrollToTop}
