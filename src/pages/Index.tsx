@@ -8,7 +8,6 @@ import { StatsSection } from "@/components/StatsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
       <main>
         <Hero />
         <SolutionSection />
-        <HowItWorksSection />
         <OpportunitiesSection />
         <PlansSection />
         <ShowcaseSection />
