@@ -99,7 +99,7 @@ export const AboutSection = () => {
             >
               {values.map((value, index) => (
                 <SwiperSlide key={index} className="h-auto">
-                  <div className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card border border-border/50 h-full">
+                  <div className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card  h-full">
                     <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
