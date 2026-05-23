@@ -37,18 +37,6 @@ export const AboutSection = () => {
       className="py-16 md:py-32 bg-background overflow-hidden"
       ref={ref}
     >
-      <style>{`
-        .swiper-pagination-bullet {
-          background-color: white !important;
-          opacity: 0.4;
-          transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active {
-          opacity: 1 !important;
-          width: 24px !important;
-          border-radius: 9999px !important;
-        }
-      `}</style>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -101,7 +89,12 @@ export const AboutSection = () => {
               modules={[Pagination]}
               spaceBetween={20}
               slidesPerView={1.1}
-              pagination={{ clickable: true }}
+              pagination={{
+                clickable: true,
+                bulletClass:
+                  "swiper-pagination-bullet !bg-white !opacity-40 !transition-all !duration-300",
+                bulletActiveClass: "!opacity-100 !w-6 !rounded-full",
+              }}
               breakpoints={{
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },
