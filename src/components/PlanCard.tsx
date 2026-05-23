@@ -8,7 +8,7 @@ export const PlanCard = ({ plan, index, isInView }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="p-8 h-full bg-card rounded-3xl  border border-border"
+      className="p-8 h-full bg-card rounded-3xl"
     >
       <div className="h-full flex flex-col">
         <h3 className="font-semibold text-2xl mb-2">{plan.name}</h3>

@@ -83,8 +83,8 @@ const StatItem = ({
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       className="group will-change-transform"
     >
-      <div className="flex flex-col sm:flex-row items-center gap-4 p-5 rounded-2xl bg-card/50 md:hover:bg-card border border-border/50 md:hover:border-primary/30 transition-all duration-300">
-        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+      <div className="flex flex-col sm:flex-row items-center gap-4 p-5 rounded-2xl bg-card md:hover:border-primary/30 transition-all duration-300">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
           <stat.icon className="w-5 h-5 text-primary" />
         </div>
         <div className="text-center sm:text-left">
@@ -128,7 +128,7 @@ export const StatsSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Damos o suporte necessário para que você, prestador, deixe de
+                DamoTransformando serviços em renda e impactos o suporte necessário para que você, prestador, deixe de
                 depender apenas de indicações informais e passe a ter um fluxo
                 constante de oportunidades profissionais.
               </p>

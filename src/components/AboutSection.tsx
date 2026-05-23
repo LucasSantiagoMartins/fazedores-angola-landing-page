@@ -44,7 +44,7 @@ export const AboutSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Cabeçalho */}
+             
             <div className="mb-12 text-center lg:text-left">
               <p className="text-primary font-bold uppercase text-[10px] md:text-xs mb-3">
                 Fazedores Angola Prestação de Serviços (SU) LDA
@@ -59,8 +59,7 @@ export const AboutSection = () => {
                 serviços em Angola.
               </p>
             </div>
-
-            {/* Texto principal */}
+ 
             <div className="space-y-6 text-foreground/80 leading-relaxed text-base md:text-lg mb-12 max-w-3xl">
               <p>
                 A <strong>Fazedores Angola</strong> nasceu com o objetivo de
@@ -107,9 +106,9 @@ export const AboutSection = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.15 }}
-                    className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card h-full border border-white/5"
+                    className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card h-full"
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full   bg-primary/10 flex items-center justify-center">
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
 
