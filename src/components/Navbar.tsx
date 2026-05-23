@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
+import { Menu } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import DoerButton from "./DoerButton";
+import { MobileMenu } from "./MobileMenu";
 
 const navLinks = [
   { href: "about", label: "Sobre nós" },
@@ -25,88 +25,69 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+      window.scrollTo({
+        top: element.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: "smooth",
+      });
     }
   };
 
-  const handleNavClick = (id: string) => {
+  const handleNavClick = (id) => {
     setIsOpen(false);
-    if (isHome) {
-      scrollToSection(id);
-    } else {
-      navigate("/", { state: { targetId: id } });
-    }
+    isHome ? scrollToSection(id) : navigate("/", { state: { targetId: id } });
   };
-
-  useEffect(() => {
-    if (isHome && location.state?.targetId) {
-      const targetId = location.state.targetId;
-      setTimeout(() => {
-        scrollToSection(targetId);
-        window.history.replaceState({}, document.title);
-      }, 300);
-    }
-  }, [isHome, location]);
 
   const shouldShowTransparent = isHome && !isScrolled;
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        shouldShowTransparent
-          ? "bg-transparent py-5 border-b border-transparent"
-          : "bg-background/90 backdrop-blur-xl border-b border-border py-3"
-      }`}
-    >
-      <nav className="container mx-auto px-6">
-        <div className="flex items-center justify-between relative">
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          shouldShowTransparent
+            ? "bg-transparent py-5"
+            : "bg-background/90 backdrop-blur-xl border-b border-border py-3"
+        }`}
+      >
+        <nav className="container mx-auto px-6 flex items-center justify-between relative">
           <a
+            href="/"
+            className="cursor-pointer z-10"
             onClick={(e) => {
               e.preventDefault();
               isHome
                 ? window.scrollTo({ top: 0, behavior: "smooth" })
                 : navigate("/");
             }}
-            href="/"
-            className="flex items-center gap-3 group z-10 cursor-pointer"
           >
-            <img
-              src={logo}
-              alt="Fazedores Angola"
-              className="rounded-full h-10 w-auto transition-all duration-300 group-hover:scale-105"
-            />
+            <img src={logo} alt="Logo" className="rounded-full h-10 w-auto" />
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+          {/* Desktop Nav centralizada */}
+          <div className="hidden lg:flex gap-1 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`px-4 py-2 transition-all text-sm font-medium relative group ${
+                className={`px-4 py-2 text-sm font-medium ${
                   shouldShowTransparent ? "text-white/90" : "text-foreground/70"
-                } hover:text-primary`}
+                } hover:text-primary transition-colors`}
               >
                 {link.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-1/2" />
               </button>
             ))}
           </div>
 
-          {/* Desktop Actions */}
+          {/* Ações à direita */}
           <div className="hidden lg:flex items-center gap-3 z-10">
             <DoerButton
               variant="outline"
               className={
-                shouldShowTransparent ? "text-white/80" : "text-foreground/70"
+                shouldShowTransparent ? "text-white border-white/20" : ""
               }
             >
               <a
@@ -129,47 +110,22 @@ export const Navbar = () => {
           </div>
 
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 z-[101] relative ${shouldShowTransparent ? "text-white" : "text-foreground"}`}
+            onClick={() => setIsOpen(true)}
+            className={`lg:hidden z-10 ${
+              shouldShowTransparent ? "text-white" : "text-foreground"
+            }`}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <Menu size={28} />
           </button>
-        </div>
+        </nav>
+      </motion.header>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 z-[100] bg-background lg:hidden pt-24 pb-8 px-6 flex flex-col items-center"
-            >
-              <div className="flex flex-col gap-8 w-full max-w-sm items-center">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.href}
-                    onClick={() => handleNavClick(link.href)}
-                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </button>
-                ))}
-                <div className="w-full flex flex-col gap-4 pt-8 border-t border-border">
-                  <DoerButton variant="outline" className="w-full">
-                    <a href="https://app.fazedoresangola.ao/">Entrar</a>
-                  </DoerButton>
-                  <DoerButton variant="primary" className="w-full">
-                    <a href="https://app.fazedoresangola.ao/criar-conta">
-                      Criar conta
-                    </a>
-                  </DoerButton>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </motion.header>
+      <MobileMenu
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        navLinks={navLinks}
+        handleNavClick={handleNavClick}
+      />
+    </>
   );
 };

@@ -83,7 +83,7 @@ const StatItem = ({
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       className="group will-change-transform"
     >
-      <div className="flex flex-col sm:flex-row items-center gap-4 p-5 rounded-2xl bg-card md:hover:border-primary/30 transition-all duration-300">
+      <div className="flex flex-col sm:flex-row items-center gap-4 p-8 rounded-2xl bg-card md:hover:border-primary/30 transition-all duration-300">
         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
           <stat.icon className="w-5 h-5 text-primary" />
         </div>
@@ -93,7 +93,7 @@ const StatItem = ({
             {count}
             {stat.suffix}
           </p>
-          <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground">
+          <p className="text-[10px] md:text-xs font-medium uppercase  text-muted-foreground">
             {stat.label}
           </p>
         </div>
@@ -107,7 +107,10 @@ export const StatsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-16 md:py-28 bg-background overflow-hidden" ref={ref}>
+    <section
+      className="py-16 md:py-28 bg-background-subtle overflow-hidden"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="grid grid-cols-2 gap-3">
@@ -128,9 +131,10 @@ export const StatsSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                DamoTransformando serviços em renda e impactos o suporte necessário para que você, prestador, deixe de
-                depender apenas de indicações informais e passe a ter um fluxo
-                constante de oportunidades profissionais.
+                DamoTransformando serviços em renda e impactos o suporte
+                necessário para que você, prestador, deixe de depender apenas de
+                indicações informais e passe a ter um fluxo constante de
+                oportunidades profissionais.
               </p>
               <p>
                 Nossa tecnologia foi desenhada para valorizar o seu talento,
