@@ -84,17 +84,7 @@ export const Hero = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-4xl mx-auto text-center gpu"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full glass-dark text-white/90 text-xs sm:text-sm font-medium"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-primary-glow animate-pulse" />
-              Serviços profissionais em Angola
-            </motion.div>
-
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
               {slides[currentSlide].title}
             </h2>
 
