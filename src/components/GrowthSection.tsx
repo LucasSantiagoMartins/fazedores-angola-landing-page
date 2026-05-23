@@ -61,7 +61,7 @@ export const GrowthSection = () => {
                 delay: index * 0.08,
               }}
             >
-              <div className="h-full bg-card p-5 md:p-7 rounded-2xl border border-border transition-all duration-300 hover:border-primary/20">
+              <div className="h-full bg-card p-5 md:p-7 rounded-3xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
