@@ -25,7 +25,7 @@ export const SolutionSection = () => {
           <div className="w-full lg:w-1/2">
             <div className="relative w-full">
               <div className="group cursor-pointer w-full">
-                <div className="rounded-t-3xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 aspect-video flex items-center justify-center border-t border-x border-white/10">
+                <div className="rounded-t-3xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 h-[400px] flex items-center justify-center border-t border-x border-white/10">
                   <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <Play
                       size={32}

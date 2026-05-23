@@ -85,7 +85,7 @@ export const AboutSection = () => {
               </p>
             </div>
 
-            {/* Carrossel de Valores */}
+       
             <Swiper
               modules={[Pagination]}
               spaceBetween={20}
