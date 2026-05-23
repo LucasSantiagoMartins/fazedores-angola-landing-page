@@ -1,4 +1,4 @@
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { usePlans } from "@/hooks/usePlans";
 import { PlanSkeleton } from "./PlanSkeleton";
@@ -10,7 +10,11 @@ export const PlansSection = () => {
   const { plans, loading } = usePlans();
 
   return (
-    <section id="plans" className="py-10 md:py-28 bg-background-subtle" ref={ref}>
+    <section
+      id="plans"
+      className="py-10 md:py-28 bg-background-subtle"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -21,17 +25,18 @@ export const PlansSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* Slider manual no mobile, Grid no desktop */}
+        <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x scrollbar-hide">
           {loading ? (
             <PlanSkeleton />
           ) : (
             plans?.map((plan, index) => (
-              <PlanCard
+              <div
                 key={plan.id}
-                plan={plan}
-                index={index}
-                isInView={isInView}
-              />
+                className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center"
+              >
+                <PlanCard plan={plan} index={index} isInView={isInView} />
+              </div>
             ))
           )}
         </div>

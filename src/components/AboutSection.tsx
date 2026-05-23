@@ -34,25 +34,25 @@ export const AboutSection = () => {
       ref={ref}
     >
       <div className="container mx-auto px-4 relative">
-        {/* Container dos Cards - Grid no desktop, Slider no mobile */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 w-full absolute -top-56 md:-top-64 left-0 px-4 z-30 overflow-x-auto pb-4 md:pb-0 snap-x scrollbar-hide">
+        {/* Container dos Cards - Slider compacto no mobile sem scrollbar */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 w-full absolute -top-56 md:-top-72 left-0 px-4 z-30 overflow-x-auto pb-4 md:pb-0 snap-x scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {values.map((value, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card border border-border/50 shadow-2xl min-w-[280px] md:min-w-0 snap-center"
+              className="flex flex-col gap-2 p-3 md:p-8 rounded-3xl bg-card border border-border/50 shadow-2xl min-w-[200px] md:min-w-0 snap-center"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <value.icon className="w-6 h-6 text-primary" />
+              <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <value.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
               </div>
 
-              <h4 className="text-foreground font-bold text-lg">
+              <h4 className="text-foreground font-bold text-xs md:text-lg">
                 {value.title}
               </h4>
 
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed flex-grow">
+              <p className="text-muted-foreground text-[10px] md:text-base leading-relaxed flex-grow">
                 {value.description}
               </p>
             </motion.div>

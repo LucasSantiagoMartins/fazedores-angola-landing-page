@@ -8,19 +8,23 @@ export const PlanCard = ({ plan, index, isInView }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="p-8 h-full bg-card rounded-3xl"
+      className="p-5 h-full bg-card rounded-3xl border border-border/50 shadow-sm"
     >
       <div className="h-full flex flex-col">
-        <h3 className="font-semibold text-2xl mb-2">{plan.name}</h3>
-        <div className="mb-4">
-          <span className="text-3xl text-gradient font-medium">{formatPrice(plan.price)}</span>
+        <h3 className="font-semibold text-xl mb-1">{plan.name}</h3>
+        <div className="mb-3">
+          <span className="text-2xl text-gradient font-medium">
+            {formatPrice(plan.price)}
+          </span>
         </div>
-        <p className="text-sm mb-6 text-muted-foreground">{plan.description}</p>
-        <ul className="space-y-3 flex-1">
+        <p className="text-xs mb-4 text-muted-foreground leading-relaxed">
+          {plan.description}
+        </p>
+        <ul className="space-y-2 flex-1">
           {plan.benefits.map((benefit, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <Check className="w-5 h-5 text-primary flex-shrink-0" />
-              <span className="text-sm">{benefit}</span>
+            <li key={i} className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-xs">{benefit}</span>
             </li>
           ))}
         </ul>
