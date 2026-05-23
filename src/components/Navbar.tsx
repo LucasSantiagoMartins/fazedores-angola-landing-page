@@ -4,19 +4,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 import logo from "@/assets/logo.webp";
+import { DoerButton } from "./DoerButton"; // Importando seu componente de botão
 
 const navLinks = [
   { href: "about", label: "Sobre nós" },
   { href: "plans", label: "Planos" },
   { href: "services", label: "Como funciona" },
-];
-
-const socialLinks = [
-  {
-    icon: FaInstagram,
-    href: "https://instagram.com/fazedores_angola",
-    label: "Instagram",
-  },
 ];
 
 export const Navbar = () => {
@@ -32,30 +25,13 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
     }
   };
 
@@ -95,11 +71,9 @@ export const Navbar = () => {
           <a
             onClick={(e) => {
               e.preventDefault();
-              if (isHome) {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              } else {
-                navigate("/");
-              }
+              isHome
+                ? window.scrollTo({ top: 0, behavior: "smooth" })
+                : navigate("/");
             }}
             href="/"
             className="flex items-center gap-3 group z-10 cursor-pointer"
@@ -111,6 +85,7 @@ export const Navbar = () => {
             />
           </a>
 
+          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <button
@@ -126,119 +101,79 @@ export const Navbar = () => {
             ))}
           </div>
 
+          {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 z-10">
-            {socialLinks.map((social) => (
+            <DoerButton
+              asChild
+              variant="ghost"
+              className={
+                shouldShowTransparent ? "text-white/80" : "text-foreground/70"
+              }
+            >
               <a
-                key={social.label}
-                href={social.href}
+                href="https://app.fazedoresangola.ao/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                  shouldShowTransparent
-                    ? "border-white/20 text-white hover:bg-white hover:text-primary"
-                    : "border-primary/20 text-primary hover:bg-primary hover:text-white"
-                }`}
               >
-                <social.icon size={16} />
+                Entrar
               </a>
-            ))}
-            <a
-              href="https://app.fazedoresangola.ao/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-sm font-medium transition-colors ${
-                shouldShowTransparent
-                  ? "text-white/80 hover:text-white"
-                  : "text-foreground/70 hover:text-primary"
-              }`}
-            >
-              Entrar
-            </a>
-            <a
-              href="https://app.fazedoresangola.ao/criar-conta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 h-10 inline-flex items-center rounded-full text-sm font-medium btn-gradient shadow-glow hover:brightness-110 active:scale-[0.98] transition-all"
-            >
-              Criar conta
-            </a>
+            </DoerButton>
+            <DoerButton asChild variant="primary">
+              <a
+                href="https://app.fazedoresangola.ao/criar-conta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Criar conta
+              </a>
+            </DoerButton>
           </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 z-10 ${
-              shouldShowTransparent ? "text-white" : "text-foreground"
-            }`}
+            className={`lg:hidden p-2 z-[101] relative ${shouldShowTransparent ? "text-white" : "text-foreground"}`}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="fixed inset-0 z-[100] w-full h-[100dvh] bg-background lg:hidden flex flex-col shadow-2xl"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed inset-0 z-[100] bg-background lg:hidden pt-24 pb-8 px-6 flex flex-col items-center"
             >
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-                <img
-                  src={logo}
-                  alt="Fazedores Angola"
-                  className="rounded-full h-9 w-auto"
-                />
-                <button
-                  onClick={() => setIsOpen(false)}
-                  aria-label="Fechar menu"
-                  className="w-10 h-10 rounded-full bg-muted hover:bg-muted/80 text-foreground flex items-center justify-center transition-colors"
-                >
-                  <X size={22} />
-                </button>
-              </div>
-
-              <div className="flex-1 flex flex-col justify-center items-center gap-7 px-6 overflow-y-auto py-8">
+              <div className="flex flex-col gap-8 w-full max-w-sm items-center">
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href)}
-                    className="text-center text-2xl font-semibold text-foreground hover:text-primary transition-colors"
+                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
                   </button>
                 ))}
-                <div className="flex flex-col gap-3 w-full max-w-xs pt-4">
-                  <a
-                    href="https://app.fazedoresangola.ao/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full text-center px-6 py-3 rounded-full border border-border text-foreground font-medium hover:border-primary hover:text-primary transition-colors"
+                <div className="w-full flex flex-col gap-4 pt-8 border-t border-border">
+                  <DoerButton
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="w-full"
                   >
-                    Entrar
-                  </a>
-                  <a
-                    href="https://app.fazedoresangola.ao/criar-conta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full text-center px-6 h-12 inline-flex items-center justify-center rounded-full btn-gradient font-medium shadow-glow active:scale-[0.98] transition-all"
+                    <a href="https://app.fazedoresangola.ao/">Entrar</a>
+                  </DoerButton>
+                  <DoerButton
+                    asChild
+                    variant="primary"
+                    className="w-full"
                   >
-                    Criar conta
-                  </a>
-                </div>
-                <div className="flex gap-4 pt-6 border-t border-border w-full justify-center mt-2">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      className="text-primary p-3 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors"
-                    >
-                      <social.icon size={22} />
+                    <a href="https://app.fazedoresangola.ao/criar-conta">
+                      Criar conta
                     </a>
-                  ))}
+                  </DoerButton>
                 </div>
               </div>
             </motion.div>

@@ -30,7 +30,6 @@ export const FinalCTASection = () => {
             <DoerButton
               asChild
               variant="primary"
-              size="lg"
               className="w-full sm:w-auto"
             >
               <a
@@ -39,7 +38,7 @@ export const FinalCTASection = () => {
                 rel="noopener noreferrer"
               >
                 Ir para a página inicial
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-10 h-5" />
               </a>
             </DoerButton>
           </div>
