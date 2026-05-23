@@ -12,28 +12,28 @@ const useIsClient = () => {
 const stats = [
   {
     icon: Briefcase,
-    value: 965,
+    value: 0,
     label: "Serviços realizados",
     prefix: "+",
     suffix: "",
   },
   {
     icon: Users,
-    value: 235,
+    value: 0,
     label: "Fazedores ativos",
     prefix: "+",
     suffix: "",
   },
   {
     icon: Star,
-    value: 98,
+    value: 0,
     label: "Avaliação positiva",
     prefix: "",
     suffix: "%",
   },
   {
     icon: Rocket,
-    value: 100,
+    value: 0,
     label: "Foco em crescimento",
     prefix: "",
     suffix: "%",
@@ -49,7 +49,7 @@ const useCountUp = (
   const isClient = useIsClient();
 
   useEffect(() => {
-    if (!start || !isClient) return;
+    if (!start || !isClient || end === 0) return;
 
     let startTime: number | null = null;
     const animate = (currentTime: number) => {
