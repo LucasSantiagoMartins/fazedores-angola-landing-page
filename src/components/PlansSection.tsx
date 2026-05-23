@@ -25,8 +25,8 @@ export const PlansSection = () => {
           </p>
         </div>
 
-        {/* Slider manual no mobile, Grid no desktop */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x scrollbar-hide">
+        {/* Container do Slider: Esconde scrollbar, mantendo comportamento de slide */}
+        <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {loading ? (
             <PlanSkeleton />
           ) : (
