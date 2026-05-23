@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 import logo from "@/assets/logo.webp";
-import { DoerButton } from "./DoerButton"; // Importando seu componente de botão
+import DoerButton from "./DoerButton";
 
 const navLinks = [
   { href: "about", label: "Sobre nós" },
@@ -104,8 +104,7 @@ export const Navbar = () => {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 z-10">
             <DoerButton
-              asChild
-              variant="ghost"
+              variant="outline"
               className={
                 shouldShowTransparent ? "text-white/80" : "text-foreground/70"
               }
@@ -118,7 +117,7 @@ export const Navbar = () => {
                 Entrar
               </a>
             </DoerButton>
-            <DoerButton asChild variant="primary">
+            <DoerButton variant="primary">
               <a
                 href="https://app.fazedoresangola.ao/criar-conta"
                 target="_blank"
@@ -157,19 +156,10 @@ export const Navbar = () => {
                   </button>
                 ))}
                 <div className="w-full flex flex-col gap-4 pt-8 border-t border-border">
-                  <DoerButton
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="w-full"
-                  >
+                  <DoerButton variant="outline" className="w-full">
                     <a href="https://app.fazedoresangola.ao/">Entrar</a>
                   </DoerButton>
-                  <DoerButton
-                    asChild
-                    variant="primary"
-                    className="w-full"
-                  >
+                  <DoerButton variant="primary" className="w-full">
                     <a href="https://app.fazedoresangola.ao/criar-conta">
                       Criar conta
                     </a>

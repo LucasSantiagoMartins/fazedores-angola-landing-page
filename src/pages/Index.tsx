@@ -1,13 +1,12 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { SolutionSection } from "@/components/SolutionSection";
-// import { OpportunitiesSection } from "@/components/OpportunitiesSection";
 import { PlansSection } from "@/components/PlansSection";
-import { ShowcaseSection } from "@/components/ShowcaseSection";
 import { StatsSection } from "@/components/StatsSection";
 import { AboutSection } from "@/components/AboutSection";
-import { FinalCTASection } from "@/components/FinalCTASection";
+// import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
+import { GrowthSection } from "@/components/GrowthSection";
 
 const Index = () => {
   return (
@@ -16,12 +15,10 @@ const Index = () => {
       <main>
         <Hero />
         <SolutionSection />
-        {/* <OpportunitiesSection /> */}
+        <GrowthSection />
         <PlansSection />
-        <ShowcaseSection />
-        <StatsSection />
         <AboutSection />
-        <FinalCTASection />
+        <StatsSection />
       </main>
       <Footer />
     </div>

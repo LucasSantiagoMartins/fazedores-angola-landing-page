@@ -1,76 +1,85 @@
-import * as React from "react";
-import { Loader2 } from "lucide-react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { Slot } from "@radix-ui/react-slot";
-import { cn } from "@/lib/utils";
+import React from "react";
 
-const doerButtonVariants = cva(
-  "inline-flex items-center justify-center gap-2 h-10 rounded-full font-medium text-sm transition-all active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-  {
-    variants: {
-      variant: {
-        primary: "btn-gradient shadow-glow",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border",
-        outline:
-          "border border-border text-foreground hover:border-primary hover:text-primary",
-        ghost: "text-foreground hover:bg-muted",
-      },
-      size: {
-        default: "px-6",
-        lg: "h-12 px-8 text-base",
-        sm: "h-9 px-4 text-xs",
-      },
-    },
-    defaultVariants: {
-      variant: "primary",
-      size: "default",
-    },
-  },
-);
-
-export interface DoerButtonProps
-  extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof doerButtonVariants> {
-  asChild?: boolean;
-  loading?: boolean;
+interface DoerButtonProps {
+  children: React.ReactNode;
+  variant?:
+    | "none"
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "outline-blue"
+    | "social"
+    | "gray"
+    | "danger";
+  icon?: string;
+  iconPosition?: "left" | "right";
+  fullWidth?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit";
+  className?: string;
+  disabled?: boolean;
+  isLoading?: boolean;
 }
 
-export const DoerButton = React.forwardRef<HTMLButtonElement, DoerButtonProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      asChild = false,
-      loading,
-      children,
-      disabled,
-      ...props
-    },
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        ref={ref}
-        className={cn(doerButtonVariants({ variant, size }), className)}
-        disabled={disabled || loading}
-        {...props}
-      >
-        {loading ? (
-          <>
-            <Loader2 className="w-4 h-4 animate-spin" />
-            <span>A carregar...</span>
-          </>
-        ) : (
-          children
-        )}
-      </Comp>
-    );
-  },
-);
-DoerButton.displayName = "DoerButton";
+const DoerButton: React.FC<DoerButtonProps> = ({
+  children,
+  variant = "primary",
+  icon,
+  iconPosition = "right",
+  fullWidth = false,
+  onClick,
+  type = "button",
+  className = "",
+  disabled = false,
+  isLoading = false,
+}) => {
+  const baseStyles =
+    "h-10 rounded-full font-medium text-md flex items-center justify-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none";
 
-export { doerButtonVariants };
+  const variants = {
+    primary: "btn-gradient text-primary-foreground",
+    secondary: "bg-card text-foreground border border-border lg:hover:bg-muted",
+    outline:
+      "bg-transparent text-white/60 border border-white/10 lg:hover:bg-white/5 lg:hover:text-white",
+    "outline-blue":
+      "bg-transparent text-primary border border-primary lg:hover:bg-primary/10",
+    social:
+      "bg-card border border-border lg:hover:bg-muted text-foreground text-sm font-semibold",
+    gray: "bg-transparent border border-blue-500 text-blue-500 lg:hover:bg-blue-500/5",
+    danger:
+      "bg-transparent text-red-500 border border-red-500/40 lg:hover:bg-red-500/10",
+    none: "",
+  };
+
+  const isDisabled = disabled || isLoading;
+
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={isDisabled}
+      className={`
+        ${baseStyles}
+        ${variants[variant]}
+        ${fullWidth ? "w-full" : "px-6"}
+        ${className}
+      `}
+    >
+      {isLoading ? (
+        <p>Carregando...</p>
+      ) : (
+        <>
+          {icon && iconPosition === "left" && (
+            <span className="material-symbols-outlined">{icon}</span>
+          )}
+          {children}
+          {icon && iconPosition === "right" && (
+            <span className="material-symbols-outlined">{icon}</span>
+          )}
+        </>
+      )}
+    </button>
+  );
+};
+
+export default DoerButton;

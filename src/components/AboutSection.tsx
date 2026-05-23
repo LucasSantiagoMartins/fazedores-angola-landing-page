@@ -46,33 +46,42 @@ export const AboutSection = () => {
           >
             {/* Cabeçalho */}
             <div className="mb-12 text-center lg:text-left">
-              <p className="text-primary font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">
+              <p className="text-primary font-bold uppercase text-[10px] md:text-xs mb-3">
                 Fazedores Angola Prestação de Serviços (SU) LDA
               </p>
+
               <h3 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-2">
-                Lucas Santiago de Oliveira Martins
+                Sobre a <span className="text-gradient">Fazedores Angola</span>
               </h3>
+
               <p className="text-muted-foreground font-medium text-lg md:text-xl">
-                Fundador & Gerente
+                Tecnologia, oportunidades e crescimento para o mercado de
+                serviços em Angola.
               </p>
             </div>
 
             {/* Texto principal */}
             <div className="space-y-6 text-foreground/80 leading-relaxed text-base md:text-lg mb-12 max-w-3xl">
               <p>
-                A <strong>Fazedores Angola</strong> nasceu da visão de
-                transformar o mercado de serviços em Angola através da
-                tecnologia. Como especialistas em sistemas digitais, focamos em
-                criar uma solução que é um verdadeiro motor de crescimento.
+                A <strong>Fazedores Angola</strong> nasceu com o objetivo de
+                modernizar a forma como serviços são encontrados e realizados em
+                Angola, usando tecnologia para criar uma experiência mais
+                rápida, organizada e acessível para clientes e prestadores.
               </p>
+
+              <p>
+                Mais do que uma plataforma de serviços, construímos um
+                ecossistema focado em oportunidades, visibilidade e crescimento
+                sustentável para os fazedores que movimentam o mercado nacional.
+              </p>
+
               <p>
                 Acreditamos no princípio{" "}
                 <span className="text-primary font-semibold">
                   "Dividir para conquistar"
                 </span>
-                : nossa plataforma garante que oportunidades sejam distribuídas
-                de forma justa, permitindo que cada prestador impulsione todo o
-                ecossistema.
+                , promovendo uma distribuição mais equilibrada de oportunidades
+                para fortalecer toda a comunidade.
               </p>
             </div>
 
@@ -80,7 +89,7 @@ export const AboutSection = () => {
             <Swiper
               modules={[Pagination]}
               spaceBetween={20}
-              slidesPerView={1.1} // Mostra um pouco do próximo card no mobile
+              slidesPerView={1.1}
               pagination={{ clickable: true }}
               breakpoints={{
                 768: { slidesPerView: 2 },
@@ -94,9 +103,11 @@ export const AboutSection = () => {
                     <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
+
                     <h4 className="text-foreground font-bold text-lg">
                       {value.title}
                     </h4>
+
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed flex-grow">
                       {value.description}
                     </p>
