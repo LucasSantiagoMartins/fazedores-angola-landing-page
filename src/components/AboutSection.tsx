@@ -37,12 +37,24 @@ export const AboutSection = () => {
       className="py-16 md:py-32 bg-background overflow-hidden"
       ref={ref}
     >
+      <style>{`
+        .swiper-pagination-bullet {
+          background-color: white !important;
+          opacity: 0.4;
+          transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+          opacity: 1 !important;
+          width: 24px !important;
+          border-radius: 9999px !important;
+        }
+      `}</style>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Cabeçalho */}
             <div className="mb-12 text-center lg:text-left">
@@ -85,7 +97,6 @@ export const AboutSection = () => {
               </p>
             </div>
 
-       
             <Swiper
               modules={[Pagination]}
               spaceBetween={20}
@@ -99,7 +110,12 @@ export const AboutSection = () => {
             >
               {values.map((value, index) => (
                 <SwiperSlide key={index} className="h-auto">
-                  <div className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card  h-full">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: index * 0.15 }}
+                    className="flex flex-col gap-4 p-6 md:p-8 rounded-3xl bg-card h-full border border-white/5"
+                  >
                     <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
@@ -111,7 +127,7 @@ export const AboutSection = () => {
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed flex-grow">
                       {value.description}
                     </p>
-                  </div>
+                  </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>
