@@ -26,14 +26,14 @@ const stats = [
   },
   {
     icon: Star,
-    value: 0,
+    value: 95,
     label: "Avaliação positiva",
     prefix: "",
     suffix: "%",
   },
   {
     icon: Rocket,
-    value: 0,
+    value: 100,
     label: "Foco em crescimento",
     prefix: "",
     suffix: "%",
@@ -81,19 +81,21 @@ const StatItem = ({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="group will-change-transform"
+      className="group will-change-transform min-w-[200px] md:min-w-0 snap-center"
     >
-      <div className="flex flex-col sm:flex-row items-center gap-4 p-8 rounded-2xl bg-card md:hover:border-primary/30 transition-all duration-300">
-        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-          <stat.icon className="w-5 h-5 text-primary" />
+      <div className="flex flex-col gap-2 p-3 md:p-8 rounded-3xl bg-card border border-border/50 shadow-2xl transition-all duration-300 h-full">
+        <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+          <stat.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
         </div>
-        <div className="text-center sm:text-left">
-          <p className="text-2xl font-bold text-foreground tabular-nums">
+
+        <div>
+          <p className="text-xl md:text-2xl font-medium text-foreground tabular-nums">
             {stat.prefix}
             {count}
             {stat.suffix}
           </p>
-          <p className="text-[10px] md:text-xs font-medium uppercase  text-muted-foreground">
+
+          <p className="text-[10px] md:text-base leading-relaxed text-muted-foreground">
             {stat.label}
           </p>
         </div>
@@ -113,7 +115,7 @@ export const StatsSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="flex md:grid md:grid-cols-2 gap-4 overflow-x-auto pb-4 md:pb-0 snap-x scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {stats.map((stat, index) => (
               <StatItem
                 key={index}
@@ -129,6 +131,7 @@ export const StatsSection = () => {
               Transformando serviços em{" "}
               <span className="text-gradient">renda e impacto</span>
             </h2>
+
             <div className="space-y-4 text-muted-foreground">
               <p>
                 DamoTransformando serviços em renda e impactos o suporte
@@ -136,6 +139,7 @@ export const StatsSection = () => {
                 indicações informais e passe a ter um fluxo constante de
                 oportunidades profissionais.
               </p>
+
               <p>
                 Nossa tecnologia foi desenhada para valorizar o seu talento,
                 organizando o mercado angolano com transparência e justiça.

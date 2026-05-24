@@ -25,20 +25,24 @@ export const PlansSection = () => {
           </p>
         </div>
 
-        {/* Container do Slider: Esconde scrollbar, mantendo comportamento de slide */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {loading ? (
-            <PlanSkeleton />
-          ) : (
-            plans?.map((plan, index) => (
-              <div
-                key={plan.id}
-                className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center"
-              >
-                <PlanCard plan={plan} index={index} isInView={isInView} />
-              </div>
-            ))
-          )}
+        {/* Container do Slider */}
+        <div className="relative">
+          <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x pr-10 md:pr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {loading ? (
+              <PlanSkeleton />
+            ) : (
+              plans?.map((plan, index) => (
+                <div
+                  key={plan.id}
+                  className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center"
+                >
+                  <PlanCard plan={plan} index={index} isInView={isInView} />
+                </div>
+              ))
+            )}
+          </div>
+
+          <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-background-subtle to-transparent pointer-events-none md:hidden" />
         </div>
       </div>
     </section>

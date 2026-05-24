@@ -22,10 +22,10 @@ export const SolutionSection = () => {
             </p>
           </div>
 
-          <div className="w-full lg:w-1/2">
+          <div className="w-[100vw] md:w-full lg:w-1/2 -mx-4 md:mx-0">
             <div className="relative w-full">
               <div className="group cursor-pointer w-full">
-                <div className="rounded-t-3xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 h-80 flex items-center justify-center border-t border-x border-white/10">
+                <div className="w-full rounded-none md:rounded-t-2xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 h-80 flex items-center justify-center border-0 md:border-t md:border-x border-white/10">
                   <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <Play
                       size={32}
@@ -40,4 +40,4 @@ export const SolutionSection = () => {
       </div>
     </section>
   );
-};
+};  
