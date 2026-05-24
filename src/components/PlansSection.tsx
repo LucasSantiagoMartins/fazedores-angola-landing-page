@@ -27,7 +27,8 @@ export const PlansSection = () => {
 
         {/* Container do Slider */}
         <div className="relative">
-          <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x pr-10 md:pr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {/* Adicionado um padding extra na direita para garantir o corte visual do card */}
+          <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x pr-8 md:pr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             {loading ? (
               <PlanSkeleton />
             ) : (
@@ -42,7 +43,8 @@ export const PlansSection = () => {
             )}
           </div>
 
-          <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-background-subtle to-transparent pointer-events-none md:hidden" />
+          {/* Indicador visual de scroll (Gradiente lateral) */}
+          <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-background-subtle to-transparent pointer-events-none md:hidden z-10" />
         </div>
       </div>
     </section>
