@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, Instagram, Facebook, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import DoerButton from "./DoerButton";
 import { MobileMenu } from "./MobileMenu";
@@ -83,30 +83,62 @@ export const Navbar = () => {
           </div>
 
           {/* Ações à direita */}
-          <div className="hidden lg:flex items-center gap-3 z-10">
-            <DoerButton
-              variant="outline"
-              className={
-                shouldShowTransparent ? "text-white border-white/20" : ""
-              }
+          <div className="hidden lg:flex items-center gap-6 z-10">
+            {/* Redes Sociais */}
+            <div
+              className={`flex items-center gap-4 ${shouldShowTransparent ? "text-white/70" : "text-foreground/60"}`}
             >
               <a
-                href="https://app.fazedoresangola.ao/"
+                href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
               >
-                Entrar
+                <Instagram size={20} />
               </a>
-            </DoerButton>
-            <DoerButton variant="primary">
               <a
-                href="https://app.fazedoresangola.ao/criar-conta"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
               >
-                Criar conta
+                <Facebook size={20} />
               </a>
-            </DoerButton>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <DoerButton
+                variant="outline"
+                className={
+                  shouldShowTransparent ? "text-white border-white/20" : ""
+                }
+              >
+                <a
+                  href="https://app.fazedoresangola.ao/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Entrar
+                </a>
+              </DoerButton>
+              <DoerButton variant="primary">
+                <a
+                  href="https://app.fazedoresangola.ao/criar-conta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Criar conta
+                </a>
+              </DoerButton>
+            </div>
           </div>
 
           <button
