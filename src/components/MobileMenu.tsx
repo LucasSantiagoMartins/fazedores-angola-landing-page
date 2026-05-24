@@ -4,17 +4,23 @@ import { X } from "lucide-react";
 import DoerButton from "./DoerButton";
 
 export const MobileMenu = ({ isOpen, onClose, navLinks, handleNavClick }) => {
-  // Efeito para travar/destravar o scroll do body
   useEffect(() => {
     if (isOpen) {
+      // Bloqueia o scroll de forma robusta
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     } else {
+      // Restaura o scroll
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     }
 
-    // Cleanup caso o componente seja desmontado
     return () => {
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     };
   }, [isOpen]);
 
@@ -25,7 +31,7 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, handleNavClick }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center px-6 overflow-y-auto"
+          className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center px-6"
         >
           <button
             onClick={onClose}
@@ -34,7 +40,7 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, handleNavClick }) => {
             <X size={32} />
           </button>
 
-          <div className="flex flex-col gap-8 w-full max-w-sm items-center py-20">
+          <div className="flex flex-col gap-8 w-full max-w-sm items-center">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -46,22 +52,29 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, handleNavClick }) => {
             ))}
 
             <div className="w-full flex flex-col gap-4 pt-8 border-t border-border">
-              <DoerButton variant="outline" className="w-full">
+              {/* Ajuste nos botões para garantir alinhamento */}
+              <DoerButton
+                variant="outline"
+                className="w-full flex items-center justify-center"
+              >
                 <a
                   href="https://app.fazedoresangola.ao/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full h-full"
+                  className="w-full h-full flex items-center justify-center"
                 >
                   Entrar
                 </a>
               </DoerButton>
-              <DoerButton variant="primary" className="w-full">
+              <DoerButton
+                variant="primary"
+                className="w-full flex items-center justify-center"
+              >
                 <a
                   href="https://app.fazedoresangola.ao/criar-conta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full h-full"
+                  className="w-full h-full flex items-center justify-center"
                 >
                   Criar conta
                 </a>
