@@ -39,7 +39,7 @@ export const PlansSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Planos para <span className="text-gradient">Fazedores</span>
           </h2>
           <p className="text-muted-foreground text-lg">

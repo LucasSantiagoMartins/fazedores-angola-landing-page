@@ -36,14 +36,14 @@ export const GrowthSection = () => {
       ref={ref}
       className="py-16 md:py-28 bg-background relative overflow-hidden"
     >
-      {/* Elemento decorativo com animação de entrada dinâmica */}
+      {/* Elemento decorativo com tamanho reduzido e animação de subida */}
       <motion.img
-        initial={{ opacity: 0, x: 100, rotate: -20, scale: 0.8 }}
+        initial={{ opacity: 0, x: 100, rotate: -15, scale: 0.8 }}
         animate={isInView ? { opacity: 0.6, x: 0, rotate: 0, scale: 1 } : {}}
         transition={{ duration: 1, ease: "backOut" }}
         src="/triangle.png"
         alt=""
-        className="absolute bottom-0 right-0 h-full w-auto object-contain z-0 pointer-events-none"
+        className="absolute bottom-0 right-0 h-[85%] max-h-[500px] w-auto object-contain z-0 pointer-events-none"
       />
 
       <div className="container mx-auto px-4 relative z-10">
