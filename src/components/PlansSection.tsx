@@ -36,7 +36,7 @@ export const PlansSection = () => {
         </div>
 
         <div className="relative">
-          <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x pr-8 md:pr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x pr-8 md:pr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden items-stretch">
             {loading ? (
               <PlanSkeleton />
             ) : (
@@ -45,19 +45,27 @@ export const PlansSection = () => {
                 return (
                   <div
                     key={plan.id}
-                    className={`relative min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center p-[2px] rounded-[2.5rem] transition-all duration-300 ${
-                      isInfluencia
-                        ? "bg-gradient-to-b from-primary to-primary/50"
-                        : "bg-transparent"
-                    }`}
+                    className="relative min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center pt-8"
                   >
                     {isInfluencia && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[11px] font-bold px-6 py-1 rounded-full z-20 whitespace-nowrap shadow-xl uppercase">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-white text-[11px] font-bold px-6 py-1 rounded-full z-20 whitespace-nowrap shadow-xl uppercase">
                         Mais Popular
                       </div>
                     )}
-                    <div className="h-full bg-background rounded-[2.4rem] overflow-hidden">
-                      <PlanCard plan={plan} index={index} isInView={isInView} />
+                    <div
+                      className={`h-full p-[2px] rounded-[2.5rem] transition-all duration-300 ${
+                        isInfluencia
+                          ? "bg-gradient-to-b from-primary to-primary/50 md:scale-105 shadow-2xl"
+                          : "bg-transparent"
+                      }`}
+                    >
+                      <div className="h-full bg-background rounded-[2.4rem] overflow-hidden">
+                        <PlanCard
+                          plan={plan}
+                          index={index}
+                          isInView={isInView}
+                        />
+                      </div>
                     </div>
                   </div>
                 );
