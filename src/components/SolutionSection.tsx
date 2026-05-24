@@ -1,11 +1,10 @@
 import { Play } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const SolutionSection = () => {
   return (
-    // Removi o 'py-16 md:py-24' e substituí por 'pt-16 md:pt-24' para eliminar o espaço inferior
     <section className="bg-background-subtle pt-16 md:pt-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative">
-        {/* Usamos flex, items-end alinha os elementos na base da seção */}
         <div className="flex flex-col lg:flex-row items-end gap-12 lg:gap-20">
           {/* Texto à esquerda */}
           <div className="flex-1 flex flex-col gap-6 pb-16 md:pb-24">
@@ -22,7 +21,14 @@ export const SolutionSection = () => {
             </p>
           </div>
 
-          <div className="w-[100vw] md:w-full lg:w-1/2 -mx-4 md:mx-0">
+          {/* Vídeo com animação de subida suave */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-[100vw] md:w-full lg:w-1/2 -mx-4 md:mx-0"
+          >
             <div className="relative w-full">
               <div className="group cursor-pointer w-full">
                 <div className="w-full rounded-none md:rounded-t-2xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 h-80 flex items-center justify-center border-0 md:border-t md:border-x border-white/10">
@@ -35,9 +41,9 @@ export const SolutionSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-};  
+};

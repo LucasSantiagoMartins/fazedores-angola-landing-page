@@ -32,8 +32,21 @@ export const GrowthSection = () => {
   });
 
   return (
-    <section ref={ref} className="py-16 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
+    <section
+      ref={ref}
+      className="py-16 md:py-28 bg-background relative overflow-hidden"
+    >
+      {/* Elemento decorativo com animação de entrada dinâmica */}
+      <motion.img
+        initial={{ opacity: 0, x: 100, rotate: -20, scale: 0.8 }}
+        animate={isInView ? { opacity: 0.6, x: 0, rotate: 0, scale: 1 } : {}}
+        transition={{ duration: 1, ease: "backOut" }}
+        src="/triangle.png"
+        alt=""
+        className="absolute bottom-0 right-0 h-full w-auto object-contain z-0 pointer-events-none"
+      />
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -44,7 +57,7 @@ export const GrowthSection = () => {
             Cresça com a <span className="text-gradient">Fazedores Angola</span>
           </h2>
 
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-foreground text-base sm:text-lg max-w-2xl mx-auto">
             Mais visibilidade, oportunidades equilibradas e ferramentas para
             ajudar o seu negócio a crescer de forma profissional.
           </p>
@@ -70,7 +83,7 @@ export const GrowthSection = () => {
                   {feature.title}
                 </h3>
 
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-foreground text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

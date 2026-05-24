@@ -17,13 +17,7 @@ const stats = [
     prefix: "+",
     suffix: "",
   },
-  {
-    icon: Users,
-    value: 0,
-    label: "Fazedores ativos",
-    prefix: "+",
-    suffix: "",
-  },
+  { icon: Users, value: 0, label: "Fazedores ativos", prefix: "+", suffix: "" },
   {
     icon: Star,
     value: 95,
@@ -50,7 +44,6 @@ const useCountUp = (
 
   useEffect(() => {
     if (!start || !isClient || end === 0) return;
-
     let startTime: number | null = null;
     const animate = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
@@ -81,24 +74,21 @@ const StatItem = ({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="group will-change-transform min-w-[200px] md:min-w-0 snap-center"
+      className="flex flex-col items-center justify-center text-center gap-3 p-2"
     >
-      <div className="flex flex-col gap-2 p-3 md:p-8 rounded-3xl bg-card border border-border/50 shadow-2xl transition-all duration-300 h-full">
-        <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-          <stat.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
-        </div>
+      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+        <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+      </div>
 
-        <div>
-          <p className="text-xl md:text-2xl font-medium text-foreground tabular-nums">
-            {stat.prefix}
-            {count}
-            {stat.suffix}
-          </p>
-
-          <p className="text-[10px] md:text-base leading-relaxed text-muted-foreground">
-            {stat.label}
-          </p>
-        </div>
+      <div>
+        <p className="text-xl md:text-3xl font-bold text-white tabular-nums">
+          {stat.prefix}
+          {count}
+          {stat.suffix}
+        </p>
+        <p className="text-[10px] md:text-xs text-white/80 font-medium uppercase tracking-wider mt-1">
+          {stat.label}
+        </p>
       </div>
     </motion.div>
   );
@@ -110,42 +100,19 @@ export const StatsSection = () => {
 
   return (
     <section
-      className="py-16 md:py-28 bg-background-subtle overflow-hidden"
+      className="py-10 md:py-12 bg-gradient-primary overflow-hidden"
       ref={ref}
     >
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex md:grid md:grid-cols-2 gap-4 overflow-x-auto pb-4 md:pb-0 snap-x scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {stats.map((stat, index) => (
-              <StatItem
-                key={index}
-                stat={stat}
-                index={index}
-                isInView={isInView}
-              />
-            ))}
-          </div>
-
-          <div className="space-y-6">
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              Transformando serviços em{" "}
-              <span className="text-gradient">renda e impacto</span>
-            </h2>
-
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                DamoTransformando serviços em renda e impactos o suporte
-                necessário para que você, prestador, deixe de depender apenas de
-                indicações informais e passe a ter um fluxo constante de
-                oportunidades profissionais.
-              </p>
-
-              <p>
-                Nossa tecnologia foi desenhada para valorizar o seu talento,
-                organizando o mercado angolano com transparência e justiça.
-              </p>
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat, index) => (
+            <StatItem
+              key={index}
+              stat={stat}
+              index={index}
+              isInView={isInView}
+            />
+          ))}
         </div>
       </div>
     </section>
