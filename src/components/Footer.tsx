@@ -21,7 +21,10 @@ const policies = [
 ];
 
 export const Footer = () => {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="bg-card border-t border-border">
@@ -80,7 +83,7 @@ export const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    onClick={scrollToTop}
+                    onClick={() => scrollToTop()}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
@@ -99,7 +102,7 @@ export const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    onClick={scrollToTop}
+                    onClick={() => scrollToTop()}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
@@ -111,18 +114,20 @@ export const Footer = () => {
         </div>
       </div>
 
+      {/* Container do copyright ajustado para não quebrar layout */}
       <div className="border-t border-border">
-        <div className="container mx-auto px-4 py-6 relative">
-          <p className="text-muted-foreground text-sm text-center">
+        <div className="container mx-auto px-4 py-6 flex items-center justify-center relative">
+          <p className="text-muted-foreground text-sm">
             © 2026{" "}
             <span className="text-foreground font-semibold">
               Fazedores Angola
             </span>
             . Todos os direitos reservados.
           </p>
+
           <motion.button
             onClick={scrollToTop}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full btn-gradient flex items-center justify-center shadow-glow"
+            className="absolute right-4 w-10 h-10 rounded-full btn-gradient flex items-center justify-center shadow-glow"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Voltar ao topo"
