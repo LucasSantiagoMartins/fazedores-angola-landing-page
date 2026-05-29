@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Target, Eye, Users } from "lucide-react";
 
 const values = [
@@ -7,53 +6,20 @@ const values = [
     title: "Missão",
     description:
       "Conectar clientes e fazedores com praticidade, promovendo renda e valorizando o talento nacional.",
-    image: "/missao.webp",
   },
   {
     icon: Eye,
     title: "Visão",
     description:
       "Ser o ecossistema líder em Angola para serviços, reconhecido pela inovação e impacto digital.",
-    image: "/visao.webp",
   },
   {
     icon: Users,
     title: "Cultura",
     description:
       "Dividir para conquistar: distribuímos oportunidades e crescemos juntos como uma comunidade.",
-    image: "/cultura.webp",
   },
 ];
-
-const LazyImage = ({
-  src,
-  alt,
-  className,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-}) => {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <>
-      {!loaded && (
-        <div className="absolute inset-0 animate-pulse bg-muted/40" />
-      )}
-
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
-        className={`${className} transition-opacity duration-500 ${
-          loaded ? "opacity-25" : "opacity-0"
-        }`}
-      />
-    </>
-  );
-};
 
 export const AboutSection = () => {
   return (
@@ -103,31 +69,21 @@ export const AboutSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className={`relative overflow-hidden rounded-3xl bg-card ${
+                className={`relative overflow-hidden rounded-3xl bg-card border border-border/50 p-6 flex flex-col justify-end ${
                   index === 2 ? "col-span-2 h-48" : "h-64"
                 }`}
               >
-                <LazyImage
-                  src={value.image}
-                  alt={value.title}
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                />
-
-                <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-
-                <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-3 backdrop-blur-sm">
-                    <value.icon className="w-5 h-5 text-white" />
-                  </div>
-
-                  <h4 className="text-white font-bold text-lg">
-                    {value.title}
-                  </h4>
-
-                  <p className="text-white/80 text-sm mt-1 max-w-[85%]">
-                    {value.description}
-                  </p>
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                  <value.icon className="w-5 h-5 text-primary" />
                 </div>
+
+                <h4 className="text-foreground font-bold text-lg">
+                  {value.title}
+                </h4>
+
+                <p className="text-muted-foreground text-sm mt-1 max-w-[85%]">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -136,26 +92,20 @@ export const AboutSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden p-6 rounded-3xl bg-card shadow-lg border border-border/50"
+                className="relative overflow-hidden p-6 rounded-3xl bg-card"
               >
-                <LazyImage
-                  src={value.image}
-                  alt={value.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-
-                <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-
                 <div className="absolute top-6 right-6 z-10">
-                  <value.icon className="w-8 h-8 text-white" />
+                  <value.icon className="w-8 h-8 text-primary" />
                 </div>
 
                 <div className="relative z-10 pt-8">
-                  <h4 className="font-bold text-lg mb-2 text-white">
+                  <h4 className="font-bold text-lg mb-2 text-foreground">
                     {value.title}
                   </h4>
 
-                  <p className="text-white/80 text-sm">{value.description}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {value.description}
+                  </p>
                 </div>
               </div>
             ))}
