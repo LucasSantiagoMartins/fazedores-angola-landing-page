@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Target, Eye, Users } from "lucide-react";
 
 const values = [
@@ -26,6 +26,36 @@ const values = [
   },
 ];
 
+const LazyImage = ({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && (
+        <div className="absolute inset-0 animate-pulse bg-muted/40" />
+      )}
+
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`${className} transition-opacity duration-500 ${
+          loaded ? "opacity-25" : "opacity-0"
+        }`}
+      />
+    </>
+  );
+};
+
 export const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
@@ -38,7 +68,6 @@ export const AboutSection = () => {
     >
       <div className="container mx-auto px-4 relative">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
-          {/* Coluna da Esquerda: Conteúdo */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -48,38 +77,37 @@ export const AboutSection = () => {
               <p className="text-primary font-bold uppercase text-[10px] md:text-xs mb-3">
                 Fazedores Angola Prestação de Serviços (SU) LDA
               </p>
-              <h3 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-2 whitespace-nowrap">
+
+              <h3 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-2 leading-tight">
                 Sobre a <span className="text-gradient">Fazedores Angola</span>
               </h3>
-              <p className="text-muted-foreground font-medium text-base md:text-lg">
-                Tecnologia, oportunidades e crescimento para o mercado de
-                serviços em Angola.
+
+              <p className="text-muted-foreground font-medium text-sm md:text-base">
+                Tecnologia e oportunidades para o mercado de serviços em Angola.
               </p>
             </div>
 
             <div className="space-y-4 text-foreground/80 leading-relaxed text-sm md:text-base">
               <p>
                 A <strong>Fazedores Angola</strong> nasceu para modernizar a
-                forma como serviços são encontrados e realizados em Angola,
-                criando uma experiência mais rápida, organizada e acessível.
+                forma como serviços são encontrados e realizados em Angola.
               </p>
+
               <p>
-                Construímos um ecossistema focado em oportunidades, visibilidade
-                e crescimento sustentável para os fazedores que movimentam o
-                mercado nacional.
+                Criamos oportunidades, visibilidade e crescimento para os
+                fazedores que movimentam o mercado nacional.
               </p>
+
               <p>
                 Acreditamos no princípio{" "}
                 <span className="text-primary font-semibold">
                   "Dividir para conquistar"
                 </span>
-                , fortalecendo toda a comunidade através de uma distribuição
-                mais equilibrada de oportunidades.
+                .
               </p>
             </div>
           </motion.div>
 
-          {/* Coluna da Direita: Grid de Imagens */}
           <div className="hidden lg:grid grid-cols-2 gap-4 h-full">
             {values.map((value, index) => (
               <motion.div
@@ -87,25 +115,28 @@ export const AboutSection = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className={`relative overflow-hidden rounded-3xl bg-card border border-border/50 shadow-2xl ${
+                className={`relative overflow-hidden rounded-3xl bg-card ${
                   index === 2 ? "col-span-2 h-48" : "h-64"
                 }`}
               >
-                <img
+                <LazyImage
                   src={value.image}
                   alt={value.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 />
-                <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
+
+                <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+
                 <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-3">
-                    <value.icon className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-3 backdrop-blur-sm">
+                    <value.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="text-foreground font-bold text-lg">
+
+                  <h4 className="text-white font-bold text-lg">
                     {value.title}
                   </h4>
-                  <p className="text-muted-foreground text-sm mt-1">
+
+                  <p className="text-white/80 text-sm mt-1 max-w-[85%]">
                     {value.description}
                   </p>
                 </div>
@@ -113,27 +144,30 @@ export const AboutSection = () => {
             ))}
           </div>
 
-          {/* Mobile View: Empilhado sem scroll horizontal */}
           <div className="flex lg:hidden flex-col gap-4 w-full">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden p-6 rounded-3xl bg-card shadow-lg"
+                className="relative overflow-hidden p-6 rounded-3xl bg-card shadow-lg border border-border/50"
               >
-                <img
+                <LazyImage
                   src={value.image}
                   alt={value.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-10"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute top-6 right-6">
-                  <value.icon className="w-8 h-8 text-primary" />
+
+                <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+
+                <div className="absolute top-6 right-6 z-10">
+                  <value.icon className="w-8 h-8 text-white" />
                 </div>
+
                 <div className="relative z-10 pt-8">
-                  <h4 className="font-bold text-lg mb-2">{value.title}</h4>
-                  <p className="text-muted-foreground text-sm">
-                    {value.description}
-                  </p>
+                  <h4 className="font-bold text-lg mb-2 text-white">
+                    {value.title}
+                  </h4>
+
+                  <p className="text-white/80 text-sm">{value.description}</p>
                 </div>
               </div>
             ))}

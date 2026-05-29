@@ -1,8 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { Briefcase, Users, Star, Rocket } from "lucide-react";
+import { Briefcase, Users, Star } from "lucide-react";
 
-// Hook auxiliar para evitar conflitos de Hydration
 const useIsClient = () => {
   const [isClient, setIsClient] = useState(false);
 
@@ -131,7 +130,6 @@ export const StatsSection = () => {
       className="py-10 md:py-12 bg-gradient-primary overflow-visible relative"
       ref={ref}
     >
-      {/* Homem agora no lado esquerdo */}
       <motion.img
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -142,11 +140,11 @@ export const StatsSection = () => {
         }}
         src="/provider-man.png"
         alt="Fazedor"
-        className="hidden lg:block absolute bottom-0 left-10 h-[420px] w-auto object-contain z-20 pointer-events-none"
+        className="absolute bottom-0 right-0 lg:left-10 lg:right-auto h-[180px] md:h-[240px] lg:h-[420px] w-auto object-contain z-20 pointer-events-none"
       />
 
       <div className="container mx-auto px-4 relative z-10 flex justify-end">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ml-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ml-auto pr-24 md:pr-0">
           {stats.map((stat, index) => (
             <StatItem
               key={index}

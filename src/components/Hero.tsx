@@ -39,10 +39,12 @@ export const Hero = () => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 12000);
+
     return () => clearInterval(interval);
   }, []);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
@@ -63,7 +65,9 @@ export const Hero = () => {
             className="absolute inset-0 gpu"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/85 z-10" />
+
             <div className="absolute inset-0 bg-radial-primary z-10 opacity-70" />
+
             <img
               src={slides[currentSlide].image}
               alt=""
@@ -74,7 +78,23 @@ export const Hero = () => {
         </AnimatePresence>
       </div>
 
-      <div className="container mx-auto px-4 py-20 md:py-32 relative z-20">
+      <button
+        onClick={prevSlide}
+        className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-14 md:h-14 rounded-full border border-white/30 bg-black/30 backdrop-blur-md hover:bg-white/15 flex items-center justify-center transition-all duration-300"
+        aria-label="Anterior"
+      >
+        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-14 md:h-14 rounded-full border border-white/30 bg-black/30 backdrop-blur-md hover:bg-white/15 flex items-center justify-center transition-all duration-300"
+        aria-label="Próximo"
+      >
+        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+      </button>
+
+      <div className="container mx-auto px-6 md:px-4 py-20 md:py-32 relative z-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -82,9 +102,9 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="max-w-4xl mx-auto text-center gpu"
+            className="max-w-5xl mx-auto text-center gpu"
           >
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-[1.15] md:leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70 break-words px-2">
               {slides[currentSlide].title}
             </h2>
 
@@ -94,15 +114,7 @@ export const Hero = () => {
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex items-center justify-center gap-12 md:gap-20 mt-10 md:mt-12 relative z-30">
-          <button
-            onClick={prevSlide}
-            className="w-11 h-11 rounded-full border border-white/30 bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all duration-300"
-            aria-label="Anterior"
-          >
-            <ChevronLeft className="w-5 h-5 text-white" />
-          </button>
-
+        <div className="flex justify-center mt-10 md:mt-12 relative z-30">
           <div className="flex gap-2">
             {slides.map((_, index) => (
               <button
@@ -115,14 +127,6 @@ export const Hero = () => {
               />
             ))}
           </div>
-
-          <button
-            onClick={nextSlide}
-            className="w-11 h-11 rounded-full border border-white/30 bg-white/5 hover:bg-white/15 flex items-center justify-center transition-all duration-300"
-            aria-label="Próximo"
-          >
-            <ChevronRight className="w-5 h-5 text-white" />
-          </button>
         </div>
       </div>
     </section>
