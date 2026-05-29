@@ -9,18 +9,21 @@ import marketingImg from "../assets/marketing_team.jpg";
 const slides = [
   {
     title: "Serviços e crescimento profissional em Angola",
+    highlight: "Angola",
     description:
       "Conectamos clientes a prestadores qualificados. Peça um serviço ou torne-se prestador e cresça com a plataforma.",
     image: carpenterImg,
   },
   {
     title: "Soluções técnicas com especialistas locais",
+    highlight: "especialistas",
     description:
       "Encontre mecânicos e técnicos preparados para resolver os seus problemas com confiança e agilidade.",
     image: mechanicImg,
   },
   {
     title: "Gestão, marketing e oportunidades para prestadores",
+    highlight: "oportunidades",
     description:
       "Mais do que um marketplace — uma plataforma completa de crescimento profissional para quem faz acontecer.",
     image: marketingImg,
@@ -47,6 +50,11 @@ export const Hero = () => {
 
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  const currentTitle = slides[currentSlide].title;
+  const currentHighlight = slides[currentSlide].highlight;
+
+  const titleParts = currentTitle.split(currentHighlight);
 
   return (
     <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -104,8 +112,30 @@ export const Hero = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-5xl mx-auto text-center gpu"
           >
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-[1.15] md:leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70 break-words px-2">
-              {slides[currentSlide].title}
+            <h2
+              className="
+                font-display
+                text-3xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-7xl
+                font-bold
+                mb-4
+                md:mb-6
+                tracking-tight
+                text-white
+                px-2
+                break-words
+                leading-[1.2]
+                md:leading-[1.15]
+                pb-[0.12em]
+              "
+            >
+              {titleParts[0]}
+
+              <span className="text-gradient">{currentHighlight}</span>
+
+              {titleParts[1]}
             </h2>
 
             <p className="text-foreground/90 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2">

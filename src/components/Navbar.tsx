@@ -89,7 +89,7 @@ export const Navbar = () => {
               className={`flex items-center gap-4 ${shouldShowTransparent ? "text-white/70" : "text-foreground/60"}`}
             >
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/fazedores_angola"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
@@ -97,7 +97,7 @@ export const Navbar = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/fazedores_angola"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
@@ -105,7 +105,7 @@ export const Navbar = () => {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/company/fazedores-angola"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
