@@ -48,7 +48,7 @@ export const AboutSection = () => {
               <p className="text-primary font-bold uppercase text-[10px] md:text-xs mb-3">
                 Fazedores Angola Prestação de Serviços (SU) LDA
               </p>
-              <h3 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-2">
+              <h3 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-2 whitespace-nowrap">
                 Sobre a <span className="text-gradient">Fazedores Angola</span>
               </h3>
               <p className="text-muted-foreground font-medium text-base md:text-lg">
@@ -79,7 +79,7 @@ export const AboutSection = () => {
             </div>
           </motion.div>
 
-          {/* Coluna da Direita: Grid de Imagens com Conteúdo */}
+          {/* Coluna da Direita: Grid de Imagens */}
           <div className="hidden lg:grid grid-cols-2 gap-4 h-full">
             {values.map((value, index) => (
               <motion.div
@@ -94,10 +94,10 @@ export const AboutSection = () => {
                 <img
                   src={value.image}
                   alt={value.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-20"
                 />
                 <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
-
                 <div className="relative z-10 p-6 flex flex-col justify-end h-full">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                     <value.icon className="w-5 h-5 text-primary" />
@@ -113,23 +113,28 @@ export const AboutSection = () => {
             ))}
           </div>
 
-          {/* Mobile View */}
-          <div className="flex lg:hidden gap-4 w-full overflow-x-auto pb-4 snap-x scrollbar-hide">
+          {/* Mobile View: Empilhado sem scroll horizontal */}
+          <div className="flex lg:hidden flex-col gap-4 w-full">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden flex flex-col gap-2 p-6 rounded-3xl bg-card  shadow-2xl min-w-[260px] snap-center"
+                className="relative overflow-hidden p-6 rounded-3xl bg-card shadow-lg border border-border/50"
               >
                 <img
                   src={value.image}
                   alt={value.title}
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-10"
                 />
-                <value.icon className="w-8 h-8 text-primary" />
-                <h4 className="font-bold text-lg">{value.title}</h4>
-                <p className="text-muted-foreground text-sm">
-                  {value.description}
-                </p>
+                <div className="absolute top-6 right-6">
+                  <value.icon className="w-8 h-8 text-primary" />
+                </div>
+                <div className="relative z-10 pt-8">
+                  <h4 className="font-bold text-lg mb-2">{value.title}</h4>
+                  <p className="text-muted-foreground text-sm">
+                    {value.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
