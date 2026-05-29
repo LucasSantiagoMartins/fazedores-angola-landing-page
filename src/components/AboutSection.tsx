@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Target, Eye, Users } from "lucide-react";
 
 const values = [
@@ -57,22 +56,14 @@ const LazyImage = ({
 };
 
 export const AboutSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
     <section
       id="about"
       className="py-8 md:py-14 bg-background relative z-20 mt-20"
-      ref={ref}
     >
       <div className="container mx-auto px-4 relative">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <div>
             <div className="mb-8 text-center lg:text-left">
               <p className="text-primary font-bold uppercase text-[10px] md:text-xs mb-3">
                 Fazedores Angola Prestação de Serviços (SU) LDA
@@ -106,15 +97,12 @@ export const AboutSection = () => {
                 .
               </p>
             </div>
-          </motion.div>
+          </div>
 
           <div className="hidden lg:grid grid-cols-2 gap-4 h-full">
             {values.map((value, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
                 className={`relative overflow-hidden rounded-3xl bg-card ${
                   index === 2 ? "col-span-2 h-48" : "h-64"
                 }`}
@@ -140,7 +128,7 @@ export const AboutSection = () => {
                     {value.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 

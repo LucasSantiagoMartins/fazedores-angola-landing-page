@@ -1,14 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Briefcase, Users, Star } from "lucide-react";
-
-const useIsClient = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => setIsClient(true), []);
-
-  return isClient;
-};
 
 const stats = [
   {
@@ -34,70 +25,9 @@ const stats = [
   },
 ];
 
-const useCountUp = (
-  end: number,
-  duration: number = 2000,
-  start: boolean = false,
-  delay: number = 0,
-) => {
-  const [count, setCount] = useState(0);
-  const isClient = useIsClient();
-
-  useEffect(() => {
-    if (!start || !isClient || end === 0) return;
-
-    let startTime: number | null = null;
-    let animationFrame: number;
-
-    const timeout = setTimeout(() => {
-      const animate = (currentTime: number) => {
-        if (startTime === null) startTime = currentTime;
-
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-
-        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-
-        setCount(Math.floor(easeOutCubic * end));
-
-        if (progress < 1) {
-          animationFrame = requestAnimationFrame(animate);
-        }
-      };
-
-      animationFrame = requestAnimationFrame(animate);
-    }, delay);
-
-    return () => {
-      clearTimeout(timeout);
-      cancelAnimationFrame(animationFrame);
-    };
-  }, [end, duration, start, delay, isClient]);
-
-  return count;
-};
-
-const StatItem = ({
-  stat,
-  index,
-  isInView,
-}: {
-  stat: (typeof stats)[0];
-  index: number;
-  isInView: boolean;
-}) => {
-  const count = useCountUp(stat.value, 2000, isInView, index * 400);
-
+const StatItem = ({ stat }: { stat: (typeof stats)[0] }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.15,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="flex flex-col items-center justify-center text-center gap-3 p-2 relative z-10"
-    >
+    <div className="flex flex-col items-center justify-center text-center gap-3 p-2 relative z-10">
       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
         <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
       </div>
@@ -105,7 +35,7 @@ const StatItem = ({
       <div>
         <p className="text-xl md:text-3xl font-thin text-white tabular-nums">
           {stat.prefix}
-          {count}
+          {stat.value}
           {stat.suffix}
         </p>
 
@@ -113,31 +43,14 @@ const StatItem = ({
           {stat.label}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 export const StatsSection = () => {
-  const ref = useRef(null);
-
-  const isInView = useInView(ref, {
-    once: true,
-    amount: 0.2,
-  });
-
   return (
-    <section
-      className="py-10 md:py-12 bg-gradient-primary overflow-visible relative"
-      ref={ref}
-    >
-      <motion.img
-        initial={{ opacity: 0, x: -60 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{
-          duration: 1.2,
-          ease: [0.22, 1, 0.36, 1],
-        }}
+    <section className="py-10 md:py-12 bg-gradient-primary overflow-visible relative">
+      <img
         src="/provider-man.png"
         alt="Fazedor"
         className="absolute bottom-0 right-0 lg:left-10 lg:right-auto h-[180px] md:h-[240px] lg:h-[420px] w-auto object-contain z-20 pointer-events-none"
@@ -146,12 +59,7 @@ export const StatsSection = () => {
       <div className="container mx-auto px-4 relative z-10 flex justify-end">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ml-auto pr-24 md:pr-0">
           {stats.map((stat, index) => (
-            <StatItem
-              key={index}
-              stat={stat}
-              index={index}
-              isInView={isInView}
-            />
+            <StatItem key={index} stat={stat} />
           ))}
         </div>
       </div>
