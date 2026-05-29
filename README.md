@@ -1,12 +1,10 @@
 # Fazedores Angola — Landing Page
 
-Plataforma oficial da **Fazedores Angola**, um ecossistema digital de serviços e crescimento profissional em Angola.
-
-A Fazedores Angola vai além de conectar clientes a prestadores — ela cria oportunidades, promove crescimento profissional, aumenta visibilidade e fortalece o mercado de serviços através da tecnologia.
+A Fazedores Angola vai além de conectar clientes a prestadores — ela cria oportunidades, promove crescimento profissional, aumenta visibilidade e fortalece o mercado de serviços através da tecnologia, um ecossistema digital de serviços e crescimento profissional em Angola
 
 ## 📸 Capturas das Secções
 
-Capturas das principais secções e funcionalidades apresentadas.
+Pré-visualizações da interface principal da landing page
 
 <table>
   <tr>
