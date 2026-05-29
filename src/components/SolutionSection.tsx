@@ -64,7 +64,10 @@ export const SolutionSection = () => {
 
               {/* Card vídeo */}
               <div className="group cursor-pointer w-full">
-                <div className="w-full rounded-none md:rounded-t-2xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 h-72 md:h-[320px] flex items-center justify-center border-0 md:border-t md:border-x border-white/10">
+                <div
+                  className="w-full rounded-none md:rounded-t-2xl overflow-hidden shadow-2xl shadow-blue-500/20 bg-blue-600 h-72 md:h-[320px] flex items-center justify-center border-0 md:border-t md:border-x border-white/10 bg-contain bg-center bg-no-repeat"
+                  style={{ backgroundImage: "url('/logo.webp')" }}
+                >
                   <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110">
                     <Play
                       size={32}
