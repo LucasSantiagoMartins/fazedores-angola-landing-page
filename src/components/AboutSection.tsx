@@ -118,7 +118,7 @@ export const AboutSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden p-6 rounded-3xl bg-card shadow-lg border border-border/50"
+                className="relative overflow-hidden p-6 rounded-3xl bg-card shadow-lg"
               >
                 <img
                   src={value.image}

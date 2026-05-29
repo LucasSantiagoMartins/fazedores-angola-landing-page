@@ -104,13 +104,13 @@ const StatItem = ({
       </div>
 
       <div>
-        <p className="text-xl md:text-3xl font-bold text-white tabular-nums">
+        <p className="text-xl md:text-3xl font-thin text-white tabular-nums">
           {stat.prefix}
           {count}
           {stat.suffix}
         </p>
 
-        <p className="text-[10px] md:text-xs text-white/80 font-medium uppercase tracking-wider mt-1">
+        <p className="text-[10px] md:text-xs text-white/80 font-thin uppercase tracking-wider mt-1">
           {stat.label}
         </p>
       </div>
