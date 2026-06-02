@@ -48,9 +48,6 @@ export const Footer = () => {
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-foreground/90">Luanda, Angola</p>
-                  <p className="text-muted-foreground">
-                    Estalagem, Rua Beto Carneiro
-                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
