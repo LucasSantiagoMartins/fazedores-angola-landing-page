@@ -11,7 +11,7 @@ const stats = [
   },
   {
     icon: Users,
-    value: 0,
+    value: 13,
     label: "Fazedores ativos",
     prefix: "+",
     suffix: "",
