@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, Instagram, Facebook, Linkedin } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 import DoerButton from "./DoerButton";
 import { MobileMenu } from "./MobileMenu";
 

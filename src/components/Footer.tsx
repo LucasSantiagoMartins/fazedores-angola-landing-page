@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 
 const usefulLinks = [
   { label: "FAQ / Perguntas Frequentes", href: "/perguntas-respostas" },
