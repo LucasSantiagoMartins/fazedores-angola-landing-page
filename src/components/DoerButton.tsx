@@ -34,7 +34,7 @@ const DoerButton: React.FC<DoerButtonProps> = ({
   isLoading = false,
 }) => {
   const baseStyles =
-    "h-10 rounded-full font-medium text-md flex items-center justify-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none";
+    "h-9 rounded-full font-medium text-md flex items-center justify-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
     primary: "btn-gradient text-primary-foreground",

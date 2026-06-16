@@ -4,4 +4,8 @@ export const endpoints = {
     plans: {
         getPlans: `/plans`,
     },
+
+    doers: {
+        getDoers: "/doers"
+    }
 };
