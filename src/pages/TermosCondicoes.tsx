@@ -8,6 +8,8 @@ import {
   RefreshCcw,
   Handshake,
   ShieldCheck,
+  AlertTriangle,
+  Scale,
 } from "lucide-react";
 
 const TermosCondicoes = () => {
@@ -29,8 +31,7 @@ const TermosCondicoes = () => {
               Termos e Condições – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Estes Termos regem o uso da plataforma e estabelecem os direitos e
-              deveres de clientes e fazedores.
+              Última atualização: 16/06/2026
             </p>
           </motion.div>
 
@@ -38,123 +39,102 @@ const TermosCondicoes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-10"
+            className="space-y-6"
           >
+            {/* Seção 1-3 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                1. Aceitação e Propósito
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                <CheckCircle className="w-5 h-5" /> 1 a 3. Introdução e Objeto
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                O Fazedores Angola é um **ecossistema tecnológico de conexão**.
-                Ao utilizar os nossos serviços, concorda que a plataforma atua
-                como facilitadora de visibilidade e gestão, não sendo parte
-                direta na transação financeira do serviço prestado.
+              <p className="text-muted-foreground leading-relaxed">
+                Estes Termos regulam o acesso à plataforma{" "}
+                <strong>Fazedores Angola</strong>. Somos uma plataforma de
+                intermediação tecnológica que facilita a ligação entre Clientes
+                e Fazedores. Não executamos os serviços anunciados nem atuamos
+                como empregadores.
               </p>
             </section>
 
+            {/* Seção 4-6 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-primary" />
-                2. Pagamentos e Transações
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                <ShieldCheck className="w-5 h-5" /> 4 a 6. Contas e
+                Responsabilidades
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Para garantir agilidade no mercado local, o fluxo financeiro
-                funciona da seguinte forma:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
                 <li>
-                  <span className="font-semibold text-foreground">
-                    Pagamento Direto:
-                  </span>{" "}
-                  O valor total da execução do serviço é pago pelo cliente
-                  **diretamente ao Fazedor**, através dos métodos acordados
-                  entre ambos (Dinheiro, Express ou Transferência).
+                  <strong>Utilizadores:</strong> Devem fornecer dados
+                  verdadeiros e manter o sigilo de acesso.
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">
-                    Responsabilidade do Fazedor:
-                  </span>{" "}
-                  O fazedor é responsável por honrar a comissão ou taxa de
-                  utilização da plataforma gerada pela intermediação do serviço.
+                  <strong>Fazedores:</strong> Responsáveis pela qualidade, ética
+                  e execução real dos serviços.
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">
-                    Independência Financeira:
-                  </span>{" "}
-                  O Fazedores Angola não retém, não guarda, nem se
-                  responsabiliza por valores pagos pelos clientes aos
-                  prestadores.
+                  <strong>Clientes:</strong> Comprometidos com o respeito,
+                  profissionalismo e cumprimento de acordos.
                 </li>
               </ul>
             </section>
 
+            {/* Seção 7-8 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-primary" />
-                3. Marketing e Planos de Crescimento
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                <DollarSign className="w-5 h-5" /> 7 e 8. Pagamentos e Planos
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                O fazedor investe na sua presença digital através dos nossos
-                planos:
+              <p className="text-muted-foreground mb-2">
+                Os pagamentos são efetuados diretamente entre Cliente e Fazedor.
+                A Fazedores Angola não intermedeia valores.
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
                 <li>
-                  <span className="font-semibold text-foreground">
-                    Subscrição:
-                  </span>{" "}
-                  O pagamento efetuado à plataforma refere-se estritamente aos
-                  serviços de tecnologia, marketing, edição de conteúdo e
-                  ferramentas de gestão.
+                  Não somos responsáveis por cobranças ou atrasos financeiros.
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">
-                    Uso de Imagem:
-                  </span>{" "}
-                  Ao submeter media para edição, o fazedor garante a autoria do
-                  trabalho. O Fazedores Angola reserva-se o direito de usar este
-                  conteúdo para promover o talento do profissional nas nossas
-                  redes.
+                  Os valores de subscrições e serviços digitais (marketing,
+                  conteúdo) não são reembolsáveis.
                 </li>
               </ul>
             </section>
 
+            {/* Seção 9-12 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <RefreshCcw className="w-5 h-5 text-primary" />
-                4. Mediação e Conduta
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                <AlertTriangle className="w-5 h-5" /> 9 a 12. Conteúdo e
+                Limitações
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Embora o pagamento seja direto, a plataforma zela pela
-                qualidade:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-3 ml-4">
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
                 <li>
-                  Fazedores com histórico de cobranças indevidas ou serviços
-                  inacabados serão removidos do ecossistema.
+                  <strong>Conteúdo:</strong> O utilizador detém os direitos, mas
+                  concede licença para promoção pela plataforma.
                 </li>
                 <li>
-                  A equipa realiza auditorias em caso de reclamações para
-                  verificar se o acordo entre as partes foi cumprido.
+                  <strong>Mediação:</strong> Reclamações podem levar a
+                  advertências, suspensões ou exclusão.
+                </li>
+                <li>
+                  <strong>Limitação:</strong> Não garantimos número mínimo de
+                  contratos, faturação ou rendimento.
                 </li>
               </ul>
             </section>
 
+            {/* Seção 13-15 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Handshake className="w-5 h-5 text-primary" />
-                5. Lei Aplicável e Suporte
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                <Scale className="w-5 h-5" /> 13 a 15. Disposições Finais
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Em conformidade com as leis da República de Angola. Para
-                questões sobre faturação de planos ou conduta:
+              <p className="text-muted-foreground mb-4">
+                Estes termos podem ser alterados a qualquer momento. Regem-se
+                pelas leis da República de Angola e o foro competente é o dos
+                tribunais de Angola.
               </p>
               <div className="p-4 bg-muted/50 rounded-2xl border border-border">
-                <p className="text-foreground font-medium">
-                  contacto@fazedoresangola.com
+                <p className="text-foreground font-semibold">
+                  Dúvidas? Entre em contacto:
                 </p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Luanda, Angola
+                <p className="text-primary font-medium">
+                  contacto@fazedoresangola.com
                 </p>
               </div>
             </section>
