@@ -13,12 +13,21 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <Hero />
-        <SolutionSection />
-        <GrowthSection />
-        <PlansSection />
-        <StatsSection />
-        <AboutSection />
+        {/* Sticky Hero/Carousel — fica por trás enquanto as próximas secções sobem */}
+        <div className="relative h-screen">
+          <div className="sticky top-0 h-screen w-full overflow-hidden gpu z-0">
+            <Hero />
+          </div>
+        </div>
+
+        {/* Conteúdo subsequente sobe e cobre o Hero */}
+        <div className="relative z-10 bg-background gpu">
+          <SolutionSection />
+          <GrowthSection />
+          <PlansSection />
+          <StatsSection />
+          <AboutSection />
+        </div>
       </main>
       <Footer />
     </div>
