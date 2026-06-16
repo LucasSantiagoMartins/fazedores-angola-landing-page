@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import TermosCondicoes from "./pages/TermosCondicoes";
 import ComissoesTaxas from "./pages/ComissoesTaxas";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
-import PoliticaCancelamento from "./pages/PoliticaCancelamento";
+// import PoliticaCancelamento from "./pages/PoliticaCancelamento";
 import PoliticaReembolso from "./pages/PoliticaReembolso";
 import AvaliacoesFeedback from "./pages/AvaliacoesFeedback";
 import NormasPrestacaoServico from "./pages/NormasPrestacaoServico";
@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/perguntas-respostas" element={<PerguntasRespostas />} />
           <Route path="/comissoes-taxas" element={<ComissoesTaxas />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
-          <Route path="/politica-cancelamento" element={<PoliticaCancelamento />} />
+          {/* <Route path="/politica-cancelamento" element={<PoliticaCancelamento />} /> */}
           <Route path="/politica-reembolso" element={<PoliticaReembolso />} />
           <Route path="/avaliacoes-feedback" element={<AvaliacoesFeedback />} />
           <Route path="/normas-prestacao-servico" element={<NormasPrestacaoServico />} />
