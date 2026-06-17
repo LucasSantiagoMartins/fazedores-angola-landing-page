@@ -1,16 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import {
-  FileText,
-  CheckCircle,
-  DollarSign,
-  RefreshCcw,
-  Handshake,
-  ShieldCheck,
-  AlertTriangle,
-  Scale,
-} from "lucide-react";
+import { FileText } from "lucide-react";
 
 const TermosCondicoes = () => {
   return (
@@ -28,11 +19,19 @@ const TermosCondicoes = () => {
               <FileText className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Termos e Condições – Fazedores Angola
+              TERMOS E CONDIÇÕES DE UTILIZAÇÃO DA PLATAFORMA FAZEDORES ANGOLA
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mb-6">
               Última atualização: 16/06/2026
             </p>
+            <div className="bg-primary/5 border border-primary/20 p-4 rounded-2xl max-w-2xl mx-auto">
+              <p className="text-sm text-foreground font-medium">
+                Ao criar uma conta, aceder ou utilizar a plataforma e os
+                serviços da Fazedores Angola, o utilizador declara expressamente
+                ter lido, compreendido e aceite integralmente os Termos e
+                Condições definidos neste documento.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -41,98 +40,248 @@ const TermosCondicoes = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            {/* Seção 1-3 */}
+            {/* Seções mantidas conforme o conteúdo original */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
-                <CheckCircle className="w-5 h-5" /> 1 a 3. Introdução e Objeto
+                1. Introdução
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Estes Termos regulam o acesso à plataforma{" "}
-                <strong>Fazedores Angola</strong>. Somos uma plataforma de
-                intermediação tecnológica que facilita a ligação entre Clientes
-                e Fazedores. Não executamos os serviços anunciados nem atuamos
-                como empregadores.
+                Bem-vindo à Fazedores Angola. Os presentes Termos e Condições
+                regulam o acesso e utilização da plataforma Fazedores Angola,
+                incluindo o website, aplicações, serviços digitais e demais
+                funcionalidades disponibilizadas pela empresa. Ao criar uma
+                conta, aceder ou utilizar a plataforma, o utilizador declara ter
+                lido, compreendido e aceite integralmente os presentes Termos e
+                Condições.
               </p>
             </section>
 
-            {/* Seção 4-6 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
-                <ShieldCheck className="w-5 h-5" /> 4 a 6. Contas e
-                Responsabilidades
+                2. Definições
               </h2>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>
-                  <strong>Utilizadores:</strong> Devem fornecer dados
-                  verdadeiros e manter o sigilo de acesso.
-                </li>
-                <li>
-                  <strong>Fazedores:</strong> Responsáveis pela qualidade, ética
-                  e execução real dos serviços.
-                </li>
-                <li>
-                  <strong>Clientes:</strong> Comprometidos com o respeito,
-                  profissionalismo e cumprimento de acordos.
-                </li>
-              </ul>
-            </section>
-
-            {/* Seção 7-8 */}
-            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
-                <DollarSign className="w-5 h-5" /> 7 e 8. Pagamentos e Planos
-              </h2>
-              <p className="text-muted-foreground mb-2">
-                Os pagamentos são efetuados diretamente entre Cliente e Fazedor.
-                A Fazedores Angola não intermedeia valores.
+              <p className="text-muted-foreground leading-relaxed">
+                Para efeitos deste documento: <strong>Plataforma</strong> –
+                Sistema digital Fazedores Angola destinado à ligação entre
+                clientes e prestadores de serviços. <strong>Cliente</strong> –
+                Pessoa singular ou coletiva que procura contratar serviços
+                através da plataforma. <strong>Fazedor</strong> – Prestador de
+                serviços registado na plataforma. <strong>Utilizador</strong> –
+                Qualquer pessoa que utilize a plataforma, independentemente da
+                sua categoria.
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>
-                  Não somos responsáveis por cobranças ou atrasos financeiros.
-                </li>
-                <li>
-                  Os valores de subscrições e serviços digitais (marketing,
-                  conteúdo) não são reembolsáveis.
-                </li>
-              </ul>
             </section>
 
-            {/* Seção 9-12 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
-                <AlertTriangle className="w-5 h-5" /> 9 a 12. Conteúdo e
-                Limitações
+                3. Objeto da Plataforma
               </h2>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>
-                  <strong>Conteúdo:</strong> O utilizador detém os direitos, mas
-                  concede licença para promoção pela plataforma.
-                </li>
-                <li>
-                  <strong>Mediação:</strong> Reclamações podem levar a
-                  advertências, suspensões ou exclusão.
-                </li>
-                <li>
-                  <strong>Limitação:</strong> Não garantimos número mínimo de
-                  contratos, faturação ou rendimento.
-                </li>
-              </ul>
+              <p className="text-muted-foreground leading-relaxed">
+                A Fazedores Angola é uma plataforma tecnológica de intermediação
+                e promoção de serviços que facilita a ligação entre clientes e
+                prestadores de serviços. A empresa disponibiliza ferramentas de
+                divulgação, gestão de perfil profissional, marketing digital,
+                produção de conteúdo e outros recursos destinados ao crescimento
+                dos prestadores registados. A Fazedores Angola não executa os
+                serviços anunciados nem atua como empregadora dos Fazedores.
+              </p>
             </section>
 
-            {/* Seção 13-15 */}
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
-                <Scale className="w-5 h-5" /> 13 a 15. Disposições Finais
+                4. Criação e Gestão de Conta
               </h2>
               <p className="text-muted-foreground mb-4">
-                Estes termos podem ser alterados a qualquer momento. Regem-se
-                pelas leis da República de Angola e o foro competente é o dos
-                tribunais de Angola.
+                Para utilizar determinadas funcionalidades da plataforma poderá
+                ser necessário criar uma conta. O utilizador compromete-se a:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                <li>Fornecer informações verdadeiras e atualizadas;</li>
+                <li>Manter a confidencialidade dos seus dados de acesso;</li>
+                <li>
+                  Não utilizar a conta para fins ilícitos ou fraudulentos;
+                </li>
+                <li>Atualizar os seus dados sempre que necessário.</li>
+              </ul>
+              <p className="text-muted-foreground mt-4">
+                A Fazedores Angola reserva-se o direito de suspender ou encerrar
+                contas que violem estes Termos.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                5. Responsabilidades dos Fazedores
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Ao registar-se na plataforma, o Fazedor declara que:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                <li>
+                  Possui capacidade e competência para executar os serviços
+                  anunciados;
+                </li>
+                <li>
+                  Disponibilizará informações verdadeiras sobre a sua atividade;
+                </li>
+                <li>Cumprirá os acordos celebrados com os clientes;</li>
+                <li>Atuará com profissionalismo, ética e respeito;</li>
+                <li>
+                  <strong>
+                    Compromete-se a pagar a comissão de intermediação gerada por
+                    cada serviço prestado através da plataforma.
+                  </strong>
+                </li>
+              </ul>
+              <p className="text-muted-foreground mt-4">
+                O Fazedor é o único responsável pela qualidade, execução e
+                conclusão dos serviços prestados.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                6. Responsabilidades dos Clientes
+              </h2>
+              <p className="text-muted-foreground">
+                Os clientes comprometem-se a: Fornecer informações corretas
+                sobre os serviços pretendidos; Tratar os prestadores com
+                respeito e profissionalismo; Cumprir os acordos estabelecidos
+                com os Fazedores e{" "}
+                <strong>
+                  pagar devidamente pelo serviço prestado, conforme o valor
+                  acordado com o Fazedor.
+                </strong>
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                7. Pagamentos e Relação Comercial
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Salvo indicação expressa em contrário, os pagamentos relativos
+                aos serviços contratados são efetuados diretamente entre Cliente
+                e Fazedor. A Fazedores Angola não recebe, guarda, administra ou
+                controla os valores acordados entre as partes. Consequentemente:
+                A empresa não é responsável por cobranças realizadas pelos
+                Fazedores; Não é responsável por atrasos de pagamento; Não
+                garante a recuperação de valores pagos entre as partes. Quando
+                aplicável, o Fazedor poderá estar sujeito ao pagamento de taxas,
+                comissões ou subscrições relacionadas com a utilização da
+                plataforma.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                8. Planos, Subscrições e Serviços Adicionais
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A Fazedores Angola poderá disponibilizar planos pagos, serviços
+                de marketing, produção de conteúdo, videomaker, promoção digital
+                e outras soluções destinadas ao crescimento dos Fazedores. Os
+                valores, benefícios e condições de cada plano serão apresentados
+                na plataforma e poderão ser atualizados a qualquer momento. Os
+                pagamentos efetuados referentes a subscrições e serviços
+                digitais não são reembolsáveis, salvo disposição legal em
+                contrário.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                9. Conteúdo e Direitos de Utilização
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Ao enviar fotografias, vídeos ou outros materiais para a
+                plataforma, o utilizador declara possuir os direitos necessários
+                para a sua utilização. O utilizador concede à Fazedores Angola
+                autorização não exclusiva para utilizar esse conteúdo para fins
+                de divulgação, marketing, promoção da plataforma e promoção dos
+                serviços do próprio Fazedor. A propriedade intelectual do
+                conteúdo permanece com o respetivo titular.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                10. Avaliações e Reclamações
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Os utilizadores poderão apresentar reclamações relativas à
+                utilização da plataforma ou aos serviços contratados. A
+                Fazedores Angola poderá analisar as situações reportadas e tomar
+                medidas administrativas internas, incluindo: Advertências;
+                Suspensão temporária; Remoção definitiva da plataforma. A
+                atuação da empresa não constitui arbitragem nem substitui os
+                mecanismos legais competentes.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                11. Limitação de Responsabilidade
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A Fazedores Angola atua exclusivamente como plataforma de
+                intermediação tecnológica. A empresa não garante: A
+                concretização de contratos entre clientes e Fazedores; Um número
+                mínimo de pedidos ou clientes para qualquer Fazedor; Um nível
+                específico de faturação ou rendimento; A Fazedores Angola não
+                será responsável por danos, prejuízos, perdas financeiras ou
+                conflitos decorrentes da relação estabelecida entre Clientes e
+                Fazedores.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                12. Suspensão e Encerramento de Contas
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A Fazedores Angola poderá suspender ou encerrar contas que:
+                Violem estes Termos; Utilizem a plataforma de forma fraudulenta;
+                Prejudiquem outros utilizadores; Coloquem em risco a reputação
+                ou funcionamento da plataforma.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                13. Alterações dos Termos
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A Fazedores Angola poderá alterar os presentes Termos e
+                Condições a qualquer momento. As alterações entrarão em vigor
+                após a sua publicação na plataforma. A continuação da utilização
+                da plataforma após a atualização constitui aceitação das novas
+                condições.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                14. Lei Aplicável e Foro
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Os presentes Termos e Condições são regidos pelas leis da
+                República de Angola. Qualquer litígio relacionado com a
+                utilização da plataforma será submetido aos tribunais
+                competentes de Angola.
+              </p>
+            </section>
+
+            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-primary">
+                15. Contactos
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Para esclarecimentos ou questões relacionadas com estes Termos e
+                Condições, os utilizadores poderão contactar a Fazedores Angola
+                através dos canais oficiais disponibilizados pela empresa.
               </p>
               <div className="p-4 bg-muted/50 rounded-2xl border border-border">
-                <p className="text-foreground font-semibold">
-                  Dúvidas? Entre em contacto:
-                </p>
                 <p className="text-primary font-medium">
                   contacto@fazedoresangola.com
                 </p>

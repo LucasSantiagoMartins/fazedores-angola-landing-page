@@ -12,7 +12,7 @@ const policies = [
   { label: "Termos e Condições", href: "/termos-condicoes" },
   { label: "Comissões e Taxas", href: "/comissoes-taxas" },
   { label: "Política de Privacidade", href: "/politica-privacidade" },
-  // { label: "Política de Cancelamento", href: "/politica-cancelamento" },
+  { label: "Política de Cancelamento", href: "/politica-cancelamento" },
   { label: "Avaliações e feedback", href: "/avaliacoes-feedback" },
   {
     label: "Normas de Prestação de Serviço",

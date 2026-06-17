@@ -7,6 +7,8 @@ import {
   DollarSign,
   AlertCircle,
   ShieldCheck,
+  TrendingDown,
+  Lock,
 } from "lucide-react";
 
 const ComissoesTaxas = () => {
@@ -52,8 +54,7 @@ const ComissoesTaxas = () => {
               Comissões e Taxas – Fazedores Angola
             </h1>
             <p className="text-muted-foreground">
-              Transparência total sobre como funciona a sustentabilidade do
-              nosso ecossistema.
+              Transparência total sobre como funciona a sustentabilidade do nosso ecossistema.
             </p>
           </motion.div>
 
@@ -75,16 +76,10 @@ const ComissoesTaxas = () => {
                   <taxa.icon className="w-7 h-7 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {taxa.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {taxa.description}
-                  </p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{taxa.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{taxa.description}</p>
                 </div>
-                <div className="text-3xl font-bold text-primary">
-                  {taxa.value}
-                </div>
+                <div className="text-3xl font-bold text-primary">{taxa.value}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -98,64 +93,44 @@ const ComissoesTaxas = () => {
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-sm">
               <h2 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-primary" />
-                Prazos e Restrições de Conta
+                Gestão de Comissões Pendentes
               </h2>
-              <div className="space-y-4">
-                <div className="p-4 bg-primary/5 border-l-4 border-primary rounded-r-xl">
-                  <p className="text-foreground font-medium">
-                    Janela de Pagamento: 48 Horas
-                  </p>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    Após concluir um serviço, o fazedor tem até 48 horas para
-                    liquidar a comissão de 5% à plataforma.
-                  </p>
+              <div className="space-y-6">
+                <div className="p-5 bg-destructive/5 border border-destructive/20 rounded-2xl">
+                  <div className="flex items-start gap-4">
+                    <Lock className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-foreground font-bold">Bloqueio Operacional</p>
+                      <p className="text-muted-foreground text-sm mt-1">
+                        Sempre que existir uma comissão pendente, o Fazedor fica impedido de realizar qualquer ação que altere o estado de uma solicitação (aceitar, recusar, colocar em andamento ou concluir solicitações).
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <ul className="list-disc list-inside text-muted-foreground space-y-4 ml-4">
-                  <li>
-                    <span className="font-semibold text-foreground">
-                      Inatividade da Conta:
-                    </span>{" "}
-                    Se o prazo de 48 horas expirar sem a liquidação da comissão,
-                    a conta será marcada como{" "}
-                    <span className="text-destructive font-bold">Inativa</span>.
-                    O acesso ao sistema será bloqueado até à regularização.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-foreground">
-                      Bloqueio de Ações:
-                    </span>{" "}
-                    Enquanto houver uma comissão pendente (mesmo dentro do
-                    prazo), o fazedor continuará a receber novas solicitações,
-                    mas **não poderá aceitar ou recusar** qualquer novo pedido
-                    até que o saldo anterior seja liquidado.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-foreground">
-                      Fluxo Direto:
-                    </span>{" "}
-                    Reafirmamos que o cliente paga sempre diretamente ao
-                    fazedor. A dívida da comissão é um compromisso exclusivo do
-                    fazedor para com o Fazedores Angola.
-                  </li>
-                </ul>
+                <div className="p-5 bg-amber-500/5 border border-amber-500/20 rounded-2xl">
+                  <div className="flex items-start gap-4">
+                    <TrendingDown className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-foreground font-bold">Impacto no Ranking</p>
+                      <p className="text-muted-foreground text-sm mt-1">
+                        A cada 24 horas de atraso no pagamento de uma comissão, o Fazedor sofrerá uma redução automática na sua pontuação de reputação dentro da plataforma.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-primary" />
-                Conformidade
+                Conformidade e Regras
               </h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-                <li>
-                  O fazedor é responsável por emitir faturas aos seus clientes e
-                  por cumprir as suas obrigações fiscais junto da AGT.
-                </li>
-                <li>
-                  Manter a conta ativa garante o acesso às ferramentas de
-                  marketing e edição de perfil profissional.
-                </li>
+                <li>O fazedor é responsável por emitir faturas aos seus clientes e por cumprir as suas obrigações fiscais junto da AGT.</li>
+                <li>O desbloqueio das funcionalidades ocorre automaticamente após a confirmação da liquidação da comissão pendente.</li>
+                <li>Manter a conta em dia garante o acesso total às ferramentas de marketing e visibilidade no ranking.</li>
               </ul>
             </section>
           </motion.div>

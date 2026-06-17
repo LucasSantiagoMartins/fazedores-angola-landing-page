@@ -8,12 +8,11 @@ import NotFound from "./pages/NotFound";
 import TermosCondicoes from "./pages/TermosCondicoes";
 import ComissoesTaxas from "./pages/ComissoesTaxas";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
-// import PoliticaCancelamento from "./pages/PoliticaCancelamento";
-import PoliticaReembolso from "./pages/PoliticaReembolso";
 import AvaliacoesFeedback from "./pages/AvaliacoesFeedback";
 import NormasPrestacaoServico from "./pages/NormasPrestacaoServico";
 import PerguntasRespostas from "./pages/PerguntasRespostas";
 import Contact from "./pages/Contact";
+import PoliticaCancelamento from "./pages/PoliticaCancelamento";
 
 const queryClient = new QueryClient();
 
@@ -30,8 +29,7 @@ const App = () => (
           <Route path="/perguntas-respostas" element={<PerguntasRespostas />} />
           <Route path="/comissoes-taxas" element={<ComissoesTaxas />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
-          {/* <Route path="/politica-cancelamento" element={<PoliticaCancelamento />} /> */}
-          <Route path="/politica-reembolso" element={<PoliticaReembolso />} />
+          <Route path="/politica-cancelamento" element={<PoliticaCancelamento />} />
           <Route path="/avaliacoes-feedback" element={<AvaliacoesFeedback />} />
           <Route path="/normas-prestacao-servico" element={<NormasPrestacaoServico />} />
           <Route path="*" element={<NotFound />} />

@@ -161,23 +161,11 @@ const NormasPrestacaoServico = () => {
               </div>
             </section>
 
-            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                5. Garantia e Retificações
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Ao confirmar a conclusão, o prestador garante que o serviço foi
-                entregue com qualidade. Caso surjam problemas técnicos em 48h, o
-                prestador deve realizar a retificação. A falha no cumprimento
-                deste prazo impacta diretamente o seu selo de confiança na
-                plataforma.
-              </p>
-            </section>
+           
 
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4">
-                6. Responsabilidade
+                5. Responsabilidade
               </h2>
               <p className="text-muted-foreground leading-relaxed text-sm">
                 O Fazedores Angola é um intermediário tecnológico. A relação de
