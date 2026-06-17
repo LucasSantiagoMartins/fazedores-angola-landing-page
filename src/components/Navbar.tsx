@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Menu, Instagram, Facebook, Disc as TikTok } from "lucide-react";
 import logo from "@/assets/logo.png";
 import DoerButton from "./DoerButton";
 import { MobileMenu } from "./MobileMenu";
@@ -105,12 +105,12 @@ export const Navbar = () => {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://linkedin.com/company/fazedores-angola"
+                href="https://tiktok.com/@fazedores_angola"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
               >
-                <Linkedin size={20} />
+                <TikTok size={20} />
               </a>
             </div>
 
