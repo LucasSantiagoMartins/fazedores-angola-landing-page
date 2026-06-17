@@ -111,31 +111,6 @@ const PoliticaCancelamento = () => {
               </div>
             </section>
 
-            <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border shadow-lg">
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-amber-500" />
-                Limite de Cancelamentos
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Para manter a integridade da comunidade Fazedores Angola,
-                estabelecemos um{" "}
-                <span className="font-semibold text-foreground">
-                  limite de 3 cancelamentos mensais
-                </span>{" "}
-                por utilizador.
-                <br />
-                <br />
-                Ao atingir este limite, a conta entrará automaticamente num
-                processo de{" "}
-                <span className="font-semibold text-foreground">
-                  inspeção técnica e análise de comportamento
-                </span>{" "}
-                pela nossa equipa de qualidade. Cancelamentos impróprios
-                recorrentes podem resultar em sanções administrativas ou
-                suspensão do acesso.
-              </p>
-            </section>
-
             <section className="bg-card rounded-[2rem] p-6 md:p-8 border border-border">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Briefcase className="w-5 h-5 text-primary" />
