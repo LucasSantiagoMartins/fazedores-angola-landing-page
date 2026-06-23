@@ -1,6 +1,6 @@
 # Fazedores Angola — Landing Page
 
-A Fazedores Angola vai além de conectar clientes a prestadores — ela cria oportunidades, promove crescimento profissional, aumenta visibilidade e fortalece o mercado de serviços através da tecnologia, um ecossistema digital de serviços e crescimento profissional em Angola
+A Fazedores Angola vai além de conectar clientes a prestadores. Ela cria oportunidades, promove crescimento profissional, aumenta visibilidade e fortalece o mercado de serviços através da tecnologia, um ecossistema digital de serviços e crescimento profissional em Angola
 
 ## 📸 Capturas das Secções
 
